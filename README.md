@@ -8,6 +8,8 @@ Users will be able to have live chat functionality via web sockets. They'll be a
 Users will be able to have a list of profile settings including:
 - Skill level
 - Willing to host
+- Main(s)
+- Secondary
 - etc
 
 Users will be able to broadcast their location via Google Maps geolocation if they're a host.
