@@ -2,14 +2,16 @@
 
 ### Show Me Your Moves is a mobile app that allows Super Smash Bros players to connect with each other and play.
 
-## Background and Overview
+## Background and Overview (eb)
 
-## Functionality & MVP
+## Functionality & MVP (bw)
 
-## Technologies & Technical Challenges
+## Technologies & Technical Challenges (fl)
 
-## Wireframes
+## Wireframes (fl)
 
-## Accomplished over the Weekend
+https://xd.adobe.com/view/ca63fccb-19f6-4d65-adbf-9bb6c189288c
 
-## Group Members & Work Breakdown
+## Accomplished over the Weekend (eb)
+
+## Group Members & Work Breakdown (bw)
