@@ -128,9 +128,11 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
   - Add 'fetch chat' functionality within Side Bar component
 - [ ] Work through Activity Map quirks (EB)
 - [ ] Push app to Heroku (EB)
+- [ ] Start working on demo page (all)
 
 ### Day 5
 - [ ] Continue working through bugs (all)
+- [ ] Finish demo page (all)
 - [ ] User testing with friends and family (all)
 - [ ] Polish UI/UX (all)
 
