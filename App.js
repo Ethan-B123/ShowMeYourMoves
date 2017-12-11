@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Map from "./frontend/components/map";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Marth is a nerd..</Text>
+        <Map />
       </View>
     );
   }
