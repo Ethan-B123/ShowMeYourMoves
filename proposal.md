@@ -1,6 +1,6 @@
 # Show Me Your Moves
 
-## **Show Me Your Moves is a mobile app that allows Super Smash Bros players to connect with each other and play.**
+### **Show Me Your Moves is a mobile app that allows Super Smash Bros players to connect with each other and play.**
 
 ## Background and Overview (eb)
 
