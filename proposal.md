@@ -16,12 +16,16 @@ Our app will consist of two key features:
 
 ## Functionality & MVP (bw)
 
-[ ] A map that shows other smash players around you
-[ ] A message button that opens up a chat window
-[ ] Login with FaceBook, Google, and regular login
-[ ] A sidebar that shows all of your chat history
-[ ] User profile settings
-[ ] allowing you to choose if you're a host or a just a smash player
+- [ ] An activity map that shows other Smash Players and Hosts around the user
+- [ ] A 'More Info' page for both Smash Players and Hosts
+- [ ] A message button that opens up a chat window
+- [ ] Login with FaceBook, Google, and regular login
+- [ ] A sidebar that shows all of the user's previous chats
+- [ ] User profile settings allows user to choose if they're a Host or just a Smash Player
+
+### Bonus Features:
+
+- [ ] A 'Report' button to report bad Smash Players/Hosts
 
 ## Technologies & Technical Challenges (fl)
 
@@ -64,40 +68,72 @@ https://xd.adobe.com/view/ca63fccb-19f6-4d65-adbf-9bb6c189288c
 Expectation is that with each thing done, CSS/styling will be 100% completed as well.
 
 ### Day 1
-- figure out Git workflow (EB, FL, BW)
-- integrate Backend auth with rails user auth
-
-Frontend auth
-  - Redux cycle for session (reducers, actions, api util) (FL)
-  - Getting basic rails backend integrated with react.native (EB)
-  - Redirecting to user settings page upon signup (BW)
-- get Login page up and running with FB, Google, and regular login (BW)
-- login form (EB)
-- sign up form (FL)
+- [ ] Figure out Git workflow (EB, FL, BW)
+- [ ] Setup boiler plate code for Redux cycle for session (reducers, actions, api util) (FL)
+  - Reducers
+  - Actions
+  - API Util
+- [ ] Start getting basic Rails backend setup (BW)
+  - User model
+  - Users and Sessions controllers
+  - Routes
+  - Setup PostgreSQL
+  - Run rails migrations
+- [ ] Get login and signup forms functioning (BW)
+  - FaceBook login
+  - Google login
+  - Regular login
+  - Regular signup
+- [ ] Start working on Google Maps integration (EB)
 
 ### Day 2
-- Integrate Google maps to start working on activity map (EB)
-- app header (BW)
-- hamburger menu (BW)
-- Create user settings page (FL)
+- [ ] Finish integrating with Google Maps (EB)
+- [ ] Start building Activity Map functionality (EB)
+  - Get Players and Host to show up on map based on user's location
+  - Have modal thing slide up from bottom when you click on a Smash Player or Host with:
+    - 'More Info' button (live link)
+    - 'Message' button (doesn't do anything yet. dead link for now)
+    - Skill level and main Smash game info
+- [ ] Finish building Rails backend and smooth out login/signup bugs (BW)
+- [ ] Build app header component (BW)
+  - Header text
+  - Hamburger menu
+  - Back button depending on current page
+- [ ] Start building side bar menu (BW)
+  - list of previous chats (dead links for now)
+  - link to User Settings (live link)
+  - link to Activity Map (live link)
+- [ ] Finish building session Redux cycle (FL)
+- [ ] Start building User Settings component (FL)
   - user settings form
-  - image upload
+  - image upload functionality
+- [ ] Start building 'More Info' component (FL)
+  - Host
+  - Smash Player
 
 ### Day 3
-- Finish Activity Map, user info, and host info pages general debugging. (EB)
-- Start working on messaging (FL)
-- create side bar menu (BW)
-- Work on chat history backend setup (BW)
+- [ ] Finish Activity Map (EB)
+- [ ] Finish User Settings (FL)
+- [ ] Finish More Info (FL)
+- [ ] Finish Side Bar (BW)
+- [ ] Start building Chat component (FL)
+  - Websocket functionality
+- [ ] Start setting up chat history backend (BW)
+  - Run rails migration
+    - Chats table
 
 ### Day 4
-- Get heroku set up
-- Polish
+- [ ] Finish Chat component (FL)
+- [ ] Finish Chat history backend setup (BW)
+  - Add 'fetch chat' functionality within Side Bar component
+- [ ] Work through Activity Map quirks (EB)
+- [ ] Push app to Heroku (EB)
 
 ### Day 5
-- try to find bugs and crash the App
-- user testing
-- improve UI/UX
+- [ ] Continue working through bugs (all)
+- [ ] User testing with friends and family (all)
+- [ ] Polish UI/UX (all)
 
 ### Day 6
-- push to app store
-- Create README
+- [ ] Push to app store (all)
+- [ ] Create README (all)
