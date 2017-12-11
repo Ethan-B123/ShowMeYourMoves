@@ -4,14 +4,14 @@
 
 ## Background and Overview (eb)
 
-As students at App Academy who love playing Super Smash Brothers, we wanted to create an opportunity for Smash Brothers players to connect and meet up to play.
+As students at App Academy who love playing Super Smash Brothers, we want to create an application connecting Smash Players to each other locally.
 
-Currently there are only ways to organize for online play but not so much in person.
+Currently there are ways to organize online games, but there are not any easy ways to to find players near you.
 
-This app will hopefully serve that need because we know there are probably a lot of players in the Bay area who want to connect and play Smash together.
+This app aims to bridge the gap between players. We know there are a lot of players in the Bay area who want to connect and play Smash together.
 
-Our app will consist of two key features:
-- A map that shows other smash players around you
+Our app consists of two key features:
+- A map that shows other Smash Players around you
 - A way to connect and chat with those players
 
 ## Functionality & MVP (bw)
@@ -60,6 +60,15 @@ figure out a system to effectively collaborte even when we're working separately
 https://xd.adobe.com/view/ca63fccb-19f6-4d65-adbf-9bb6c189288c
 
 ## Accomplished over the Weekend (eb)
+- research new technologies used by the app, such as
+  - React.native
+  - OAuth2.0
+  - WebSockets
+  - Google Maps Geolocation
+- setup a simple `react-native` application
+- test the `react-native` app on a mobile device
+- setup OAuth API keys
+- create proposal
 
 ## Group Members & Work Breakdown (bw)
 
