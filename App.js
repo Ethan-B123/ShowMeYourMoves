@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginPage from 'login_page';
+import LoginPage from './frontend/components/login_page.js';
 
 export default class App extends React.Component {
   render() {
