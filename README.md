@@ -142,7 +142,7 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
 
 ### Day 1
 
-- [ ] Figure out Git workflow (EB, FL, BW)
+- [ ] Figure out Git workflow (all)
 - [ ] Setup boiler plate code for Redux cycle for session (reducers, actions, api util) (FL)
   - Reducers
   - Actions
