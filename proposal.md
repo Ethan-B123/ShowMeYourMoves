@@ -2,7 +2,7 @@
 
 ### **Show Me Your Moves is a mobile app that allows Super Smash Bros players to connect with each other and play.**
 
-## Background and Overview (eb)
+## Background and Overview
 
 As students at App Academy who love playing Super Smash Brothers, we want to create an application connecting Smash Players to each other locally.
 
@@ -15,7 +15,7 @@ Our app consists of two key features:
 - A map that shows other Smash Players around you
 - A way to connect and chat with those players
 
-## Functionality & MVP (bw)
+## Functionality & MVP
 
 - [ ] An activity map that shows other Smash Players and Hosts around the user
 - [ ] A 'More Info' page for both Smash Players and Hosts
@@ -24,11 +24,12 @@ Our app consists of two key features:
 - [ ] A sidebar that shows all of the user's previous chats
 - [ ] User profile settings allows user to choose if they're a Host or just a Smash Player
 
-### Bonus Features:
+### Bonus Features
 
 - [ ] A 'Report' button to report bad Smash Players/Hosts
+- [ ] Nearby tournament locator
 
-## Technologies & Technical Challenges (fl)
+## Technologies & Technical Challenges
 
 **Backend: Ruby/Rails**
 
@@ -121,19 +122,19 @@ Adobe XD link is provided at the bottom with working prototype functionality. Al
 
 https://xd.adobe.com/view/ca63fccb-19f6-4d65-adbf-9bb6c189288c
 
-## Accomplished over the Weekend (eb)
+## Accomplished over the Weekend
 
-- research new technologies used by the app, such as
+- Research new technologies used by the app, such as
   - React.native
   - OAuth2.0
   - WebSockets
   - Google Maps Geolocation
-- setup a simple `react-native` application
-- test the `react-native` app on a mobile device
-- setup OAuth API keys
-- create proposal
+- Setup a simple `react-native` application
+- Test the `react-native` app on a mobile device
+- Setup OAuth API keys
+- Create proposal
 
-## Group Members & Work Breakdown (bw)
+## Group Members & Work Breakdown
 
 ### Ethan Bjornsen, Francis Lara, Brillante Wang
 
