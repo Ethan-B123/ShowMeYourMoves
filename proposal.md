@@ -41,7 +41,7 @@ Our app consists of two key features:
 ### Location Challenges (Google Maps Integration)
 
 - Integrating Google maps so that it's the main page that users are taken to as soon as they log in.
-- User's personal privacy is important so we want a way to not broadcast their addresses publicly but still show their general location on the map (kind of like Airbnb) with a pin drop/marker.
+- User's personal privacy is important so we want a way to not broadcast their addresses publicly but still show their general location on the map (similar to Airbnb) with a pin drop/marker.
 - We need a way to only show users within some radius of your location instead of all users in the world.
 
 - Making a clear easy to use interface on the map.
