@@ -56,7 +56,64 @@ The main functionality will be the map so it's going to have to be really easy t
 ### Git workflow
 figure out a system to effectively collaborte even when we're working separately with Git.
 
-## Wireframes (fl)
+## Wireframes
+
+Adobe XD link is provided at the bottom with working prototype functionality. All images larger than normal size are scrollable.
+
+- OAuth Login
+
+![](wireframes/OAuth-Login.png)
+
+- Email Login
+
+![](wireframes/Email-Login.png)
+
+- Email Signup
+
+![](wireframes/Email-Signup.png)
+
+- Activity Map
+
+![](wireframes/ActivityMap-Index.png)
+
+- Activity Map - Player Selected
+
+![](wireframes/ActivityMap-Player.png)
+
+- Player Messaging
+
+![](wireframes/Direct-Message.png)
+
+- Player Detail
+
+![](wireframes/Player-Detail.png)
+
+- Activity Map - Host Selected
+
+![](wireframes/ActivityMap-Host.png)
+
+- Host Detail Index
+
+![](wireframes/Host-Detail-Index.png)
+
+- Host Player Detail
+
+![](wireframes/Host-Detail-Player.png)
+
+- Host Event Detail
+
+![](wireframes/Host-Detail-Event.png)
+
+- Hamburger Menu/Sidebar
+
+![](wireframes/Sidebar.png)
+
+- User Settings
+
+![](wireframes/User-Settings.png)
+
+- Adobe XD Prototype
+
 https://xd.adobe.com/view/ca63fccb-19f6-4d65-adbf-9bb6c189288c
 
 ## Accomplished over the Weekend (eb)
