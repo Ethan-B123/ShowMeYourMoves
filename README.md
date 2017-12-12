@@ -106,9 +106,6 @@ Adobe XD link is provided at the bottom with working prototype functionality. Al
 
 ![](wireframes/Host-Detail-Player.png)
 
-- Host Event Detail
-
-![](wireframes/Host-Detail-Event.png)
 
 - Hamburger Menu/Sidebar
 
