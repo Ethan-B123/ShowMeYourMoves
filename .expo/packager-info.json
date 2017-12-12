@@ -1,15 +1,8 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-<<<<<<< HEAD
-  "packagerPid": 59442,
-  "expoServerNgrokUrl": "https://e6-k34.brillanw.showmeyourmoves.exp.direct",
-  "packagerNgrokUrl": "https://packager.e6-k34.brillanw.showmeyourmoves.exp.direct",
-  "ngrokPid": 59454
-=======
-  "packagerPid": 36161,
+  "packagerPid": 38701,
   "expoServerNgrokUrl": "https://e6-k34.foxmccloud.showmeyourmoves.exp.direct",
   "packagerNgrokUrl": "https://packager.e6-k34.foxmccloud.showmeyourmoves.exp.direct",
-  "ngrokPid": 36175
->>>>>>> 4b2f6d0e062b6cdd8fac1eae3955c1f4a33b8b3e
+  "ngrokPid": 38712
 }
