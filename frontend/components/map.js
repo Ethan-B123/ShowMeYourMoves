@@ -11,6 +11,13 @@ const DEMO_PLAYERS = [
   { latitude: 37.7844654, longitude: -122.4091938 }
 ]
 
+const DEMO_SESSIONS = [
+  { latitude: 37.798323 + 0.001, longitude: -122.4209297 },
+  { latitude: 37.7973596 + 0.001, longitude: -122.4119088 },
+  { latitude: 37.7929689 + 0.001, longitude: -122.4127009 },
+  { latitude: 37.7844654 + 0.001, longitude: -122.4091938 }
+]
+
 class Map extends Component {
 
   constructor(props) {
@@ -32,6 +39,8 @@ class Map extends Component {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       },
+      players: DEMO_PLAYERS,
+      sessions: DEMO_SESSIONS,
       selectedIcon: -1
     };
   }
@@ -40,7 +49,7 @@ class Map extends Component {
     this.setState({ region });
   }
 
-  showPlayer(latLng, id) {
+  showPlayers(latLng, id) {
     const icon = id === this.state.selectedIcon // TODO: use user/event id
       ? require("../../assets/map_icons/person_icon_highlighted.png")
       : require("../../assets/map_icons/person_icon_purple.png");
@@ -61,7 +70,7 @@ class Map extends Component {
         region={this.state.region}
         onRegionChange={this.onRegionChange.bind(this)}>
         {DEMO_PLAYERS.map(
-          (latLng, idx) => this.showPlayer(latLng, idx)
+          (latLng, idx) => this.showPlayers(latLng, idx)
         )}
       </ MapView>
     );

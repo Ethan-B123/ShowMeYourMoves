@@ -28,7 +28,7 @@ export default MapIcon;
 
 const styles = StyleSheet.create({
   markerView: {
-    backgroundColor: "pink",
+    backgroundColor: "#fff",
     borderRadius: 15,
     width: 30,
     height: 30
