@@ -41,16 +41,49 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <View>
-        <Button
-          title="Log in with Facebook"
-          onPress={this.logInWithFB.bind(this)}/>
-        <Button
-          title="Log in with Google"
-          onPress={this.logInWithGoogle.bind(this)}/>
+      <View style={styles.container}>
+        <View style={styles.buttonsContainer}>
+          <Button
+            title="Continue with Facebook"
+            onPress={this.logInWithFB.bind(this)}/>
+          <Button
+            title="Continue with Google"
+            onPress={this.logInWithGoogle.bind(this)}/>
+        </View>
+
+        <View style={styles.regularLogin}>
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>or</Text>
+            <Text style={styles.text}>Log in or sign up with email</Text>
+          </View>
+          <View style={styles.regularLoginButtons}>
+            <Button
+              title="Log In"/>
+            <Button
+              title="Sign Up"/>
+          </View>
+        </View>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#210c56'
+  },
+  regularLogin: {
+    alignItems: "center",
+  },
+  text: {
+    color: "#fff"
+  },
+  textContainer: {
+    alignItems: "center"
+  },
+  regularLoginButtons: {
+    flexDirection: "row"
+  }
+})
 
 export default LoginPage;
