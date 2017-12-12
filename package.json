@@ -1,5 +1,15 @@
 {
-  "name": "ShowMeYourMovesBackEnd",
+  "main": "node_modules/expo/AppEntry.js",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "expo": "^23.0.0",
+    "react": "16.0.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "react-native-maps": "^0.18.3",
+    "react-navigation": "^1.0.0-beta.21",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  }
 }
