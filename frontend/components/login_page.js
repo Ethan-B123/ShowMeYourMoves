@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight } from 'react-native';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -43,12 +44,24 @@ class LoginPage extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.buttonsContainer}>
-          <Button
-            title="Continue with Facebook"
-            onPress={this.logInWithFB.bind(this)}/>
-          <Button
-            title="Continue with Google"
-            onPress={this.logInWithGoogle.bind(this)}/>
+          <TouchableHighlight
+            style={styles.touchableHighlight}
+            underlayColor="#99d9f4"
+            onPress={this.logInWithFB.bind(this)}>
+            <View style={styles.fbButtonContainer}>
+              <FontAwesome name="facebook" color="white" size={25}/>
+              <Text style={styles.buttonText}>Continue with Facebook</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.touchableHighlight}
+            underlayColor="#99d9f4"
+            onPress={this.logInWithGoogle.bind(this)}>
+            <View style={styles.googleButtonContainer}>
+              <Entypo name="google-" color="white" size={25}/>
+              <Text style={styles.buttonText}>Continue with Google</Text>
+            </View>
+          </TouchableHighlight>
         </View>
 
         <View style={styles.regularLogin}>
@@ -81,8 +94,39 @@ const styles = StyleSheet.create({
   textContainer: {
     alignItems: "center"
   },
+  fbButtonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#3b5998",
+    paddingVertical: 20,
+    paddingHorizontal: 2,
+    borderRadius: 5,
+    justifyContent: "center",
+    width: 300
+  },
+  googleButtonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#DD4835",
+    paddingVertical: 20,
+    paddingHorizontal: 2,
+    borderRadius: 5,
+    justifyContent: "center",
+    width: 300
+  },
+  buttonText: {
+    fontSize: 18,
+    color: "#FAFAFA",
+    marginLeft: 10,
+    marginTop: 2,
+  },
   regularLoginButtons: {
     flexDirection: "row"
+  },
+  touchableHighlight: {
+    alignItems: "center"
   }
 })
 
