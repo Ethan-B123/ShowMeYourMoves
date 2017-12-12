@@ -9,6 +9,7 @@
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icon.png",
+    "facebookScheme": "fb1622588997802973",
     "splash": {
       "image": "./wireframes/oauth_login.png",
       "resizeMode": "contain",

@@ -1,12 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import LoginPage from './frontend/components/login_page.js';
+import RootNavigator from './frontend/navigators/root_navigator';
 
 export default class App extends React.Component {
+  // renderScene(route, navigator) {
+  //   switch(route.id) {
+  //     case "login-page":
+  //       return (
+  //         <LoginPage navigator={navigator}/>
+  //       )
+  //   }
+  // }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Marth is a nerd..</Text>
-      </View>
+      <RootNavigator/>
     );
   }
 }
