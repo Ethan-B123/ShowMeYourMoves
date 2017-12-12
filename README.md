@@ -68,52 +68,52 @@ Adobe XD link is provided at the bottom with working prototype functionality. Al
 
 - OAuth Login
 
-![](wireframes/OAuth-Login.png)
+![](wireframe/OAuth-Login.png)
 
 - Email Login
 
-![](wireframes/Email-Login.png)
+![](wireframe/Email-Login.png)
 
 - Email Signup
 
-![](wireframes/Email-Signup.png)
+![](wireframe/Email-Signup.png)
 
 - Activity Map
 
-![](wireframes/ActivityMap-Index.png)
+![](wireframe/ActivityMap-Index.png)
 
 - Activity Map - Player Selected
 
-![](wireframes/ActivityMap-Player.png)
+![](wireframe/ActivityMap-Player.png)
 
 - Player Messaging
 
-![](wireframes/Direct-Message.png)
+![](wireframe/Direct-Message.png)
 
 - Player Detail
 
-![](wireframes/Player-Detail.png)
+![](wireframe/Player-Detail.png)
 
 - Activity Map - Host Selected
 
-![](wireframes/ActivityMap-Host.png)
+![](wireframe/ActivityMap-Host.png)
 
 - Host Detail Index
 
-![](wireframes/Host-Detail-Index.png)
+![](wireframe/Host-Detail-Index.png)
 
 - Host Player Detail
 
-![](wireframes/Host-Detail-Player.png)
+![](wireframe/Host-Detail-Player.png)
 
 
 - Hamburger Menu/Sidebar
 
-![](wireframes/Sidebar.png)
+![](wireframe/Sidebar.png)
 
 - User Settings
 
-![](wireframes/User-Settings.png)
+![](wireframe/User-Settings.png)
 
 - Adobe XD Prototype
 
