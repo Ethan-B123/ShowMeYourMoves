@@ -43,9 +43,9 @@ class LoginPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={{fontSize: 30, alignItems: "center", marginBottom: 20, color: "#fff"}}>SHOW ME YOUR MOVES</Text>
         <View style={styles.buttonsContainer}>
           <TouchableHighlight
-            style={styles.touchableHighlight}
             underlayColor="#99d9f4"
             onPress={this.logInWithFB.bind(this)}>
             <View style={styles.fbButtonContainer}>
@@ -54,7 +54,6 @@ class LoginPage extends React.Component {
             </View>
           </TouchableHighlight>
           <TouchableHighlight
-            style={styles.touchableHighlight}
             underlayColor="#99d9f4"
             onPress={this.logInWithGoogle.bind(this)}>
             <View style={styles.googleButtonContainer}>
@@ -71,6 +70,7 @@ class LoginPage extends React.Component {
           </View>
           <View style={styles.regularLoginButtons}>
             <Button
+              onPress={this.props.login}
               title="Log In"/>
             <Button
               title="Sign Up"/>
@@ -83,7 +83,11 @@ class LoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#210c56'
+    backgroundColor: '#210c56',
+    alignItems: "center"
+  },
+  buttonsContainer: {
+    alignItems: "center"
   },
   regularLogin: {
     alignItems: "center",
@@ -99,22 +103,24 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#3b5998",
-    paddingVertical: 20,
+    paddingVertical: 7,
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
-    width: 300
+    marginBottom: 18,
+    width: 50
   },
   googleButtonContainer: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#DD4835",
-    paddingVertical: 20,
+    paddingVertical: 7,
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
-    width: 300
+    marginBottom: 10,
+    width: 50
   },
   buttonText: {
     fontSize: 18,
