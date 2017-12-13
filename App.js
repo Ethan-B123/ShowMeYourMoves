@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginPage from './frontend/components/login_page.js';
 import RootNavigator from './frontend/navigators/root_navigator';
+import { Provider } from 'react-redux';
+import configureStore from './frontend/store/store';
+
 
 export default class App extends React.Component {
   // renderScene(route, navigator) {
@@ -14,8 +17,11 @@ export default class App extends React.Component {
   // }
 
   render() {
+    let store = configureStore();
     return (
-      <RootNavigator/>
+      <Provider store={store}>
+        <RootNavigator/>
+      </Provider>
     );
   }
 }

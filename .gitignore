@@ -1,4 +1,8 @@
 /node_modules
-
 # Ignore application configuration
 /config/application.yml
+/.expo
+.expo/
+/.expo/
+.*/
+ip_file.js
