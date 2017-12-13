@@ -10,6 +10,7 @@ class MapIcon extends Component {
 
   pressFn(e) {
     const { openDetail, closeDetail, detailIsOpen } = this.props;
+    e.preventDefault();
     openDetail(e);
   }
 
