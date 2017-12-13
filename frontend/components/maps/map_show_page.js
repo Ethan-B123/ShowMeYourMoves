@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, StatusBar } from 'react-native';
 import MapIcon from "./map_icon";
-import Map from "./map";
+import Map from "./map_container";
 import MapDetailBottom from "./map_detail_bottom";
 
 class MapShowPage extends Component {
@@ -35,7 +35,7 @@ class MapShowPage extends Component {
         <View style={styles.topBar}>
           <View style={styles.left}>
             <Image
-              source={require("../../assets/map_icons/person_icon_highlighted.png")}
+              source={require("./../../../assets/map_icons/person_icon_highlighted.png")}
               style={styles.image}
             />
           </View>

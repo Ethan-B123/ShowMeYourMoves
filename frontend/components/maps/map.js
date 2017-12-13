@@ -27,8 +27,8 @@ class Map extends Component {
 
   componentDidMount() {
     this.setState({
-      playerIconDefaultSrc: require("../../assets/map_icons/person_icon_purple.png"),
-      playerIconHighlightedSrc: require("../../assets/map_icons/person_icon_highlighted.png")
+      playerIconDefaultSrc: require("./../../../assets/map_icons/person_icon_purple.png"),
+      playerIconHighlightedSrc: require("./../../../assets/map_icons/person_icon_highlighted.png")
     })
   }
 
@@ -77,9 +77,8 @@ class Map extends Component {
     const { playerIconDefaultSrc, playerIconHighlightedSrc } = this.state;
     const { openDetail, closeDetail, detailIsOpen } = this.props;
     const icon = id === this.state.selectedIcon // TODO: use user/event id
-      ? require("../../assets/map_icons/person_icon_highlighted.png")
-      : require("../../assets/map_icons/person_icon_purple.png");
-    const icon2 = require("../../assets/map_icons/person_icon_purple.png");
+      ? this.state.playerIconHighlightedSrc
+      : this.state.playerIconDefaultSrc;
     return (
       <MapIcon
         key={id}

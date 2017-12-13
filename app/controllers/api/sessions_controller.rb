@@ -1,5 +1,7 @@
 class Api::SessionsController < ApplicationController
   def create
+    params[:user] = JSON.parse(params[:user])
+    # binding.pry
     if params[:user][:email]
       @user = User.find_by_credentials(
         params[:user][:email],
