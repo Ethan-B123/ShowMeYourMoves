@@ -9,7 +9,7 @@ class RegularLoginPage extends React.Component {
     this.state = {
       email: "",
       password: ""
-    }
+    };
   }
 
   render() {
@@ -30,11 +30,11 @@ class RegularLoginPage extends React.Component {
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    )
+    );
   }
 }
 
-export styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     padding: 20
   },
@@ -47,7 +47,7 @@ export styles = StyleSheet.create({
   },
   buttonsContainer: {
     paddingVertical: 15
-  }
+  },
   buttonText: {
     textAlign: 'center',
     color: '#FFFFFF'
