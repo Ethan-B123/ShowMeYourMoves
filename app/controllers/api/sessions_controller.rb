@@ -11,6 +11,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       log_in!(@user)
+      render 'api/users/show'
     else
       render json: ["Invalid credentials"], status: 404
     end
@@ -20,6 +21,7 @@ class Api::SessionsController < ApplicationController
     if current_user
       log_out!
       render json: {}
+      # render 'api/users/show'
     else
       render json: ["User not found"], status: 404
     end
