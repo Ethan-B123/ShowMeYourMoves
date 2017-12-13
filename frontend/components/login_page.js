@@ -108,7 +108,8 @@ class LoginPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: '#210c56',
-    flex: 1
+    flex: 1,
+    justifyContent: "space-around"
   },
   title: {
     fontSize: 30,
@@ -118,7 +119,8 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
   buttonsContainer: {
-    // alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   regularLogin: {
     alignItems: "center",
@@ -132,19 +134,17 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
   fbButtonContainer: {
-    // flex: 1,
     flexDirection: "row",
-    // alignItems: "center",
+    alignItems: "center",
     backgroundColor: "#3b5998",
     paddingVertical: 7,
     paddingHorizontal: 2,
     borderRadius: 5,
-    // justifyContent: "center",
+    justifyContent: "center",
     marginBottom: 18,
-    width: 50
+    width: 300
   },
   googleButtonContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#DD4835",
@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
-    marginBottom: 10,
-    width: 50
+    marginBottom: 18,
+    width: 300
   },
   buttonText: {
     fontSize: 18,
