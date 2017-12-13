@@ -32,7 +32,7 @@ class LoginPage extends React.Component {
   }
 
   async logInWithFB() {
-    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('1622588997802973', {
+    const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("1622588997802973", {
         permissions: ['public_profile'],
       });
     if (type === 'success') {
@@ -43,13 +43,13 @@ class LoginPage extends React.Component {
         'Logged in!',
         `Hi ${(await response.json()).name}!`,
       );
-
-      this.setState({ fb_user_id: (await response.json()).id })
-      this.props.login(this.state)
-        .then(
-          () => navigator.navigate('map'),
-          () => this.props.signup(this.state)
-        )
+      debugger;
+      // this.setState({ fb_user_id: (await response.json()).id })
+      // this.props.login(this.state)
+      //   .then(
+      //     () => navigator.navigate('map'),
+      //     () => this.props.signup(this.state)
+      //   )
     }
   }
 
@@ -83,7 +83,7 @@ class LoginPage extends React.Component {
           </View>
           <View style={styles.regularLoginButtons}>
             <Button
-              onPress={() => this.props.navigation.navigate('regular-login')}
+              onPress={() => this.props.navigation.navigate('RegularLogin')}
               title="Log In"/>
             <Button
               title="Sign Up"/>
