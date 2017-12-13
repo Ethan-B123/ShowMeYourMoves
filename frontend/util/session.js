@@ -1,17 +1,24 @@
 import ip from '../../ip_file';
 
-export const postUser = user => (
+export const postUser = user => {
+  var data = new FormData();
+  data.append( "user", JSON.stringify( user ) );
   fetch(`${ip}/api/users`, {
     method: 'POST',
-    body: JSON.stringify({ user })
+    body: JSON.stringify( user )
   })
-);
+};
 
-export const postSession = () => (
-  fetch(`${ip}/api/session`, {
-    method: 'POST'
+export const postSession = user => {
+
+  var data = new FormData();
+  data.append( "user", JSON.stringify( user ) );
+
+  return fetch(`${ip}/api/session`, {
+    method: 'POST',
+    body: data
   })
-);
+};
 
 export const deleteSession = () => (
   fetch(`${ip}/api/session`, {

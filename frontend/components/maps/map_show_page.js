@@ -35,7 +35,7 @@ class MapShowPage extends Component {
         <View style={styles.topBar}>
           <View style={styles.left}>
             <Image
-              source={require("../../assets/map_icons/person_icon_highlighted.png")}
+              source={require("./../../../assets/map_icons/person_icon_highlighted.png")}
               style={styles.image}
             />
           </View>
