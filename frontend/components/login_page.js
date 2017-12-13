@@ -41,7 +41,6 @@ class LoginPage extends React.Component {
         'Logged in!',
         `Hi ${(await response.json()).name}!`,
       );
-      debugger;
       this.setState({ fb_user_id: (await response.json()).id })
       this.props.login(this.state)
         .then(
@@ -53,48 +52,70 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{fontSize: 30, alignItems: "center", marginBottom: 20, color: "#fff"}}>SHOW ME YOUR MOVES</Text>
-        <View style={styles.buttonsContainer}>
-          <TouchableHighlight
-            underlayColor="#99d9f4"
-            onPress={this.logInWithFB.bind(this)}>
-            <View style={styles.fbButtonContainer}>
-              <FontAwesome name="facebook" color="white" size={25}/>
-              <Text style={styles.buttonText}>Continue with Facebook</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            underlayColor="#99d9f4"
-            onPress={this.logInWithGoogle.bind(this)}>
-            <View style={styles.googleButtonContainer}>
-              <Entypo name="google-" color="white" size={25}/>
-              <Text style={styles.buttonText}>Continue with Google</Text>
-            </View>
-          </TouchableHighlight>
-        </View>
+        <View style={styles.container}>
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%'
+            }}
+          >
+            <Image
+              style={{flex: 1, resizeMode: 'stretch'}}
+              source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
+            />
+          </View>
+          <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
+          <View style={styles.buttonsContainer}>
+            <TouchableHighlight
+              underlayColor="#99d9f4"
+              onPress={this.logInWithFB.bind(this)}>
+              <View style={styles.fbButtonContainer}>
+                <FontAwesome name="facebook" color="white" size={25}/>
+                <Text style={styles.buttonText}>Continue with Facebook</Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="#99d9f4"
+              onPress={this.logInWithGoogle.bind(this)}>
+              <View style={styles.googleButtonContainer}>
+                <Entypo name="google-" color="white" size={25}/>
+                <Text style={styles.buttonText}>Continue with Google</Text>
+              </View>
+            </TouchableHighlight>
+          </View>
 
-        <View style={styles.regularLogin}>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>or</Text>
-            <Text style={styles.text}>Log in or sign up with email</Text>
-          </View>
-          <View style={styles.regularLoginButtons}>
-            <Button
-              onPress={() => this.props.navigation.navigate('RegularLogin')}
-              title="Log In"/>
-            <Button
-              title="Sign Up"/>
+          <View style={styles.regularLogin}>
+            <View style={styles.textContainer}>
+              <Text style={styles.text}>or</Text>
+              <Text style={styles.text}>Log in or sign up with email</Text>
+            </View>
+            <View style={styles.regularLoginButtons}>
+              <Button
+                onPress={() => this.props.navigation.navigate('RegularLogin')}
+                title="Log In"/>
+              <Button
+                title="Sign Up"/>
+            </View>
           </View>
         </View>
-      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#210c56',
+    // backgroundColor: '#210c56',
+    flex: 1
+  },
+  title: {
+    fontSize: 30,
+    textAlign: "center",
+    marginBottom: 20,
+    color: "#fff",
+    backgroundColor: "transparent"
   },
   buttonsContainer: {
     // alignItems: "center"
@@ -103,10 +124,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "#fff"
+    color: "#fff",
+    fontSize: 25
   },
   textContainer: {
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "transparent"
   },
   fbButtonContainer: {
     // flex: 1,
@@ -139,7 +162,8 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   regularLoginButtons: {
-    flexDirection: "row"
+    flexDirection: "row",
+    backgroundColor: "transparent"
   },
   touchableHighlight: {
     alignItems: "center"

@@ -34,7 +34,7 @@ class RegularLoginPage extends React.Component {
   }
 }
 
-export styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     padding: 20
   },
@@ -47,7 +47,7 @@ export styles = StyleSheet.create({
   },
   buttonsContainer: {
     paddingVertical: 15
-  }
+  },
   buttonText: {
     textAlign: 'center',
     color: '#FFFFFF'
