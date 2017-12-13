@@ -7,8 +7,6 @@ class LoginPage extends React.Component {
     super(props);
 
     this.state = {
-      email: "",
-      password: "",
       fb_user_id: ""
     }
   }
@@ -44,12 +42,12 @@ class LoginPage extends React.Component {
         `Hi ${(await response.json()).name}!`,
       );
       debugger;
-      // this.setState({ fb_user_id: (await response.json()).id })
-      // this.props.login(this.state)
-      //   .then(
-      //     () => navigator.navigate('map'),
-      //     () => this.props.signup(this.state)
-      //   )
+      this.setState({ fb_user_id: (await response.json()).id })
+      this.props.login(this.state)
+        .then(
+          () => navigator.navigate('map'),
+          () => this.props.signup(this.state)
+        )
     }
   }
 

@@ -1,8 +1,9 @@
 import ip from '../../ip_file';
 
-export const postUser = () => (
+export const postUser = user => (
   fetch(`${ip}/api/users`, {
-    method: 'POST'
+    method: 'POST',
+    body: JSON.stringify({ user })
   })
 );
 
@@ -17,4 +18,3 @@ export const deleteSession = () => (
     method: 'delete'
   })
 );
-
