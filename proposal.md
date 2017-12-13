@@ -142,12 +142,12 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
 
 ### Day 1
 
-- [ ] Figure out Git workflow (EB, FL, BW)
-- [ ] Setup boiler plate code for Redux cycle for session (reducers, actions, api util) (FL)
+- [x] Figure out Git workflow (EB, FL, BW)
+- [x] Setup boiler plate code for Redux cycle for session (reducers, actions, api util) (FL)
   - Reducers
   - Actions
   - API Util
-- [ ] Start getting basic Rails backend setup (BW)
+- [x] Start getting basic Rails backend setup (BW)
   - User model
   - Users and Sessions controllers
   - Routes
@@ -158,12 +158,12 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
   - Google login
   - Regular login
   - Regular signup
-- [ ] Start working on Google Maps integration (EB)
+- [x] Start working on Google Maps integration (EB)
 
 ### Day 2
 
-- [ ] Finish integrating with Google Maps (EB)
-- [ ] Start building Activity Map functionality (EB)
+- [x] Finish integrating with Google Maps (EB)
+- [x] Start building Activity Map functionality (EB)
   - Get Players and Host to show up on map based on user's location
   - Have modal thing slide up from bottom when you click on a Smash Player or Host with:
     - 'More Info' button (live link)

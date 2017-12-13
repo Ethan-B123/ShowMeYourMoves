@@ -7,6 +7,7 @@
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "react-native-maps": "^0.18.3",
+    "react-native-navbar": "^2.1.0",
     "react-native-vector-icons": "^4.4.2",
     "react-navigation": "^1.0.0-beta.21"
   }
