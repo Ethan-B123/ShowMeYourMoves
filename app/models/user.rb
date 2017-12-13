@@ -16,7 +16,8 @@
 #
 
 class User < ApplicationRecord
-  validates :email, :password_digest, :access_token, presence: true
+  validates :access_token, presence: true
+  validates :email, :password_digest, presence: true, unless: :fb_user_id?
   validates :email, :access_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
