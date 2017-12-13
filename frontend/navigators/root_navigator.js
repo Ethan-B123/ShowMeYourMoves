@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import LoginPage from '../components/login_page';
+import LoginPageContainer from '../components/login_page_container';
 import RegularLoginPage from '../components/regular_login';
 
 const RootNavigator = StackNavigator({
   Login: {
-    screen: LoginPage,
+    screen: LoginPageContainer,
     navigationOptions: {
       headerTitle: 'login',
     },
