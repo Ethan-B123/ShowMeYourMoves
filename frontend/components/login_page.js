@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 class LoginPage extends React.Component {
@@ -89,15 +89,20 @@ class LoginPage extends React.Component {
 
           <View style={styles.regularLogin}>
             <View style={styles.textContainer}>
-              <Text style={styles.text}>or</Text>
+              <Text style={{color: "#FFF", fontSize: 25}}>or</Text>
               <Text style={styles.text}>Log in or sign up with email</Text>
             </View>
             <View style={styles.regularLoginButtons}>
-              <Button
-                onPress={() => this.props.navigation.navigate('RegularLogin')}
-                title="Log In"/>
-              <Button
-                title="Sign Up"/>
+              <TouchableOpacity
+                style={styles.regularLoginButton}
+                onPress={() => this.props.navigation.navigate('RegularLogin')}>
+                <Text style={styles.regularLoginButtonText}>Log In</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.regularLoginButton}
+                onPress={() => this.props.navigation.navigate('RegularLogin')}>
+                <Text style={styles.regularLoginButtonText}>Sign Up</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -108,13 +113,16 @@ class LoginPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: '#210c56',
-    flex: 1,
-    justifyContent: "space-around"
+    flex: 1
+    // justifyContent: "space-around"
   },
   title: {
-    fontSize: 30,
+    fontSize: 40,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 30,
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
     color: "#fff",
     backgroundColor: "transparent"
   },
@@ -127,7 +135,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-    fontSize: 25
+    fontSize: 18
   },
   textContainer: {
     alignItems: "center",
@@ -137,33 +145,49 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#3b5998",
-    paddingVertical: 7,
+    paddingVertical: 10,
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
     marginBottom: 18,
-    width: 300
+    width: 340
   },
   googleButtonContainer: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#DD4835",
-    paddingVertical: 7,
+    paddingVertical: 10,
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
     marginBottom: 18,
-    width: 300
+    width: 340
   },
   buttonText: {
     fontSize: 18,
     color: "#FAFAFA",
     marginLeft: 10,
-    marginTop: 2,
+    marginTop: 2
+  },
+  regularLoginButton: {
+    borderWidth: 2,
+    borderColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5,
+    width: 140
+  },
+  regularLoginButtonText: {
+    color: "#FFF",
+    fontSize: 20,
+    textAlign: "center"
   },
   regularLoginButtons: {
     flexDirection: "row",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    marginTop: 25,
+    justifyContent: "space-between",
+    width: 340
   },
   touchableHighlight: {
     alignItems: "center"
