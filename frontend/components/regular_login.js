@@ -5,17 +5,28 @@ import { StackNavigator } from 'react-navigation';
 class RegularLoginPage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      email: "",
+      password: ""
+    }
   }
 
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <TextInput
+          onChangeText={(val) => this.setState({email: val})}
+          placeholder="Email"
           style={styles.input}/>
         <TextInput
+          onChangeText={(val) => this.setState({password: val})}
+          placeholder="Password"
           secureTextEntry
           style={styles.input}/>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => this.props.login(this.state)}>
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
