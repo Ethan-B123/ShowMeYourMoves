@@ -3,6 +3,7 @@ import { Image, View, StyleSheet, Text, StatusBar } from 'react-native';
 import MapIcon from "./map_icon";
 import Map from "./map_container";
 import MapDetailBottom from "./map_detail_container";
+import PlayerActions from "./../../actions/players";
 
 class MapShowPage extends Component {
 
@@ -24,7 +25,15 @@ class MapShowPage extends Component {
     return () => this.setState({ detailOpen: false });
   }
 
+  searchArea() {
+    const { navigator, fetchPlayers } = this.props;
+    navigator.geolocation.getCurrentPosition((location) => {
+      fetchPlayers(location.coords)
+    });
+  }
+
   render() {
+    // debugger
     return(
       <View
         style={styles.container}
@@ -32,17 +41,6 @@ class MapShowPage extends Component {
         <StatusBar
           hidden={true}
         />
-        <View style={styles.topBar}>
-          <View style={styles.left}>
-            <Image
-              source={require("./../../../assets/map_icons/person_icon_highlighted.png")}
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.right}>
-            <Text style={styles.text}>Activity Map</Text>
-          </View>
-        </View>
 
         <Map
           openDetail={this.openDetail.bind(this)}

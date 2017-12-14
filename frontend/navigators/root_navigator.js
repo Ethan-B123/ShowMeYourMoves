@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import LoginPageContainer from '../components/login_page_container';
 import RegularLoginPageContainer from '../components/regular_login_container';
 import RegularSignupPageContainer from '../components/regular_signup_container';
-import MapShowPage from "../components/maps/map_show_page";
+import MapShowPage from "../components/maps/map_show_container";
 
 const RootNavigator = StackNavigator({
   Login: {
@@ -30,7 +30,7 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'ActivityMap',
     },
-  }
+  },
 });
 
 export default RootNavigator;
