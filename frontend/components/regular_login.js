@@ -9,7 +9,7 @@ class RegularLoginPage extends React.Component {
     this.state = {
       email: "",
       password: ""
-    }
+    };
   }
 
   render() {
@@ -30,7 +30,7 @@ class RegularLoginPage extends React.Component {
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    )
+    );
   }
 }
 

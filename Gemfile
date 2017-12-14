@@ -27,19 +27,22 @@ gem 'figaro'
 gem 'pry-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use Act iveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'pry-rails'
   gem 'selenium-webdriver'
-  gem 'annotate'
 end
 
 group :development do

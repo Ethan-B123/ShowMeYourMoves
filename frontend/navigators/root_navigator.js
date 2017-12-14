@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import LoginPageContainer from '../components/login_page_container';
 import RegularLoginPageContainer from '../components/regular_login_container';
 import RegularSignupPageContainer from '../components/regular_signup_container';
+import MapShowPage from "../components/maps/map_show_page";
 
 const RootNavigator = StackNavigator({
   Login: {
@@ -18,10 +19,17 @@ const RootNavigator = StackNavigator({
       headerTitle: 'regular-login',
     },
   },
+<<<<<<< HEAD
   RegularSignup: {
     screen: RegularSignupPageContainer,
     navigationOptions: {
       headerTitle: 'regular-signup',
+    },
+  },
+  ActivityMap: {
+    screen: MapShowPage,
+    navigationOptions: {
+      headerTitle: 'ActivityMap',
     },
   }
 });

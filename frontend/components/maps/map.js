@@ -27,7 +27,8 @@ class Map extends Component {
 
   componentDidMount() {
     this.setState({
-      playerIconDefaultSrc: require("../../assets/map_icons/person_icon_purple.png")
+      playerIconDefaultSrc: require("./../../../assets/map_icons/person_icon_purple.png"),
+      playerIconHighlightedSrc: require("./../../../assets/map_icons/person_icon_highlighted.png")
     })
   }
 
@@ -41,36 +42,66 @@ class Map extends Component {
       },
       players: DEMO_PLAYERS,
       sessions: DEMO_SESSIONS,
-      selectedIcon: -1
+      selectedIcon: -1,
+      timeout: undefined
     };
   }
 
   onRegionChange(region) {
+    console.log(region);
     this.setState({ region });
   }
 
-  showPlayers(latLng, id) {
+  openDetailFixClip(id) {
+    const { openDetail } = this.props;
+    const doOpenDetail = openDetail(id);
+    return (e) => {
+      const coordinate = e.nativeEvent.coordinate;
+      const region = Object.assign({}, this.state.region);
+      region.latitude = coordinate.latitude;
+      region.longitude = coordinate.longitude;
+      // debugger
+      this.mapView.animateToCoordinate(coordinate, 3);
+      // clearTimeout(this.state.timeout);
+      this.setState({ region });
+      // const updateRegion = function() {
+      //   // debugger
+      // }
+      // const timeout = setTimeout(updateRegion.bind(this), 0);
+      // this.setState({ timeout });
+      doOpenDetail(id);
+    }
+  }
+
+  makeMapIcon(latLng, id) {
+    const { playerIconDefaultSrc, playerIconHighlightedSrc } = this.state;
+    const { openDetail, closeDetail, detailIsOpen } = this.props;
     const icon = id === this.state.selectedIcon // TODO: use user/event id
-      ? require("../../assets/map_icons/person_icon_highlighted.png")
-      : require("../../assets/map_icons/person_icon_purple.png");
-    const icon2 = require("../../assets/map_icons/person_icon_purple.png");
+      ? this.state.playerIconHighlightedSrc
+      : this.state.playerIconDefaultSrc;
     return (
       <MapIcon
         key={id}
         latLng={latLng}
-        imgSrc={this.state.playerIconDefaultSrc}
+        imgSrc={playerIconDefaultSrc}
+        openDetail={this.openDetailFixClip(id).bind(this)}
+        closeDetail={closeDetail()}
       />
     )
   }
 
   render() {
+    const { region } = this.state;
+    const { closeDetail } = this.props;
     return (
       <MapView
+        ref={(mapView) => this.mapView = mapView}
         style={styles.map}
-        region={this.state.region}
+        region={region}
+        onPress={closeDetail()}
         onRegionChange={this.onRegionChange.bind(this)}>
         {DEMO_PLAYERS.map(
-          (latLng, idx) => this.showPlayers(latLng, idx)
+          (latLng, idx) => this.makeMapIcon(latLng, idx)
         )}
       </ MapView>
     );

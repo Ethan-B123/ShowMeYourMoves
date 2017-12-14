@@ -44,7 +44,14 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
+    bcrypt (3.1.11)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.7.3)
+      debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.16.1)
@@ -66,6 +73,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    debug_inspector (0.0.3)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -184,6 +192,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt (~> 3.1.7)
+  better_errors
+  binding_of_caller
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
@@ -203,4 +214,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3

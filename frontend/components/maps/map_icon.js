@@ -4,12 +4,22 @@ import MapView from "react-native-maps";
 
 
 class MapIcon extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  pressFn(e) {
+    const { openDetail, closeDetail, detailIsOpen } = this.props;
+    e.preventDefault();
+    openDetail(e);
+  }
 
   render() {
     const { latLng, imgSrc } = this.props;
     return (
         <MapView.Marker
           coordinate={latLng}
+          onPress={this.pressFn.bind(this)}
         >
           <View
             style={styles.markerView}>

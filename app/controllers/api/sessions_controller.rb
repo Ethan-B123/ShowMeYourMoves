@@ -1,5 +1,6 @@
 class Api::SessionsController < ApplicationController
   def create
+    params[:user] = JSON.parse(params[:user])
     if params[:user][:email]
       @user = User.find_by_credentials(
         params[:user][:email],
@@ -11,6 +12,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       log_in!(@user)
+      render 'api/users/show'
     else
       render json: ["Invalid credentials"], status: 404
     end
@@ -20,6 +22,7 @@ class Api::SessionsController < ApplicationController
     if current_user
       log_out!
       render json: {}
+      # render 'api/users/show'
     else
       render json: ["User not found"], status: 404
     end
