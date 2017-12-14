@@ -34,7 +34,7 @@ class RegularLoginPage extends React.Component {
   }
 }
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     padding: 20
   },
