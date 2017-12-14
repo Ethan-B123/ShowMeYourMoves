@@ -22,7 +22,7 @@ class RegularLoginPage extends React.Component {
           onSubmitEditing={() => this.passwordInput.focus()}
           keyboardType="email-address"
           autoCapitalize="none"
-          autoCorrect="false"
+          autoCorrect={false}
           style={styles.input}/>
         <TextInput
           onChangeText={(val) => this.setState({password: val})}
@@ -31,7 +31,7 @@ class RegularLoginPage extends React.Component {
           returnKeyType="go"
           keyboardType="email-address"
           autoCapitalize="none"
-          autoCorrect="false"
+          autoCorrect={false}
           ref={(input) => this.passwordInput = input}
           style={styles.input}/>
         <TouchableOpacity
