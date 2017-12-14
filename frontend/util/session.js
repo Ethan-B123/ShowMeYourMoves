@@ -3,10 +3,12 @@ import ip from '../../ip_file';
 export const postUser = user => {
   var data = new FormData();
   data.append( "user", JSON.stringify( user ) );
+
+
   return fetch(`${ip}/api/users`, {
     method: 'POST',
-    body: JSON.stringify( user )
-  })
+    body: data
+  });
 };
 
 export const postSession = user => {
@@ -17,7 +19,7 @@ export const postSession = user => {
   return fetch(`${ip}/api/session`, {
     method: 'POST',
     body: data
-  })
+  });
 };
 
 export const deleteSession = () => (
