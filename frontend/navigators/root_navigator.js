@@ -19,7 +19,6 @@ const RootNavigator = StackNavigator({
       headerTitle: 'regular-login',
     },
   },
-<<<<<<< HEAD
   RegularSignup: {
     screen: RegularSignupPageContainer,
     navigationOptions: {

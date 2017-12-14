@@ -3,7 +3,7 @@ import ip from '../../ip_file';
 export const postUser = user => {
   var data = new FormData();
   data.append( "user", JSON.stringify( user ) );
-  fetch(`${ip}/api/users`, {
+  return fetch(`${ip}/api/users`, {
     method: 'POST',
     body: JSON.stringify( user )
   })

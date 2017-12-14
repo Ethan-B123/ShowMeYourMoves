@@ -18,16 +18,26 @@ class RegularLoginPage extends React.Component {
         <TextInput
           onChangeText={(val) => this.setState({email: val})}
           placeholder="Email"
+          returnKeyType="next"
+          onSubmitEditing={() => this.passwordInput.focus()}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect="false"
           style={styles.input}/>
         <TextInput
           onChangeText={(val) => this.setState({password: val})}
           placeholder="Password"
           secureTextEntry
+          returnKeyType="go"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect="false"
+          ref={(input) => this.passwordInput = input}
           style={styles.input}/>
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => this.props.register(this.state)}>
-          <Text style={styles.buttonText}>LOGIN</Text>
+          <Text style={styles.buttonText}>SIGN UP</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
     )
