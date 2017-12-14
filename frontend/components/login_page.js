@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 class LoginPage extends React.Component {
@@ -41,7 +41,6 @@ class LoginPage extends React.Component {
         'Logged in!',
         `Hi ${(await response.json()).name}!`,
       );
-      debugger;
       this.setState({ fb_user_id: (await response.json()).id })
       this.props.login(this.state)
         .then(
@@ -53,93 +52,145 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{fontSize: 30, alignItems: "center", marginBottom: 20, color: "#fff"}}>SHOW ME YOUR MOVES</Text>
-        <View style={styles.buttonsContainer}>
-          <TouchableHighlight
-            underlayColor="#99d9f4"
-            onPress={this.logInWithFB.bind(this)}>
-            <View style={styles.fbButtonContainer}>
-              <FontAwesome name="facebook" color="white" size={25}/>
-              <Text style={styles.buttonText}>Continue with Facebook</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            underlayColor="#99d9f4"
-            onPress={this.logInWithGoogle.bind(this)}>
-            <View style={styles.googleButtonContainer}>
-              <Entypo name="google-" color="white" size={25}/>
-              <Text style={styles.buttonText}>Continue with Google</Text>
-            </View>
-          </TouchableHighlight>
-        </View>
+        <View style={styles.container}>
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%'
+            }}
+          >
+            <Image
+              style={{flex: 1, resizeMode: 'stretch'}}
+              source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
+            />
+          </View>
+          <Image
+            source={{uri: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1513200646/Title_mlaxn5.png"}}
+          />
+          <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
+          <View style={styles.buttonsContainer}>
+            <TouchableHighlight
+              underlayColor="#99d9f4"
+              onPress={this.logInWithFB.bind(this)}>
+              <View style={styles.fbButtonContainer}>
+                <FontAwesome name="facebook" color="white" size={25}/>
+                <Text style={styles.buttonText}>Continue with Facebook</Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="#99d9f4"
+              onPress={this.logInWithGoogle.bind(this)}>
+              <View style={styles.googleButtonContainer}>
+                <Entypo name="google-" color="white" size={25}/>
+                <Text style={styles.buttonText}>Continue with Google</Text>
+              </View>
+            </TouchableHighlight>
+          </View>
 
-        <View style={styles.regularLogin}>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>or</Text>
-            <Text style={styles.text}>Log in or sign up with email</Text>
-          </View>
-          <View style={styles.regularLoginButtons}>
-            <Button
-              onPress={() => this.props.navigation.navigate('RegularLogin')}
-              title="Log In"/>
-            <Button
-              title="Sign Up"/>
+          <View style={styles.regularLogin}>
+            <View style={styles.textContainer}>
+              <Text style={{color: "#FFF", fontSize: 25}}>or</Text>
+              <Text style={styles.text}>Log in or sign up with email</Text>
+            </View>
+            <View style={styles.regularLoginButtons}>
+              <TouchableOpacity
+                style={styles.regularLoginButton}
+                onPress={() => this.props.navigation.navigate('RegularLogin')}>
+                <Text style={styles.regularLoginButtonText}>Log In</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.regularLoginButton}
+                onPress={() => this.props.navigation.navigate('RegularSignup')}>
+                <Text style={styles.regularLoginButtonText}>Sign Up</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#210c56',
+    // backgroundColor: '#210c56',
+    flex: 1
+    // justifyContent: "space-around"
+  },
+  title: {
+    fontSize: 40,
+    textAlign: "center",
+    marginBottom: 30,
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
+    color: "#fff",
+    backgroundColor: "transparent"
   },
   buttonsContainer: {
-    // alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   regularLogin: {
     alignItems: "center",
   },
   text: {
-    color: "#fff"
+    color: "#fff",
+    fontSize: 18
   },
   textContainer: {
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "transparent"
   },
   fbButtonContainer: {
-    // flex: 1,
-    flexDirection: "row",
-    // alignItems: "center",
-    backgroundColor: "#3b5998",
-    paddingVertical: 7,
-    paddingHorizontal: 2,
-    borderRadius: 5,
-    // justifyContent: "center",
-    marginBottom: 18,
-    width: 50
-  },
-  googleButtonContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#DD4835",
-    paddingVertical: 7,
+    backgroundColor: "#3b5998",
+    paddingVertical: 10,
     paddingHorizontal: 2,
     borderRadius: 5,
     justifyContent: "center",
-    marginBottom: 10,
-    width: 50
+    marginBottom: 18,
+    width: 340
+  },
+  googleButtonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#DD4835",
+    paddingVertical: 10,
+    paddingHorizontal: 2,
+    borderRadius: 5,
+    justifyContent: "center",
+    marginBottom: 18,
+    width: 340
   },
   buttonText: {
     fontSize: 18,
     color: "#FAFAFA",
     marginLeft: 10,
-    marginTop: 2,
+    marginTop: 2
+  },
+  regularLoginButton: {
+    borderWidth: 2,
+    borderColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5,
+    width: 140
+  },
+  regularLoginButtonText: {
+    color: "#FFF",
+    fontSize: 20,
+    textAlign: "center"
   },
   regularLoginButtons: {
-    flexDirection: "row"
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    marginTop: 25,
+    justifyContent: "space-between",
+    width: 340
   },
   touchableHighlight: {
     alignItems: "center"
