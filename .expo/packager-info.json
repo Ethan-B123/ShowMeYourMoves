@@ -1,8 +1,8 @@
 {
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 12243,
+  "expoServerNgrokUrl": "https://p3-qk5.francislara.showmeyourmoves.exp.direct",
+  "packagerNgrokUrl": "https://packager.p3-qk5.francislara.showmeyourmoves.exp.direct",
+  "ngrokPid": 12317
 }
