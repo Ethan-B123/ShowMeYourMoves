@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-class RegularLoginPage extends React.Component {
+class RegularSignupPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -97,4 +97,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default RegularLoginPage;
+export default RegularSignupPage;
