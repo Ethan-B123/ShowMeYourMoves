@@ -9,48 +9,91 @@ class RegularLoginPage extends React.Component {
     this.state = {
       email: "",
       password: ""
-    };
+    }
   }
 
   render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <TextInput
-          onChangeText={(val) => this.setState({email: val})}
-          placeholder="Email"
-          style={styles.input}/>
-        <TextInput
-          onChangeText={(val) => this.setState({password: val})}
-          placeholder="Password"
-          secureTextEntry
-          style={styles.input}/>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => this.props.login(this.state)}>
-          <Text style={styles.buttonText}>LOGIN</Text>
-        </TouchableOpacity>
-      </KeyboardAvoidingView>
-    );
+      <View style={styles.container}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%'
+          }}
+          >
+            <Image
+              style={{flex: 1, resizeMode: 'stretch'}}
+              source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
+            />
+          </View>
+          <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
+            <TextInput
+              onChangeText={(val) => this.setState({email: val})}
+              placeholder="Email"
+              placeholderTextColor="#4C4C50"
+              returnKeyType="next"
+              onSubmitEditing={() => this.passwordInput.focus()}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoCorrect={false}
+              style={styles.input}/>
+            <TextInput
+              onChangeText={(val) => this.setState({password: val})}
+              placeholder="Password"
+              placeholderTextColor="#4C4C50"
+              secureTextEntry
+              returnKeyType="go"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoCorrect={false}
+              ref={(input) => this.passwordInput = input}
+              style={styles.input}/>
+              <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={() => this.props.login(this.state)}>
+                <Text style={styles.buttonText}>Log In</Text>
+              </TouchableOpacity>
+            </KeyboardAvoidingView>
+      </View>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
+    flex: 1,
+    justifyContent: "center"
+  },
+  form: {
+    padding: 20,
   },
   input: {
-    height: 40,
-    backgroundColor: "rgba(255,255,255,0.7)",
-    marginBottom: 20,
+    height: 50,
+    backgroundColor: "transparent",
+    marginBottom: 18,
     color: "#FFF",
-    paddingHorizontal: 10
+    borderRadius: 5,
+    paddingHorizontal: 15,
+    borderColor: "#FFF",
+    borderWidth: 1,
+    fontSize: 20
   },
-  buttonsContainer: {
-    paddingVertical: 15
+  buttonContainer: {
+    marginTop: 30,
+    borderWidth: 2,
+    borderColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5
   },
   buttonText: {
-    textAlign: 'center',
-    color: '#FFFFFF'
+    backgroundColor: "transparent",
+    color: "#FFF",
+    fontSize: 20,
+    textAlign: "center"
   }
 })
 
