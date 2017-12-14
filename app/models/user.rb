@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_access_token
 
+  has_many :nearby_players
+
   attr_reader :password
 
   def password=(password)
