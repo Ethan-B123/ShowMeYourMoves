@@ -67,6 +67,9 @@ class LoginPage extends React.Component {
               source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
             />
           </View>
+          <Image
+            source={{uri: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1513200646/Title_mlaxn5.png"}}
+          />
           <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
           <View style={styles.buttonsContainer}>
             <TouchableHighlight
@@ -100,7 +103,7 @@ class LoginPage extends React.Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.regularLoginButton}
-                onPress={() => this.props.navigation.navigate('RegularLogin')}>
+                onPress={() => this.props.navigation.navigate('RegularSignup')}>
                 <Text style={styles.regularLoginButtonText}>Sign Up</Text>
               </TouchableOpacity>
             </View>
