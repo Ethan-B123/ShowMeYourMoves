@@ -73,17 +73,19 @@ class LoginPage extends React.Component {
           <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
           <View style={styles.buttonsContainer}>
             <TouchableHighlight
+              style={styles.fbButtonContainer}
               underlayColor="#99d9f4"
               onPress={this.logInWithFB.bind(this)}>
-              <View style={styles.fbButtonContainer}>
+              <View style={{flexDirection: "row"}}>
                 <FontAwesome name="facebook" color="white" size={25}/>
                 <Text style={styles.buttonText}>Continue with Facebook</Text>
               </View>
             </TouchableHighlight>
             <TouchableHighlight
+              style={styles.googleButtonContainer}
               underlayColor="#99d9f4"
               onPress={this.logInWithGoogle.bind(this)}>
-              <View style={styles.googleButtonContainer}>
+              <View style={{flexDirection: "row"}}>
                 <Entypo name="google-" color="white" size={25}/>
                 <Text style={styles.buttonText}>Continue with Google</Text>
               </View>
