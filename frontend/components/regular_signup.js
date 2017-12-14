@@ -29,10 +29,11 @@ class RegularLoginPage extends React.Component {
               source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
             />
           </View>
-          <KeyboardAvoidingView behavior="padding" style={styles.form}>
+          <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
             <TextInput
               onChangeText={(val) => this.setState({email: val})}
               placeholder="Email"
+              placeholderTextColor="#4C4C50"
               returnKeyType="next"
               onSubmitEditing={() => this.passwordInput.focus()}
               keyboardType="email-address"
@@ -42,6 +43,7 @@ class RegularLoginPage extends React.Component {
             <TextInput
               onChangeText={(val) => this.setState({password: val})}
               placeholder="Password"
+              placeholderTextColor="#4C4C50"
               secureTextEntry
               returnKeyType="go"
               keyboardType="email-address"
@@ -52,7 +54,7 @@ class RegularLoginPage extends React.Component {
               <TouchableOpacity
                 style={styles.buttonContainer}
                 onPress={() => this.props.register(this.state)}>
-                <Text style={styles.buttonText}>SIGN UP</Text>
+                <Text style={styles.buttonText}>Sign Up</Text>
               </TouchableOpacity>
             </KeyboardAvoidingView>
       </View>
@@ -62,24 +64,36 @@ class RegularLoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: "center"
   },
   form: {
     padding: 20,
   },
   input: {
-    height: 40,
-    backgroundColor: "rgba(255,255,255,0.7)",
-    marginBottom: 20,
+    height: 50,
+    backgroundColor: "transparent",
+    marginBottom: 18,
     color: "#FFF",
-    paddingHorizontal: 10
+    borderRadius: 5,
+    paddingHorizontal: 15,
+    borderColor: "#FFF",
+    borderWidth: 1,
+    fontSize: 20
   },
-  buttonsContainer: {
-    paddingVertical: 15
+  buttonContainer: {
+    marginTop: 30,
+    borderWidth: 2,
+    borderColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5
   },
   buttonText: {
-    textAlign: 'center',
-    color: '#FFFFFF'
+    backgroundColor: "transparent",
+    color: "#FFF",
+    fontSize: 20,
+    textAlign: "center"
   }
 })
 
