@@ -1,7 +1,7 @@
 @nearby_players.includes(:user)
 @nearby_players.each do |player|
   json.set! player.id do
-    json.id = player.user.id
+    json.id = player.id
     json.name = player.user.name
     json.game = player.user.game
     json.skill_level = player.user.skill_level
