@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
         'Logged in!',
         `Hi ${jResponse.name}!`,
       );
-      debugger;
+
       // response.json().then((object) => {
       //   debugger
       // })
