@@ -1,5 +1,5 @@
 // import stuff
-import { RECEIVE_NEARBY_PLAYERS } from "../actions/players";
+import { RECEIVE_NEARBY_PLAYERS } from "../actions/nearby_players";
 
 const defaultState = {};
 
@@ -8,7 +8,7 @@ const nearbyPlayersReducer = (state = defaultState, action) => {
   switch (action.type) {
     // add cases
     case RECEIVE_NEARBY_PLAYERS:
-      return action.players;
+      return action.nearbyPlayers;
     default:
       return state;
   }
