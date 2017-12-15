@@ -52,7 +52,7 @@ class RegularSignupPage extends React.Component {
             placeholderTextColor="#4C4C50"
             secureTextEntry
             returnKeyType="go"
-            keyboardType="email-address"
+            keyboardType="password"
             autoCapitalize="none"
             autoCorrect={false}
             ref={(input) => this.passwordInput = input}
