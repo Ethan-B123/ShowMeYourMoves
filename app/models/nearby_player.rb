@@ -4,9 +4,9 @@ class NearbyPlayer < ApplicationRecord
 
   def self.all_near_spot(lat_lng_hash, range)
     NearbyPlayer.where(
-      lat: ((lat_lng_hash[:lat] + range/2)..(lat_lng_hash[:lat] - range/2))
+      lat: ((lat_lng_hash[:lat] - range/2)..(lat_lng_hash[:lat] + range/2))
     ).where(
-      lng: ((lat_lng_hash[:lng] + range/2)..(lat_lng_hash[:lng] - range/2))
+      lng: ((lat_lng_hash[:lng] - range/2)..(lat_lng_hash[:lng] + range/2))
     )
   end
 
