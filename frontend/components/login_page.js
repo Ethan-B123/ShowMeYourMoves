@@ -30,6 +30,7 @@ class LoginPage extends React.Component {
   }
 
   async logInWithFB() {
+    const { navigation } = this.props
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("1622588997802973", {
         permissions: ['public_profile'],
       });
@@ -37,16 +38,24 @@ class LoginPage extends React.Component {
       // Get the user's name using Facebook's Graph API
       const response = await fetch(
         `https://graph.facebook.com/me?access_token=${token}`);
+      const jResponse = await response.json()
       Alert.alert(
         'Logged in!',
-        `Hi ${(await response.json()).name}!`,
+        `Hi ${jResponse.name}!`,
       );
-      this.setState({ fb_user_id: (await response.json()).id })
-      this.props.login(this.state)
-        .then(
-          () => navigator.navigate('map'),
-          () => this.props.signup(this.state)
-        )
+      debugger;
+      // response.json().then((object) => {
+      //   debugger
+      // })
+      this.setState({ fb_user_id: jResponse.id },
+        () => {
+          this.props.login(this.state)
+          .then(
+            () => navigation.navigate('ActivityMap'),
+            (resJ) => this.props.register(this.state)
+          );
+        }
+      )
     }
   }
 
@@ -73,17 +82,19 @@ class LoginPage extends React.Component {
           <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
           <View style={styles.buttonsContainer}>
             <TouchableHighlight
+              style={styles.fbButtonContainer}
               underlayColor="#99d9f4"
               onPress={this.logInWithFB.bind(this)}>
-              <View style={styles.fbButtonContainer}>
+              <View style={{flexDirection: "row"}}>
                 <FontAwesome name="facebook" color="white" size={25}/>
                 <Text style={styles.buttonText}>Continue with Facebook</Text>
               </View>
             </TouchableHighlight>
             <TouchableHighlight
+              style={styles.googleButtonContainer}
               underlayColor="#99d9f4"
               onPress={this.logInWithGoogle.bind(this)}>
-              <View style={styles.googleButtonContainer}>
+              <View style={{flexDirection: "row"}}>
                 <Entypo name="google-" color="white" size={25}/>
                 <Text style={styles.buttonText}>Continue with Google</Text>
               </View>
