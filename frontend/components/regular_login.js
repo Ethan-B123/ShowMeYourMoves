@@ -52,7 +52,6 @@ class RegularLoginPage extends React.Component {
               placeholderTextColor="#4C4C50"
               secureTextEntry
               returnKeyType="go"
-              keyboardType="password"
               autoCapitalize="none"
               autoCorrect={false}
               ref={(input) => this.passwordInput = input}
