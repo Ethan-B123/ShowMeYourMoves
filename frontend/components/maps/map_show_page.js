@@ -27,7 +27,7 @@ class MapShowPage extends Component {
   }
 
   searchArea() {
-    const { navigator, fetchPlayers } = this.props;
+    const { fetchPlayers } = this.props;
     navigator.geolocation.getCurrentPosition((location) => {
       fetchPlayers(location.coords)
     });
