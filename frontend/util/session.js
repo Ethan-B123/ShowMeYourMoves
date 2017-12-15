@@ -1,23 +1,42 @@
 import ip from '../../ip_file';
 
 export const postUser = user => {
-  var data = new FormData();
+  const data = new FormData();
   data.append( "user", JSON.stringify( user ) );
-  return fetch(`${ip}/api/users`, {
-    method: 'POST',
-    body: JSON.stringify( user )
-  })
+
+
+  return new Promise((resolve, reject) => {
+    fetch(`${ip}/api/users`, {
+      method: 'POST',
+      body: data
+    }).then(async (fullRes) => {
+      resJ = await fullRes.json()
+      if (fullRes.status > 300) {
+        reject(resJ)
+      } else {
+        resolve(resJ)
+      }
+    });
+  });
 };
 
-export const postSession = user => {
+export const postSession = async user => {
 
-  var data = new FormData();
+  const data = new FormData();
   data.append( "user", JSON.stringify( user ) );
-
-  return fetch(`${ip}/api/session`, {
-    method: 'POST',
-    body: data
-  })
+  return new Promise((resolve, reject) => {
+    fetch(`${ip}/api/session`, {
+      method: 'POST',
+      body: data
+    }).then(async (fullRes) => {
+      resJ = await fullRes.json()
+      if (fullRes.status > 300) {
+        reject(resJ)
+      } else {
+        resolve(resJ)
+      }
+    });
+  });
 };
 
 export const deleteSession = () => (

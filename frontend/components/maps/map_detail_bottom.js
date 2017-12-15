@@ -6,7 +6,7 @@ class MapDetailBottom extends Component {
   render() {
     return(
       <View style={styles.container}>
-        <Text style={styles.text}>Details for user {this.props.detailId}</Text>
+        <Text style={styles.text}></Text>
       </View>
     );
   }

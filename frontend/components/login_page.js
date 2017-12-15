@@ -31,6 +31,7 @@ class LoginPage extends React.Component {
   }
 
   async logInWithFB() {
+    const { navigation } = this.props
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("1622588997802973", {
         permissions: ['public_profile'],
       });
@@ -38,16 +39,24 @@ class LoginPage extends React.Component {
       // Get the user's name using Facebook's Graph API
       const response = await fetch(
         `https://graph.facebook.com/me?access_token=${token}`);
+      const jResponse = await response.json()
       Alert.alert(
         'Logged in!',
-        `Hi ${(await response.json()).name}!`,
+        `Hi ${jResponse.name}!`,
       );
-      this.setState({ fb_user_id: (await response.json()).id })
-      this.props.login(this.state)
-        .then(
-          () => navigator.navigate('map'),
-          () => this.props.signup(this.state)
-        )
+      debugger;
+      // response.json().then((object) => {
+      //   debugger
+      // })
+      this.setState({ fb_user_id: jResponse.id },
+        () => {
+          this.props.login(this.state)
+          .then(
+            () => navigation.navigate('ActivityMap'),
+            (resJ) => this.props.register(this.state)
+          );
+        }
+      )
     }
   }
 
