@@ -9,3 +9,5 @@
 NearbyPlayer.create(user_id: 1, lat: 37.774929, lng: -122.419416)
 NearbyPlayer.create(user_id: 2, lat: 37.774671, lng: -122.411900)
 NearbyPlayer.create(user_id: 3, lat: 37.784768, lng: -122.420568)
+NearbyEvent.create(user_id: 1,  lat: 37.787075, lng: -122.403917, date: "Sat, 16 Dec 2017", start_time: "21:05:02", end_time: "21:35:02")
+
