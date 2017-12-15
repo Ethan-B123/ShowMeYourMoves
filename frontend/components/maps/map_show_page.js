@@ -4,6 +4,7 @@ import MapIcon from "./map_icon";
 import Map from "./map_container";
 import MapDetailBottom from "./map_detail_container";
 import PlayerActions from "./../../actions/players";
+import PlusButton from "./plus_button";
 
 class MapShowPage extends Component {
 
@@ -33,7 +34,7 @@ class MapShowPage extends Component {
   }
 
   render() {
-    // debugger
+
     return(
       <View
         style={styles.container}
@@ -54,6 +55,14 @@ class MapShowPage extends Component {
         }>
           <MapDetailBottom
             detailId={this.state.detailId}
+          />
+        </View>
+        <View style={ this.state.detailOpen
+          ? styles.bottomBarHidden
+          : styles.bottomBarShowing
+        }>
+          <PlusButton
+            navigation={this.props.navigation}
           />
         </View>
       </View>
