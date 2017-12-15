@@ -5,7 +5,6 @@ import RootNavigator from './frontend/navigators/root_navigator';
 import { Provider } from 'react-redux';
 import configureStore from './frontend/store/store';
 
-
 export default class App extends React.Component {
   // renderScene(route, navigator) {
   //   switch(route.id) {
