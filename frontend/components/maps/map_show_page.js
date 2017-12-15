@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, StatusBar } from 'react-native';
 import MapIcon from "./map_icon";
 import Map from "./map_container";
-import MapDetailBottom from "./map_detail_bottom";
+import MapDetailBottom from "./map_detail_container";
 
 class MapShowPage extends Component {
 

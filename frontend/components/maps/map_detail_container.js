@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Map from "./map";
+import MapDetailBottom from "./map_detail_bottom";
 
 const mapStateToProps = ({ entities }) => {
   return ({
@@ -11,4 +11,4 @@ const mapStateToProps = ({ entities }) => {
 export default connect(
   mapStateToProps,
   null
-)(Map);
+)(MapDetailBottom);

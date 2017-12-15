@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import LoginPage from './login_page';
-import { register } from '../actions/session';
+import * as SessionUtil from '../util/session'
+import { register, login } from '../actions/session';
 
 const mapDispatchToProps = dispatch => ({
-  register: user => dispatch(register(user))
+  register: user => dispatch(register(user)),
+  login: user => dispatch(login(user))
 })
 
 export default connect(
