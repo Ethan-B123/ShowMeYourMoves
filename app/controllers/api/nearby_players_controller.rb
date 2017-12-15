@@ -5,19 +5,15 @@ class Api::NearbyPlayersController < ApplicationController
     if current_user &&
       @nearby_player.user_id = current_user.id &&
       @nearby_player.save
-      @nearby_players = NearbyPlayer.all_near_spot({
-        lat: nearby_players_params[:lat],
-        lng: nearby_players_params[:lng]
-        }, 20)
+      @nearby_players = NearbyPlayer.all_near_spot(
+        nearby_players_params, 20)
       render :index
     end
   end
 
   def index
-    @nearby_players = NearbyPlayer.all_near_spot({
-      lat: nearby_players_params[:lat],
-      lng: nearby_players_params[:lng]
-      }, 20)
+    @nearby_players = NearbyPlayer.all_near_spot(
+      nearby_players_params, 20)
   end
 
   private

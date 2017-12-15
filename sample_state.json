@@ -33,11 +33,13 @@
           "longitude": 49.52525
         },
         "event_details": {
-          "time": "8:30pm - 11:30pm",
+          "start_time": "8:30pm",
+          "end_time": "11:30pm",
+          "date": "sample date",
           "description": "sample description",
           "current_player_count": 6,
           "max_player_count": 10,
-          "setup": [2, 4, 2],
+          "setup": "stuff",
           "photos": "photo_url"
         }
       }
