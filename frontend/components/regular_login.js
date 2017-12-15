@@ -12,6 +12,12 @@ class RegularLoginPage extends React.Component {
     }
   }
 
+  handleSubmit(e) {
+    this.props.login(this.state).then(
+      () => this.props.navigation.navigate('ActivityMap')
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -53,7 +59,7 @@ class RegularLoginPage extends React.Component {
               style={styles.input}/>
               <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress={() => this.props.login(this.state)}>
+                onPress={this.handleSubmit.bind(this)}>
                 <Text style={styles.buttonText}>Log In</Text>
               </TouchableOpacity>
             </KeyboardAvoidingView>
