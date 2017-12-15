@@ -38,7 +38,9 @@ class LoginPage extends React.Component {
             this.props.login(this.state)
             .then(
               () => this.props.navigation.navigate('ActivityMap'),
-              (resJ) => this.props.register(this.state)
+              (resJ) => this.props.register(this.state).then(
+                () => this.props.navigation.navigate('ActivityMap')
+              )
             );
           }
         )
@@ -72,7 +74,9 @@ class LoginPage extends React.Component {
           this.props.login(this.state)
           .then(
             () => this.props.navigation.navigate('ActivityMap'),
-            (resJ) => this.props.register(this.state)
+            (resJ) => this.props.register(this.state).then(
+              () => this.props.navigation.navigate('ActivityMap')
+            )
           );
         }
       )
