@@ -8,6 +8,8 @@ class Api::SessionsController < ApplicationController
       )
     elsif params[:user][:fb_user_id]
       @user = User.find_by(fb_user_id: params[:user][:fb_user_id])
+    elsif params[:user][:google_user_id]
+      @user = User.find_by(google_user_id: params[:user][:google_user_id])
     end
 
     if @user

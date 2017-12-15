@@ -19,6 +19,6 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params[:user] = JSON.parse(params[:user])
-    params.require(:user).permit(:email, :password, :fb_user_id)
+    params.require(:user).permit(:email, :password, :fb_user_id, :google_user_id)
   end
 end

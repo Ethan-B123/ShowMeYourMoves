@@ -7,8 +7,8 @@ class LoginPage extends React.Component {
     super(props);
 
     this.state = {
-      fb_user_id: "",
-      google_user_id: ""
+      fb_user_id: null,
+      google_user_id: null
     }
   }
 
@@ -24,13 +24,20 @@ class LoginPage extends React.Component {
         const userInfoResponse = await fetch('https://www.googleapis.com/userinfo/v2/me', {
           headers: { Authorization: `Bearer ${accessToken}`},
         });
-        const jResponse = await userInfoResponse.json()
+        const jResponse = await userInfoResponse.json();
+        Alert.alert(
+          'Logged in!',
+          `Hi ${jResponse.given_name}!`,
+        );
 
-        this.setState({ google_user_id: jResponse.id },
+        this.setState({
+          google_user_id: jResponse.id,
+          fb_user_id: null
+         },
           () => {
             this.props.login(this.state)
             .then(
-              () => navigation.navigate('ActivityMap'),
+              () => this.props.navigation.navigate('ActivityMap'),
               (resJ) => this.props.register(this.state)
             );
           }
@@ -44,7 +51,6 @@ class LoginPage extends React.Component {
   }
 
   async logInWithFB() {
-    const { navigation } = this.props
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("1622588997802973", {
         permissions: ['public_profile'],
       });
@@ -58,11 +64,14 @@ class LoginPage extends React.Component {
         `Hi ${jResponse.name}!`,
       );
 
-      this.setState({ fb_user_id: jResponse.id },
+      this.setState({
+        fb_user_id: jResponse.id,
+        google_user_id: null
+       },
         () => {
           this.props.login(this.state)
           .then(
-            () => navigation.navigate('ActivityMap'),
+            () => this.props.navigation.navigate('ActivityMap'),
             (resJ) => this.props.register(this.state)
           );
         }
