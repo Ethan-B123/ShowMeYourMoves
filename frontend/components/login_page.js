@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
+import { fb_app_id, google_ios_client_id, google_android_client_id } from '../../api_keys';
 
 class LoginPage extends React.Component {
   constructor(props) {
