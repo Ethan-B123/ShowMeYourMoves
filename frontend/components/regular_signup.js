@@ -35,7 +35,7 @@ class RegularSignupPage extends React.Component {
             source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
           />
         </View>
-        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={50}>
+        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
           <TextInput
             onChangeText={(val) => this.setState({email: val})}
             placeholder="Email"
