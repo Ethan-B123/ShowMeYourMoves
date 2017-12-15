@@ -39,6 +39,26 @@ export const postSession = async user => {
   });
 };
 
+export const updateUser = user => {
+  const data = new FormData();
+  data.append("user", JSON.stringify(user));
+
+
+  return new Promise((resolve, reject) => {
+    fetch(`${ip}/api/users${user.id}`, {
+      method: 'PATCH',
+      body: data
+    }).then(async (fullRes) => {
+      resJ = await fullRes.json()
+      if (fullRes.status > 300) {
+        reject(resJ)
+      } else {
+        resolve(resJ)
+      }
+    });
+  });
+}
+
 export const deleteSession = () => (
   fetch(`${ip}/api/session`, {
     method: 'delete'
