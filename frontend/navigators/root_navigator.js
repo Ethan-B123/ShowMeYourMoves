@@ -5,6 +5,7 @@ import LoginPageContainer from '../components/login_page_container';
 import RegularLoginPageContainer from '../components/regular_login_container';
 import RegularSignupPageContainer from '../components/regular_signup_container';
 import MapShowPage from "../components/maps/map_show_container";
+import UserDetail from "../components/maps/user_detail"
 
 const RootNavigator = StackNavigator({
   Login: {
@@ -28,9 +29,15 @@ const RootNavigator = StackNavigator({
   ActivityMap: {
     screen: MapShowPage,
     navigationOptions: {
-      headerTitle: 'ActivityMap',
+      headerTitle: 'Activity Map',
     },
   },
+  UserDetail: {
+    screen: UserDetail,
+    navigationOptions: {
+      headerTitle: 'UserDetail',
+    },
+  }
 });
 
 export default RootNavigator;

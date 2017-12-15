@@ -55,6 +55,7 @@ class MapShowPage extends Component {
         }>
           <MapDetailBottom
             detailId={this.state.detailId}
+            navigation={this.props.navigation}
           />
         </View>
         <View style={ this.state.detailOpen

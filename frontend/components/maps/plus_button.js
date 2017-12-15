@@ -9,7 +9,7 @@ export default ({ navigation }) => {
     <View style={container}>
       <TouchableHighlight
         style={button}
-        onPress={() => navigation.navigate('MapActionModal')}>
+        onPress={() => navigation.navigate('UserDetail', {id: 6})}>
         <FontAwesome name="plus" color="white" size={30}/>
       </TouchableHighlight>
     </View>
