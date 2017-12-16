@@ -55,7 +55,8 @@ const RootNavigator = StackNavigator({
       color: "#FFF",
       fontSize: 24
     },
-    headerBackTitle: null
+    headerBackTitle: null,
+    headerTintColor: "#FFF"
   }
 });
 
