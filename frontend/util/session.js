@@ -45,7 +45,7 @@ export const updateUser = user => {
 
 
   return new Promise((resolve, reject) => {
-    fetch(`${ip}/api/users${user.id}`, {
+    fetch(`${ip}/api/users/${user.id}`, {
       method: 'PATCH',
       body: data
     }).then(async (fullRes) => {
