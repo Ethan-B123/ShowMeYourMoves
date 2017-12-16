@@ -40,8 +40,7 @@ export const login = (formUser, navigateCB, registerCB) => dispatch => (
       navigateCB();
     },
     errors => {
-      dispatch(receiveFormErrors(errors));
-      if (registerCB) registerCB();
+      registerCB ? registerCB() : dispatch(receiveFormErrors(errors));
     }
   )
 );

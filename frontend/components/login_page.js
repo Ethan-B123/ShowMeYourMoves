@@ -31,7 +31,7 @@ class LoginPage extends React.Component {
         );
 
         const navigateCB = () => this.props.navigation.navigate('ActivityMap');
-        const registerCB = () => this.props.register(this.state, navigateCB).then(navigateCB);
+        const registerCB = () => this.props.register(this.state, navigateCB);
 
         this.setState({
           google_user_id: jResponse.id,
@@ -62,7 +62,7 @@ class LoginPage extends React.Component {
       );
 
       const navigateCB = () => this.props.navigation.navigate('ActivityMap');
-      const registerCB = () => this.props.register(this.state, navigateCB).then(navigateCB);
+      const registerCB = () => this.props.register(this.state, navigateCB);
 
       this.setState({
         fb_user_id: jResponse.id,
