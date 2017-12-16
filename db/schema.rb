@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171215190044) do
+ActiveRecord::Schema.define(version: 20171216044459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(version: 20171215190044) do
     t.datetime "updated_at", null: false
     t.string "game"
     t.string "skill_level"
+    t.string "event_name"
     t.index ["user_id"], name: "index_nearby_events_on_user_id", unique: true
   end
 

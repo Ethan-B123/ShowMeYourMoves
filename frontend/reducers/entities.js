@@ -8,7 +8,7 @@ import sessionReducer from './session';
 
 export default combineReducers({
   nearby_events: nearbyEventsReducer,
-  nearby_player: nearbyPlayersReducer,
+  nearby_players: nearbyPlayersReducer,
   conversations: conversationsReducer,
   messages: messagesReducer,
   session: sessionReducer
