@@ -10,12 +10,7 @@ import UserSettingsContainer from '../components/user_settings_container';
 import MapActionNavigator from "../components/maps/map_action_navigator";
 
 const RootNavigator = StackNavigator({
-  UserSettings: {
-    screen: UserSettingsContainer,
-    navigationOptions: {
-      headerTitle: 'User Settings'
-    }
-  },
+  
   Login: {
     screen: LoginPageContainer,
     navigationOptions: {
@@ -33,6 +28,12 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'regular-signup',
     },
+  },
+  UserSettings: {
+    screen: UserSettingsContainer,
+    navigationOptions: {
+      headerTitle: 'User Settings'
+    }
   },
   UserDetail: {
     screen: UserDetail,
