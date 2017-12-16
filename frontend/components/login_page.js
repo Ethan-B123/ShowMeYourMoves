@@ -91,9 +91,10 @@ class LoginPage extends React.Component {
             />
           </View>
           <Image
+            style={{flex: 1, resizeMode: 'cover'}}
             source={{uri: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1513200646/Title_mlaxn5.png"}}
           />
-          <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
+          {/* <Text style={styles.title}>SHOW ME YOUR MOVES</Text> */}
           <View style={styles.buttonsContainer}>
             <TouchableHighlight
               style={styles.fbButtonContainer}
