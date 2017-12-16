@@ -17,7 +17,13 @@ class RegularLoginPage extends React.Component {
     this.props.login(this.state, navigateCB);
   }
 
+  componentWillUnmount() {
+    console.log('login form will unmount');
+    this.props.removeFormErrors();
+  }
+
   render() {
+    console.log('rendering login form');
     return (
       <View style={styles.container}>
         <View

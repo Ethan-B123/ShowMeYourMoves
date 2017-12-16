@@ -3,6 +3,11 @@ import * as APIUtil from '../util/session';
 export const RECEIVE_FORM_ERRORS = "RECEIVE_FORM_ERRORS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+export const REMOVE_FORM_ERRORS = "REMOVE_FORM_ERRORS";
+
+export const removeFormErrors = () => ({
+  type: REMOVE_FORM_ERRORS
+})
 
 const receiveFormErrors = errors => ({
   type: RECEIVE_FORM_ERRORS,
