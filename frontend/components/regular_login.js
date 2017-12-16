@@ -12,6 +12,15 @@ class RegularLoginPage extends React.Component {
     }
   }
 
+  handleSubmit(e) {
+    const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+    this.props.login(this.state, navigateCB);
+  }
+
+  componentWillUnmount() {
+    this.props.removeFormErrors();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -24,39 +33,42 @@ class RegularLoginPage extends React.Component {
             height: '100%'
           }}
           >
-            <Image
-              style={{flex: 1, resizeMode: 'stretch'}}
-              source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
-            />
+          <Image
+            style={{flex: 1, resizeMode: 'stretch'}}
+            source={{uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png'}}
+          />
+        </View>
+        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
+          <TextInput
+            onChangeText={(val) => this.setState({email: val})}
+            placeholder="Email"
+            placeholderTextColor="#4C4C50"
+            returnKeyType="next"
+            onSubmitEditing={() => this.passwordInput.focus()}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+            style={styles.input}/>
+          <TextInput
+            onChangeText={(val) => this.setState({password: val})}
+            placeholder="Password"
+            placeholderTextColor="#4C4C50"
+            secureTextEntry
+            returnKeyType="go"
+            onSubmitEditing={this.handleSubmit.bind(this)}
+            autoCapitalize="none"
+            autoCorrect={false}
+            ref={(input) => this.passwordInput = input}
+            style={styles.input}/>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={this.handleSubmit.bind(this)}>
+              <Text style={styles.buttonText}>Log In</Text>
+            </TouchableOpacity>
+          </KeyboardAvoidingView>
+          <View style={styles.errors}>
+            {this.props.errors.map(error => <Text style={styles.error} key={error}>{error}</Text>)}
           </View>
-          <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
-            <TextInput
-              onChangeText={(val) => this.setState({email: val})}
-              placeholder="Email"
-              placeholderTextColor="#4C4C50"
-              returnKeyType="next"
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              style={styles.input}/>
-            <TextInput
-              onChangeText={(val) => this.setState({password: val})}
-              placeholder="Password"
-              placeholderTextColor="#4C4C50"
-              secureTextEntry
-              returnKeyType="go"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              ref={(input) => this.passwordInput = input}
-              style={styles.input}/>
-              <TouchableOpacity
-                style={styles.buttonContainer}
-                onPress={() => this.props.login(this.state)}>
-                <Text style={styles.buttonText}>Log In</Text>
-              </TouchableOpacity>
-            </KeyboardAvoidingView>
       </View>
     )
   }
@@ -64,10 +76,18 @@ class RegularLoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center"
+    flex: 1
+  },
+  errors: {
+    alignItems: "center"
+  },
+  error: {
+    backgroundColor: "transparent",
+    color: "#fff",
+    fontSize: 16
   },
   form: {
+    paddingTop: 150,
     padding: 20,
   },
   input: {

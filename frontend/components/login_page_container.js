@@ -4,8 +4,8 @@ import * as SessionUtil from '../util/session'
 import { register, login } from '../actions/session';
 
 const mapDispatchToProps = dispatch => ({
-  register: user => dispatch(register(user)),
-  login: user => dispatch(login(user))
+  register: (user, navigateCB) => dispatch(register(user, navigateCB)),
+  login: (user, navigateCB, registerCB) => dispatch(login(user, navigateCB, registerCB))
 })
 
 export default connect(

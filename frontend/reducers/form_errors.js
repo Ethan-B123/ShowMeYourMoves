@@ -1,12 +1,14 @@
-// import stuff
+import { RECEIVE_FORM_ERRORS, REMOVE_FORM_ERRORS } from '../actions/session';
 
 const defaultState = [];
 
 const formErrorsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
-    // add cases
-
+    case RECEIVE_FORM_ERRORS:
+      return action.errors;
+    case REMOVE_FORM_ERRORS:
+      return [];
     default:
       return state;
   }

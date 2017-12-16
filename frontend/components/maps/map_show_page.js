@@ -3,7 +3,6 @@ import { Image, View, StyleSheet, Text, StatusBar } from 'react-native';
 import MapIcon from "./map_icon";
 import Map from "./map_container";
 import MapDetailBottom from "./map_detail_container";
-import PlayerActions from "./../../actions/players";
 import PlusButton from "./plus_button";
 
 class MapShowPage extends Component {
@@ -12,13 +11,18 @@ class MapShowPage extends Component {
     super(props);
     this.state = {
       detailOpen: false,
-      detailId: 0
+      detailId: 0,
+      detailType: "player"
     };
   }
 
-  openDetail(detailId) {
+  componentDidMount() {
+    this.searchArea();
+  }
+
+  openDetail(detailId, type) {
     return () => (
-      this.setState({ detailOpen: true, detailId })
+      this.setState({ detailOpen: true, detailType: type, detailId })
     );
   }
 
@@ -27,9 +31,10 @@ class MapShowPage extends Component {
   }
 
   searchArea() {
-    const { navigator, fetchPlayers } = this.props;
+    const { fetchPlayers, fetchEvents } = this.props;
     navigator.geolocation.getCurrentPosition((location) => {
       fetchPlayers(location.coords)
+      fetchEvents(location.coords)
     });
   }
 

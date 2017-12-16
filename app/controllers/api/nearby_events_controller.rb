@@ -3,8 +3,8 @@ class Api::NearbyEventsController < ApplicationController
     if current_user
       @event = NearbyEvent.new(event_params)
       @event.user_id = current_user.id
-
       if @event.save
+        @events = NearbyEvent.all_near_spot(event_params, 20)
         render :index
       else
         render json: @event.errors.full_messages, status: 422
@@ -19,6 +19,7 @@ class Api::NearbyEventsController < ApplicationController
     @event = selected_event
     if @event
       @event.destroy
+      @events = NearbyEvent.all_near_spot(event_params, 20)
       render :index
     else
       render json: ['Unable to find event'], status: 404
@@ -29,6 +30,7 @@ class Api::NearbyEventsController < ApplicationController
   def update
     @event = selected_event
     if @event && @event.update_attributes(event_params)
+      @events = NearbyEvent.all_near_spot(event_params, 20)
       render :index
     elsif !@event
       render json: ['Unable to find event'], status: 404
@@ -39,7 +41,7 @@ class Api::NearbyEventsController < ApplicationController
   end
 
   def index
-    
+    @events = NearbyEvent.all_near_spot(event_params, 20)
   end
 
   private
@@ -51,10 +53,10 @@ class Api::NearbyEventsController < ApplicationController
   def event_params
     params[:event] = JSON.parse(params[:event])
     params.require(:event).permit(
-      :lat, 
-      :lng, 
-      :date, 
-      :start_time, 
+      :lat,
+      :lng,
+      :date,
+      :start_time,
       :end_time,
       :description,
       :current_players,

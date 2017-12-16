@@ -8,8 +8,8 @@
         "game": "melee",
         "skill_level": "average",
         "location": {
-          "lat": 50.23242,
-          "lng": 49.52525
+          "latitude": 50.23242,
+          "longitude": 49.52525
         },
         "details": {
           "about_me": "sample about me",
@@ -24,20 +24,22 @@
     "nearby_events": {
       "3": {
         "id": 3,
-        "host_id": 4, 
+        "host_id": 4,
         "event_name": "Event Title",
         "game": "melee",
         "skill_level": "advanced",
         "location": {
-          "lat": 50.23242,
-          "lng": 49.52525
+          "latitude": 50.23242,
+          "longitude": 49.52525
         },
         "event_details": {
-          "time": "8:30pm - 11:30pm",
+          "start_time": "8:30pm",
+          "end_time": "11:30pm",
+          "date": "sample date",
           "description": "sample description",
           "current_player_count": 6,
           "max_player_count": 10,
-          "setup": [2, 4, 2],
+          "setup": "stuff",
           "photos": "photo_url"
         }
       }

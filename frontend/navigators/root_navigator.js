@@ -7,6 +7,7 @@ import RegularSignupPageContainer from '../components/regular_signup_container';
 import MapShowPage from "../components/maps/map_show_container";
 import UserDetail from "../components/maps/user_detail";
 import UserSettingsContainer from '../components/user_settings_container';
+import MapActionNavigator from "../components/maps/map_action_navigator";
 
 const RootNavigator = StackNavigator({
   UserSettings: {
@@ -33,18 +34,24 @@ const RootNavigator = StackNavigator({
       headerTitle: 'regular-signup',
     },
   },
+  UserDetail: {
+    screen: UserDetail,
+    navigationOptions: {
+      headerTitle: 'UserDetail',
+    },
+  },
+  MapActionNavigator: {
+    screen: MapActionNavigator,
+    navigationOptions: {
+      headerTitle: 'Map Action Navigator',
+    },
+  },
   ActivityMap: {
     screen: MapShowPage,
     navigationOptions: {
       headerTitle: 'Activity Map',
     },
   },
-  UserDetail: {
-    screen: UserDetail,
-    navigationOptions: {
-      headerTitle: 'UserDetail',
-    },
-  }
 });
 
 export default RootNavigator;

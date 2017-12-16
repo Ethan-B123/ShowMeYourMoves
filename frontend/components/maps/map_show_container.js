@@ -1,11 +1,15 @@
 import { connect } from 'react-redux';
 import MapShowPage from "./map_show_page";
-import PlayerActions from "./../../actions/players";
+import * as NearbyPlayerActions from "./../../actions/nearby_players";
+import * as NearbyEventsActions from "./../../actions/nearby_events";
 
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchPlayers: (location) => dispatch(
-      PlayerActions.fetchPlayers(location.coords)
+      NearbyPlayerActions.fetchPlayers(location)
+    ),
+    fetchEvents: (location) => dispatch(
+      NearbyEventsActions.fetchEvents(location)
     )
   })
 }
