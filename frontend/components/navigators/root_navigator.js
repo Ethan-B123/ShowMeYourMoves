@@ -8,67 +8,55 @@ import MapShowPage from "../maps/map_show_container";
 import UserDetail from "../maps/user_detail"
 import MapActionNavigator from "../maps/map_action_navigator";
 
-const headerStyle = {
-  backgroundColor: "#27033E",
-}
-
-const headerTitleStyle = {
-  color: "#FFF",
-  fontSize: 24
-}
-
 const RootNavigator = StackNavigator({
   Login: {
     screen: LoginPageContainer,
     navigationOptions: {
       headerTitle: 'Log In',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
     },
   },
   RegularLogin: {
     screen: RegularLoginPageContainer,
     navigationOptions: {
-      headerTitle: 'regular-login',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
+      headerTitle: 'Log In',
     },
   },
   RegularSignup: {
     screen: RegularSignupPageContainer,
     navigationOptions: {
-      headerTitle: 'regular-signup',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
+      headerTitle: 'Sign Up',
     },
   },
   UserDetail: {
     screen: UserDetail,
     navigationOptions: {
       headerTitle: 'UserDetail',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
     },
   },
   MapActionNavigator: {
     screen: MapActionNavigator,
     navigationOptions: {
       headerTitle: 'Map Action Navigator',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
     },
   },
   ActivityMap: {
     screen: MapShowPage,
     navigationOptions: {
       headerTitle: 'Activity Map',
-      headerStyle: headerStyle,
-      headerTitleStyle: headerTitleStyle
     },
   },
 },
 {
-
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: "#27033E"
+    },
+    headerTitleStyle: {
+      color: "#FFF",
+      fontSize: 24
+    },
+    headerBackTitle: null
+  }
 });
 
 export default RootNavigator;
