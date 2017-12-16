@@ -55,6 +55,7 @@ class RegularLoginPage extends React.Component {
             placeholderTextColor="#4C4C50"
             secureTextEntry
             returnKeyType="go"
+            onSubmitEditing={this.handleSubmit.bind(this)}
             autoCapitalize="none"
             autoCorrect={false}
             ref={(input) => this.passwordInput = input}
@@ -82,7 +83,8 @@ const styles = StyleSheet.create({
   },
   error: {
     backgroundColor: "transparent",
-    color: "#fff"
+    color: "#fff",
+    fontSize: 16
   },
   form: {
     paddingTop: 150,
