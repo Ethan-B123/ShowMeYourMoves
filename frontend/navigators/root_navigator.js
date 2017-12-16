@@ -9,6 +9,12 @@ import UserDetail from "../components/maps/user_detail"
 import MapActionNavigator from "../components/maps/map_action_navigator";
 
 const RootNavigator = StackNavigator({
+ActivityMap: {
+  screen: MapShowPage,
+  navigationOptions: {
+    headerTitle: 'Activity Map',
+  },
+},
   Login: {
     screen: LoginPageContainer,
     navigationOptions: {
@@ -37,12 +43,6 @@ const RootNavigator = StackNavigator({
     screen: MapActionNavigator,
     navigationOptions: {
       headerTitle: 'Map Action Navigator',
-    },
-  },
-  ActivityMap: {
-    screen: MapShowPage,
-    navigationOptions: {
-      headerTitle: 'Activity Map',
     },
   },
 });

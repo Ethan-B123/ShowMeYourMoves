@@ -30,8 +30,9 @@ class MapShowPage extends Component {
   }
 
   searchArea() {
-    const { fetchPlayers } = this.props;
+    const { fetchPlayers, fetchEvents } = this.props;
     navigator.geolocation.getCurrentPosition((location) => {
+      fetchPlayers(location.coords)
       fetchPlayers(location.coords)
     });
   }
