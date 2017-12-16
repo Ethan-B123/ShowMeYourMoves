@@ -91,9 +91,10 @@ class LoginPage extends React.Component {
             />
           </View>
           <Image
+            style={styles.title}
             source={{uri: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1513200646/Title_mlaxn5.png"}}
           />
-          <Text style={styles.title}>SHOW ME YOUR MOVES</Text>
+          {/* <Text style={styles.title}>SHOW ME YOUR MOVES</Text> */}
           <View style={styles.buttonsContainer}>
             <TouchableHighlight
               style={styles.fbButtonContainer}
@@ -140,19 +141,21 @@ class LoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: '#210c56',
     flex: 1
-    // justifyContent: "space-around"
   },
   title: {
-    fontSize: 40,
-    textAlign: "center",
-    marginBottom: 30,
-    marginTop: 40,
-    marginLeft: 20,
-    marginRight: 20,
-    color: "#fff",
-    backgroundColor: "transparent"
+    height: 100,
+    resizeMode: 'contain',
+    marginVertical: 40,
+    marginHorizontal: 20
+    // fontSize: 40,
+    // textAlign: "center",
+    // marginBottom: 30,
+    // marginTop: 40,
+    // marginLeft: 20,
+    // marginRight: 20,
+    // color: "#fff",
+    // backgroundColor: "transparent"
   },
   buttonsContainer: {
     alignItems: "center",
