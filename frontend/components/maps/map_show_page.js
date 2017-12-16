@@ -11,7 +11,8 @@ class MapShowPage extends Component {
     super(props);
     this.state = {
       detailOpen: false,
-      detailId: 0
+      detailId: 0,
+      detailType: "player"
     };
   }
 
@@ -19,9 +20,9 @@ class MapShowPage extends Component {
     this.searchArea();
   }
 
-  openDetail(detailId) {
+  openDetail(detailId, type) {
     return () => (
-      this.setState({ detailOpen: true, detailId })
+      this.setState({ detailOpen: true, detailType: type, detailId })
     );
   }
 
@@ -33,7 +34,7 @@ class MapShowPage extends Component {
     const { fetchPlayers, fetchEvents } = this.props;
     navigator.geolocation.getCurrentPosition((location) => {
       fetchPlayers(location.coords)
-      fetchPlayers(location.coords)
+      fetchEvents(location.coords)
     });
   }
 

@@ -17,7 +17,6 @@ export const getNearbyPlayers = coords => {
       if (fullRes.status > 300) {
         reject(resJ)
       } else {
-        debugger
         resolve(resJ)
       }
     });
@@ -27,14 +26,14 @@ export const getNearbyPlayers = coords => {
 
 export const getNearbyEvents = coords => {
   var data = new FormData();
-  data.append( "nearby_player", JSON.stringify(
+  data.append( "event", JSON.stringify(
     {
       lat: coords.latitude,
       lng: coords.longitude
     }
   ));
   return new Promise((resolve, reject) => {
-    fetch(`${ip}/api/nearby_players_index`, {
+    fetch(`${ip}/api/nearby_events_index`, {
       method: 'POST',
       body: data
     }).then(async (fullRes) => {

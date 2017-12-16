@@ -1,5 +1,5 @@
 import * as NearbyUtil from '../util/nearby_util';
-export const RECEIVE_NEARBY_EVENTS = "RECEIVE_NEARBY_PLAYERS";
+export const RECEIVE_NEARBY_EVENTS = "RECEIVE_NEARBY_EVENTS";
 
 const receiveNearbyEvents = nearbyEvents => ({
   type: RECEIVE_NEARBY_EVENTS,

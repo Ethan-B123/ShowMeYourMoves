@@ -15,10 +15,10 @@
       json.end_time event.end_time
       json.date event.date
       json.description event.description
-      json.current_player_count event.current_player_count
-      json.max_player_count event.max_player_count
-      json.setup event.setup
-      json.photos event.photos
+      json.current_player_count event.current_players
+      json.max_player_count event.max_players
+      json.setup event.current_setup
+      json.photo event.photo
     end
   end
 end

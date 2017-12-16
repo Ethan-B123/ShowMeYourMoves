@@ -8,7 +8,7 @@ const nearbyEventsReducer = (state = defaultState, action) => {
   switch (action.type) {
     // add cases
     case RECEIVE_NEARBY_EVENTS:
-      return action.nearbyPlayers;
+      return action.nearbyEvents;
     default:
       return state;
   }
