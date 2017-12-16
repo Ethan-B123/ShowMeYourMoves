@@ -17,8 +17,9 @@
 
 class User < ApplicationRecord
   validates :access_token, presence: true
-  validates :email, :password_digest, presence: true, unless: :fb_user_id?
-  validates :email, :access_token, uniqueness: true
+  validates :access_token, uniqueness: true
+  validates :email, :password_digest, presence: true, unless: :fb_or_google_login?
+  validates :email, uniqueness: true, allow_nil: true #skips this validation if email is blank. see https://stackoverflow.com/questions/18496223/possible-to-specify-unique-index-with-nulls-allowed-in-rails-activerecord for more info
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_access_token
@@ -52,5 +53,11 @@ class User < ApplicationRecord
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
+  end
+
+  private
+
+  def fb_or_google_login?
+    self.fb_user_id || self.google_user_id
   end
 end

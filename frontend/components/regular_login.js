@@ -12,6 +12,12 @@ class RegularLoginPage extends React.Component {
     }
   }
 
+  handleSubmit(e) {
+    this.props.login(this.state).then(
+      () => this.props.navigation.navigate('ActivityMap')
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -46,14 +52,13 @@ class RegularLoginPage extends React.Component {
               placeholderTextColor="#4C4C50"
               secureTextEntry
               returnKeyType="go"
-              keyboardType="email-address"
               autoCapitalize="none"
               autoCorrect={false}
               ref={(input) => this.passwordInput = input}
               style={styles.input}/>
               <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress={() => this.props.login(this.state)}>
+                onPress={this.handleSubmit.bind(this)}>
                 <Text style={styles.buttonText}>Log In</Text>
               </TouchableOpacity>
             </KeyboardAvoidingView>
@@ -64,10 +69,10 @@ class RegularLoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center"
+    flex: 1
   },
   form: {
+    paddingTop: 150,
     padding: 20,
   },
   input: {
