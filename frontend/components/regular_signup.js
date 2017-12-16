@@ -13,12 +13,12 @@ class RegularSignupPage extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.register(this.state).then(
-      () => this.props.navigation.navigate('ActivityMap')
-    )
+    const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+    this.props.register(this.state, navigateCB);
   }
 
   render() {
+    console.log('rendering');
     return (
       <View style={styles.container}>
         <View
@@ -62,6 +62,9 @@ class RegularSignupPage extends React.Component {
               <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
           </KeyboardAvoidingView>
+          <View style={styles.errors}>
+            {this.props.errors.map(error => <Text style={styles.error} key={error}>{error}</Text>)}
+          </View>
       </View>
     )
   }
@@ -71,6 +74,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // justifyContent: "center"
+  },
+  errors: {
+    alignItems: "center"
+  },
+  error: {
+    backgroundColor: "transparent",
+    color: "#fff"
   },
   form: {
     paddingTop: 150,

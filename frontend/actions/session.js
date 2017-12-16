@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/session';
 
+export const RECEIVE_FORM_ERRORS = "RECEIVE_FORM_ERRORS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 
@@ -17,17 +18,23 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-export const register = formUser => dispatch => (
+export const register = (formUser, navigateCB) => dispatch => (
   APIUtil.postUser(formUser).then(
-    user => dispatch(receiveCurrentUser(user)),
-    errors => dispatch(receiveCurrentUser(errors))
+    user => {
+      dispatch(receiveCurrentUser(user));
+      navigateCB();
+    },
+    errors => dispatch(receiveFormErrors(errors))
   )
 );
 
-export const login = formUser => dispatch => (
+export const login = (formUser, navigateCB) => dispatch => (
   APIUtil.postSession(formUser).then(
-    user => dispatch(receiveCurrentUser(user)),
-    errors => dispatch(receiveCurrentUser(errors))
+    user => {
+      dispatch(receiveCurrentUser(user));
+      navigateCB();
+    },
+    errors => dispatch(receiveFormErrors(errors))
   )
 );
 
