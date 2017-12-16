@@ -33,13 +33,16 @@ export const register = (formUser, navigateCB) => dispatch => (
   )
 );
 
-export const login = (formUser, navigateCB) => dispatch => (
+export const login = (formUser, navigateCB, registerCB) => dispatch => (
   APIUtil.postSession(formUser).then(
     user => {
       dispatch(receiveCurrentUser(user));
       navigateCB();
     },
-    errors => dispatch(receiveFormErrors(errors))
+    errors => {
+      dispatch(receiveFormErrors(errors));
+      if (registerCB) registerCB();
+    }
   )
 );
 

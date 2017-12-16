@@ -14,7 +14,10 @@ class RegularLoginPage extends React.Component {
 
   handleSubmit(e) {
     const navigateCB = () => this.props.navigation.navigate('ActivityMap');
-    this.props.login(this.state, navigateCB);
+    this.props.login(this.state).then(
+      () => {console.log('okay');this.props.navigation.navigate('ActivityMap')},
+      () => console.log('hey')
+    )
   }
 
   componentWillUnmount() {
