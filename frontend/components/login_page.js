@@ -7,20 +7,43 @@ class LoginPage extends React.Component {
     super(props);
 
     this.state = {
-      fb_user_id: ""
+      fb_user_id: null,
+      google_user_id: null
     }
   }
 
   async logInWithGoogle() {
     try {
-      const result = await Expo.Google.logInAsync({
+      const { type, accessToken } = await Expo.Google.logInAsync({
         androidClientId: "860639452597-qdkr4j4k22b9vv2r739r9ucgj2l0o8vd.apps.googleusercontent.com",
         iosClientId: "860639452597-rknoe79r58di8fe5qgos5jjnsoug5jne.apps.googleusercontent.com",
         scopes: ['profile', 'email'],
       });
 
-      if (result.type === 'success') {
-        return result.accessToken;
+      if (type === 'success') {
+        const userInfoResponse = await fetch('https://www.googleapis.com/userinfo/v2/me', {
+          headers: { Authorization: `Bearer ${accessToken}`},
+        });
+        const jResponse = await userInfoResponse.json();
+        Alert.alert(
+          'Logged in!',
+          `Hi ${jResponse.given_name}!`,
+        );
+
+        this.setState({
+          google_user_id: jResponse.id,
+          fb_user_id: null
+         },
+          () => {
+            this.props.login(this.state)
+            .then(
+              () => this.props.navigation.navigate('ActivityMap'),
+              (resJ) => this.props.register(this.state).then(
+                () => this.props.navigation.navigate('ActivityMap')
+              )
+            );
+          }
+        )
       } else {
         return {cancelled: true};
       }
@@ -30,7 +53,6 @@ class LoginPage extends React.Component {
   }
 
   async logInWithFB() {
-    const { navigation } = this.props
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync("1622588997802973", {
         permissions: ['public_profile'],
       });
@@ -44,15 +66,17 @@ class LoginPage extends React.Component {
         `Hi ${jResponse.name}!`,
       );
 
-      // response.json().then((object) => {
-      //   debugger
-      // })
-      this.setState({ fb_user_id: jResponse.id },
+      this.setState({
+        fb_user_id: jResponse.id,
+        google_user_id: null
+       },
         () => {
           this.props.login(this.state)
           .then(
-            () => navigation.navigate('ActivityMap'),
-            (resJ) => this.props.register(this.state)
+            () => this.props.navigation.navigate('ActivityMap'),
+            (resJ) => this.props.register(this.state).then(
+              () => this.props.navigation.navigate('ActivityMap')
+            )
           );
         }
       )
