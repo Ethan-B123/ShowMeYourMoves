@@ -4,9 +4,17 @@ import { StackNavigator } from 'react-navigation';
 import LoginPageContainer from '../components/login_page_container';
 import RegularLoginPageContainer from '../components/regular_login_container';
 import RegularSignupPageContainer from '../components/regular_signup_container';
-import MapShowPage from "../components/maps/map_show_page";
+import MapShowPage from "../components/maps/map_show_container";
+import UserDetail from "../components/maps/user_detail"
+import MapActionNavigator from "../components/maps/map_action_navigator";
 
 const RootNavigator = StackNavigator({
+ActivityMap: {
+  screen: MapShowPage,
+  navigationOptions: {
+    headerTitle: 'Activity Map',
+  },
+},
   Login: {
     screen: LoginPageContainer,
     navigationOptions: {
@@ -25,12 +33,18 @@ const RootNavigator = StackNavigator({
       headerTitle: 'regular-signup',
     },
   },
-  ActivityMap: {
-    screen: MapShowPage,
+  UserDetail: {
+    screen: UserDetail,
     navigationOptions: {
-      headerTitle: 'ActivityMap',
+      headerTitle: 'UserDetail',
     },
-  }
+  },
+  MapActionNavigator: {
+    screen: MapActionNavigator,
+    navigationOptions: {
+      headerTitle: 'Map Action Navigator',
+    },
+  },
 });
 
 export default RootNavigator;

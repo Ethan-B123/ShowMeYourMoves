@@ -48,7 +48,6 @@ class Map extends Component {
   }
 
   onRegionChange(region) {
-    console.log(region);
     this.setState({ region });
   }
 
@@ -60,15 +59,8 @@ class Map extends Component {
       const region = Object.assign({}, this.state.region);
       region.latitude = coordinate.latitude;
       region.longitude = coordinate.longitude;
-      // debugger
       this.mapView.animateToCoordinate(coordinate, 3);
-      // clearTimeout(this.state.timeout);
       this.setState({ region });
-      // const updateRegion = function() {
-      //   // debugger
-      // }
-      // const timeout = setTimeout(updateRegion.bind(this), 0);
-      // this.setState({ timeout });
       doOpenDetail(id);
     }
   }
@@ -85,7 +77,6 @@ class Map extends Component {
         latLng={latLng}
         imgSrc={playerIconDefaultSrc}
         openDetail={this.openDetailFixClip(id).bind(this)}
-        closeDetail={closeDetail()}
       />
     )
   }

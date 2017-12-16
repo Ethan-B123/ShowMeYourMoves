@@ -46,7 +46,14 @@ export const login = (formUser, navigateCB, registerCB) => dispatch => (
 );
 
 export const logout = () => dispatch => (
-  APIUtil.deleteSession().then(() =>
+  APIUtil.deleteSession().then(() => 
     dispatch(logoutCurrentUser())
   )
 );
+
+export const update = formUser => dispatch => (
+  APIUtil.updateUser(formUser).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ))
+);
+

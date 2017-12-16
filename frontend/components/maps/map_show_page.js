@@ -3,6 +3,7 @@ import { Image, View, StyleSheet, Text, StatusBar } from 'react-native';
 import MapIcon from "./map_icon";
 import Map from "./map_container";
 import MapDetailBottom from "./map_detail_container";
+import PlusButton from "./plus_button";
 
 class MapShowPage extends Component {
 
@@ -12,6 +13,10 @@ class MapShowPage extends Component {
       detailOpen: false,
       detailId: 0
     };
+  }
+
+  componentDidMount() {
+    this.searchArea();
   }
 
   openDetail(detailId) {
@@ -24,7 +29,15 @@ class MapShowPage extends Component {
     return () => this.setState({ detailOpen: false });
   }
 
+  searchArea() {
+    const { fetchPlayers } = this.props;
+    navigator.geolocation.getCurrentPosition((location) => {
+      fetchPlayers(location.coords)
+    });
+  }
+
   render() {
+
     return(
       <View
         style={styles.container}
@@ -32,17 +45,6 @@ class MapShowPage extends Component {
         <StatusBar
           hidden={true}
         />
-        <View style={styles.topBar}>
-          <View style={styles.left}>
-            <Image
-              source={require("./../../../assets/map_icons/person_icon_highlighted.png")}
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.right}>
-            <Text style={styles.text}>Activity Map</Text>
-          </View>
-        </View>
 
         <Map
           openDetail={this.openDetail.bind(this)}
@@ -56,6 +58,15 @@ class MapShowPage extends Component {
         }>
           <MapDetailBottom
             detailId={this.state.detailId}
+            navigation={this.props.navigation}
+          />
+        </View>
+        <View style={ this.state.detailOpen
+          ? styles.bottomBarHidden
+          : styles.bottomBarShowing
+        }>
+          <PlusButton
+            navigation={this.props.navigation}
           />
         </View>
       </View>
