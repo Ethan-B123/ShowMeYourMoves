@@ -12,10 +12,13 @@ class RegularSignupPage extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.removeFormErrors();
+  }
+
   handleSubmit(e) {
-    this.props.register(this.state).then(
-      () => this.props.navigation.navigate('ActivityMap')
-    )
+    const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+    this.props.register(this.state, navigateCB);
   }
 
   render() {
@@ -52,6 +55,7 @@ class RegularSignupPage extends React.Component {
             placeholderTextColor="#4C4C50"
             secureTextEntry
             returnKeyType="go"
+            onSubmitEditing={this.handleSubmit.bind(this)}
             autoCapitalize="none"
             autoCorrect={false}
             ref={(input) => this.passwordInput = input}
@@ -62,6 +66,9 @@ class RegularSignupPage extends React.Component {
               <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
           </KeyboardAvoidingView>
+          <View style={styles.errors}>
+            {this.props.errors.map(error => <Text style={styles.error} key={error}>{error}</Text>)}
+          </View>
       </View>
     )
   }
@@ -71,6 +78,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // justifyContent: "center"
+  },
+  errors: {
+    alignItems: "center"
+  },
+  error: {
+    backgroundColor: "transparent",
+    color: "#fff",
+    fontSize: 16
   },
   form: {
     paddingTop: 150,
