@@ -1,1 +1,9 @@
-json.extract! @user, :display_name, :id, :email
+json.extract! @user, 
+              :display_name, 
+              :id, 
+              :email, 
+              :description, 
+              :main, 
+              :pronouns, 
+              :age, 
+              :game
