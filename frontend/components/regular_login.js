@@ -18,12 +18,10 @@ class RegularLoginPage extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('login form will unmount');
     this.props.removeFormErrors();
   }
 
   render() {
-    console.log('rendering login form');
     return (
       <View style={styles.container}>
         <View

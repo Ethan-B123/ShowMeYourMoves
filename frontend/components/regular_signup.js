@@ -12,6 +12,10 @@ class RegularSignupPage extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.removeFormErrors();
+  }
+
   handleSubmit(e) {
     const navigateCB = () => this.props.navigation.navigate('ActivityMap');
     this.props.register(this.state, navigateCB);
