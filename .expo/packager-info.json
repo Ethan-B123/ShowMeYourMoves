@@ -1,15 +1,9 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-<<<<<<< HEAD
-  "packagerPid": 444,
-  "expoServerNgrokUrl": "https://4e-g9y.francislara.showmeyourmoves.exp.direct",
-  "packagerNgrokUrl": "https://packager.4e-g9y.francislara.showmeyourmoves.exp.direct",
-  "ngrokPid": 494
-=======
   "packagerPid": 1387,
   "expoServerNgrokUrl": "https://4e-g9y.brillanw.showmeyourmoves.exp.direct",
   "packagerNgrokUrl": "https://packager.4e-g9y.brillanw.showmeyourmoves.exp.direct",
   "ngrokPid": 1405
->>>>>>> master
+
 }
