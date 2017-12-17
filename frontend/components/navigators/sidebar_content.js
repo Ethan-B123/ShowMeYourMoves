@@ -23,9 +23,9 @@ export default class SideBarContent extends React.Component {
         <ScrollView>
           {this.props.nearbyPlayers.map(player => {
             return (
-              <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
+              <TouchableOpacity key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
                 <Image style={styles.image} source={{uri: player.details.image_url}}/>
-                <Text key={player.id} style={styles.text}>
+                <Text style={styles.text}>
                   {player.display_name}
                 </Text>
               </TouchableOpacity>
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   title: {
     color: "#FFF",
     fontSize: 30,
-    marginBottom: 30,
     fontWeight: 'bold'
   },
   image: {
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 18
   },
   item: {
-    marginBottom: 30,
+    marginTop: 30,
     flexDirection: "row"
   }
 })
