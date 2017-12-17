@@ -51,7 +51,7 @@ class Api::NearbyEventsController < ApplicationController
   end
 
   def event_params
-    params[:event] = JSON.parse(params[:event])
+    params[:event] = JSON.parse(params[:event]) if params[:event].class == String
     params.require(:event).permit(
       :lat,
       :lng,
@@ -62,7 +62,10 @@ class Api::NearbyEventsController < ApplicationController
       :current_players,
       :max_players,
       :current_setup,
-      :photo
+      :photo,
+      :event_name,
+      :game,
+      :skill_level
     )
   end
 

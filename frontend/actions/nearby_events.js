@@ -6,6 +6,14 @@ const receiveNearbyEvents = nearbyEvents => ({
   nearbyEvents
 });
 
+export const postEvent = eventData => dispatch => (
+  NearbyUtil.postEvent(eventData).then(response => {
+    return (
+      dispatch(receiveNearbyEvents(response))
+    )
+  })
+);
+
 export const fetchEvents = location => dispatch => (
   NearbyUtil.getNearbyEvents(location).then(response => {
     return (
