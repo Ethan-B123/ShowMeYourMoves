@@ -47,6 +47,10 @@ const MainAppStack = StackNavigator({
 
 const SideBar = DrawerNavigator({
   ActivityMap: { screen: MainAppStack }
+},
+{
+  initialRouteName: "ActivityMap",
+  drawerBackgroundColor: "#27033E"
 })
 
 const SignUpStack = StackNavigator({
