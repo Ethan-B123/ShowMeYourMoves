@@ -10,6 +10,7 @@ import EventDetail from "../maps/event_detail_container";
 import MapActionNavigator from "../maps/map_action_navigator";
 import HamburgerMenu from "../hamburger_menu";
 import SideBarContentContainer from "./sidebar_content_container";
+import UserSettingsContainer from '../user_settings_container';
 
 const MainAppStack = StackNavigator({
   UserDetail: {
@@ -37,6 +38,12 @@ const MainAppStack = StackNavigator({
       headerTitle: 'Activity Map',
     },
   },
+  UserSettings: {
+    screen: UserSettingsContainer,
+    navigationOptions: {
+      headerTitle: 'User Settings'
+    }
+  }
 },
 {
   initialRouteName: "ActivityMap",
@@ -52,7 +59,7 @@ const MainAppStack = StackNavigator({
     headerTintColor: "#FFF",
     headerLeft: <HamburgerMenu navigation={navigation}/>
   })
-})
+});
 
 const SideBar = DrawerNavigator({
   ActivityMap: {

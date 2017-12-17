@@ -9,7 +9,9 @@ import { StyleSheet,
   TouchableHighlight, 
   TouchableOpacity, 
   KeyboardAvoidingView,
-  ScrollView } from 'react-native';
+  ScrollView,
+  NavigationActions
+} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 class UserSettings extends React.Component {
@@ -17,27 +19,39 @@ class UserSettings extends React.Component {
     super(props);
 
     //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
-    this.state = {
-      display_name: "IntermediateSteve",
-      email: "steveo@gmail.com",
-      description: "This is a description",
-      game: "Melee",
-      main: "Falco",
-      pronouns: "he/him/his",
-      age: 41
-    };
+    // this.state = {
+    //   display_name: "IntermediateSteve",
+    //   email: "steveo@gmail.com",
+    //   description: "This is a description",
+    //   game: "Melee",
+    //   main: "Falco",
+    //   pronouns: "he/him/his",
+    //   age: 41,
+    //   image_url: "http://res.cloudinary.com/lara-cloud1/image/upload/v1513485247/Abate-293x300_kunln4.png"
+    // };
     //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
 
-    // this.state = {
-    //   display_name: props.display_name,
-    //   email: props.email,
-    //   description: props.description,
-    //   game: props.game,
-    //   main: props.main,
-    //   pronouns: props.pronouns,
-    //   age: props.age
-    // };
+    let age;
+
+    if(!props.age) {
+      age = 0;
+    } else {
+      age = props.age;
+    }
+
+    this.state = {
+      display_name: props.display_name,
+      email: props.email,
+      description: props.description,
+      game: props.game,
+      main: props.main,
+      pronouns: props.pronouns,
+      age: age,
+      image_url: props.image_url,
+      id: props.id
+    };
     this.removeNonNum = this.removeNonNum.bind(this);
+    this.backAction = this.backAction.bind(this);
   }
 
   removeNonNum(str) {
@@ -48,10 +62,15 @@ class UserSettings extends React.Component {
     return parseInt(noNum);
   }
 
+  backAction(){ 
+    NavigationActions.back({
+    key: 'Init-id-1513496578960-0'
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
-      <ScrollView>
         {/* <View
           style={{
             position: 'absolute',
@@ -60,14 +79,18 @@ class UserSettings extends React.Component {
             width: '100%',
             height: '100%'
           }}
-        >
+          >
           <Image
-            style={{ flex: 1, resizeMode: 'stretch' }}
-            source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
+          style={{ flex: 1, resizeMode: 'stretch' }}
+          source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
           />
         </View> */}
-        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
-          
+        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={-50}>
+        <ScrollView>
+          <Image
+            style={styles.image}
+            source={{ uri: this.state.image_url }}
+          />
           <Text style={styles.formText}>Email</Text>
           <TextInput
             onChangeText={(val) => this.setState({ email: val })}
@@ -131,23 +154,42 @@ class UserSettings extends React.Component {
           <Text style={styles.formText}>Age</Text>
           <TextInput
             onChangeText={(val) => this.setState({ age: this.removeNonNum(val) })}
-            onSubmitEditing={() => this.props.update(this.state)}
+            onSubmitEditing={() => this.imageInput.focus()}
             value={this.state.age.toString()}
             placeholder="Age"
             placeholderTextColor="#4C4C50"
             keyboardType="numeric"
-            returnKeyType="done"
+            returnKeyType="next"
             autoCapitalize="none"
             autoCorrect={false}
             ref={(input) => this.ageInput = input}
+            style={styles.input} />
+          <Text style={styles.formText}>Image Url</Text>
+          <TextInput
+            onChangeText={(val) => this.setState({ image_url: val })}
+            value={this.state.image_url}
+            placeholder="Image Url"
+            onSubmitEditing={() => this.props.update(this.state)}
+            placeholderTextColor="#4C4C50"
+            returnKeyType="done"
+            autoCapitalize="none"
+            autoCorrect={false}
+            ref={(input) => this.imageInput = input}
             style={styles.input} />
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => this.props.update(this.state)}>
             <Text style={styles.buttonText}>Update</Text>
           </TouchableOpacity>
-        </KeyboardAvoidingView>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => this.props.logout().then(() => {
+              this.props.navigation.navigate("Login");
+            })}>
+            <Text style={styles.buttonText}>Log Out</Text>
+          </TouchableOpacity>
       </ScrollView>
+        </KeyboardAvoidingView>
       </View>
     );
   }
@@ -158,6 +200,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     backgroundColor: "#210c56"
+  },
+  image: {
+    width: 150, 
+    height: 150, 
+    borderRadius: 150,
+    flex: 1,
+    alignSelf: "center",
+    padding: 40
   },
   form: {
     padding: 20,
