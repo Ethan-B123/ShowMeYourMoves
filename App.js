@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginPage from './frontend/components/login_page.js';
-import RootNavigator from './frontend/navigators/root_navigator';
+import SideBar from './frontend/components/navigators/root_navigator';
 import { Provider } from 'react-redux';
 import configureStore from './frontend/store/store';
+import NavBar from './frontend/components/navigators/navbar';
 
 export default class App extends React.Component {
   // renderScene(route, navigator) {
@@ -19,7 +20,7 @@ export default class App extends React.Component {
     let store = configureStore();
     return (
       <Provider store={store}>
-        <RootNavigator/>
+        <SideBar/>
       </Provider>
     );
   }

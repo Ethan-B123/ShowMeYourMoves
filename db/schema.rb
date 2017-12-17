@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171217045553) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fb_user_id"
+    t.string "google_user_id"
     t.string "game"
     t.string "skill_level"
     t.string "google_user_id"
