@@ -51,7 +51,6 @@ class UserSettings extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <ScrollView>
         {/* <View
           style={{
             position: 'absolute',
@@ -60,13 +59,14 @@ class UserSettings extends React.Component {
             width: '100%',
             height: '100%'
           }}
-        >
+          >
           <Image
-            style={{ flex: 1, resizeMode: 'stretch' }}
-            source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
+          style={{ flex: 1, resizeMode: 'stretch' }}
+          source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
           />
         </View> */}
-        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={70}>
+        <ScrollView>
+        <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={-150}>
           
           <Text style={styles.formText}>Email</Text>
           <TextInput

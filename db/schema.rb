@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216044459) do
+ActiveRecord::Schema.define(version: 20171217045553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20171216044459) do
     t.string "google_user_id"
     t.string "game"
     t.string "skill_level"
+    t.string "google_user_id"
+    t.string "image_url"
+    t.text "contact_info"
     t.index ["access_token"], name: "index_users_on_access_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
