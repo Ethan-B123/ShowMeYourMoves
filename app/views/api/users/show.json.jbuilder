@@ -7,4 +7,5 @@ json.extract! @user,
               :pronouns, 
               :age, 
               :game,
-              :image_url
+              :image_url,
+              :contact_info
