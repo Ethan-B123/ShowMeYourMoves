@@ -91,7 +91,7 @@ class UserSettings extends React.Component {
             style={styles.input} />
           <Text style={styles.formText}>Contact Info</Text>
           <TextInput
-            onChangeText={(val) => this.setState({ description: val })}
+            onChangeText={(val) => this.setState({ contact_info: val })}
             value={this.state.contact_info}
             placeholder="Contact Info"
             placeholderTextColor="#4C4C50"
