@@ -32,7 +32,20 @@ export default class SideBarContent extends React.Component {
             )
           })}
         </ScrollView>
-        <View style={{borderTopWidth: 1, borderTopColor: "#FFF"}}>
+        <Text style={styles.title}>Nearby Events</Text>
+        <ScrollView>
+          {this.props.nearbyEvents.map(event => {
+            return (
+              <TouchableOpacity key={event.id} style={styles.item} onPress={this.navigateToScreen('EventDetail', event.id)}>
+                <Image style={styles.image} source={{uri: event.details.photo}}/>
+                <Text style={styles.text}>
+                  {event.event_name}
+                </Text>
+              </TouchableOpacity>
+            )
+          })}
+        </ScrollView>
+        <View style={{paddingTop: 15, borderTopWidth: 1, borderTopColor: "#FFF"}}>
           <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>
             <Image style={styles.image} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513542359/235861_xaifbg.png"}}/>
             <Text style={styles.text}>Activity Map</Text>
@@ -49,7 +62,7 @@ export default class SideBarContent extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal: 20,
     flex: 1,
     justifyContent: "space-between"
   },
@@ -59,9 +72,9 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#FFF",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginBottom: 15
+    marginVertical: 15
   },
   image: {
     height: 36,
@@ -70,7 +83,7 @@ const styles = StyleSheet.create({
     borderRadius: 18
   },
   item: {
-    marginTop: 22,
+    marginBottom: 20,
     flexDirection: "row",
     alignItems: "center"
   }

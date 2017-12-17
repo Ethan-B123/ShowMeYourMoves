@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView } from 'react-native';
+import BackButton from '../back_button';
 
 class EventDetail extends Component {
   render() {
@@ -15,6 +16,7 @@ class EventDetail extends Component {
         <View
           style={headerBox}
         >
+          <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{event.event_name}</Text>
           <Text style={subText}>{event.game}</Text>
           <Text style={subText}>{event.skill_level}</Text>

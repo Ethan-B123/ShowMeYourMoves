@@ -69,5 +69,6 @@ NearbyEvent.create(
   description: "This is a description",
   current_players: 2,
   max_players: 8,
-  current_setup: "We have 2 setups and 8 GC controllers"
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513545992/image-82907c1308b0a5d6d7936f3819bf1ef4_vepo6y.png"
 )
