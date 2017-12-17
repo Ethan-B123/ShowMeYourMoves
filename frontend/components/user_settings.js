@@ -18,19 +18,6 @@ class UserSettings extends React.Component {
   constructor(props) {
     super(props);
 
-    //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
-    // this.state = {
-    //   display_name: "IntermediateSteve",
-    //   email: "steveo@gmail.com",
-    //   description: "This is a description",
-    //   game: "Melee",
-    //   main: "Falco",
-    //   pronouns: "he/him/his",
-    //   age: 41,
-    //   image_url: "http://res.cloudinary.com/lara-cloud1/image/upload/v1513485247/Abate-293x300_kunln4.png"
-    // };
-    //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
-
     let age;
 
     if(!props.age) {
@@ -48,7 +35,8 @@ class UserSettings extends React.Component {
       pronouns: props.pronouns,
       age: age,
       image_url: props.image_url,
-      id: props.id
+      id: props.id,
+      contact_info: props.contact_info
     };
     this.removeNonNum = this.removeNonNum.bind(this);
     this.backAction = this.backAction.bind(this);
@@ -71,22 +59,8 @@ class UserSettings extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          }}
-          >
-          <Image
-          style={{ flex: 1, resizeMode: 'stretch' }}
-          source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
-          />
-        </View> */}
         <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={-50}>
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
           <Image
             style={styles.image}
             source={{ uri: this.state.image_url }}
@@ -112,8 +86,20 @@ class UserSettings extends React.Component {
             returnKeyType="next"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.descriptionInput.focus()}
+            onSubmitEditing={() => this.contactInfoInput.focus()}
             ref={(input) => this.displayNameInput = input}
+            style={styles.input} />
+          <Text style={styles.formText}>Contact Info</Text>
+          <TextInput
+            onChangeText={(val) => this.setState({ description: val })}
+            value={this.state.contact_info}
+            placeholder="Contact Info"
+            placeholderTextColor="#4C4C50"
+            returnKeyType="next"
+            autoCapitalize="none"
+            autoCorrect={false}
+            onSubmitEditing={() => this.descriptionInput.focus()}
+            ref={(input) => this.contactInfoInput = input}
             style={styles.input} />
           <Text style={styles.formText}>About Me</Text>
           <TextInput
@@ -188,7 +174,7 @@ class UserSettings extends React.Component {
             })}>
             <Text style={styles.buttonText}>Log Out</Text>
           </TouchableOpacity>
-      </ScrollView>
+        </ScrollView>
         </KeyboardAvoidingView>
       </View>
     );

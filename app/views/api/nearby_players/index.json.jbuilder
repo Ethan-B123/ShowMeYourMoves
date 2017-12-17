@@ -14,6 +14,8 @@
       json.age player.user.age
       json.pronouns player.user.pronouns
       json.main player.user.main
+      json.image_url player.user.image_url
+      json.contact_info player.user.contact_info
     end
   end
 end

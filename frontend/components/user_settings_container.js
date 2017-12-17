@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
   pronouns: state.session.currentUser.pronouns,
   age: state.session.currentUser.age,
   id: state.session.currentUser.id,
-  image_url: state.session.currentUser.image_url
+  image_url: state.session.currentUser.image_url,
+  contact_info: state.session.currentUser.contact_info
 });
 
 const mapDispatchToProps = dispatch => ({
