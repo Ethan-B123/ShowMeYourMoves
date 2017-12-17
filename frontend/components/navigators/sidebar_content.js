@@ -17,7 +17,7 @@ export default class SideBarContent extends React.Component {
   render() {
     console.log(this.props, 'rendering');
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.title}>Nearby Players</Text>
         {this.props.nearbyPlayers.map(player => {
           return (
@@ -32,13 +32,18 @@ export default class SideBarContent extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 20
+  },
   name: {
     color: "#FFF",
-    fontSize: 18,
-    marginVertical: 5
+    fontSize: 22,
+    marginBottom: 20
   },
   title: {
     color: "#FFF",
-    fontSize: 24
+    fontSize: 30,
+    marginBottom: 20,
+    fontWeight: 'bold'
   }
 })
