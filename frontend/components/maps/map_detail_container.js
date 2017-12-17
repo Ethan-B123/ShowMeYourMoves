@@ -4,7 +4,7 @@ import MapDetailBottom from "./map_detail_bottom";
 const mapStateToProps = ({ entities }) => {
   return ({
     nearbyEvents: entities.nearby_events,
-    nearbyPlayers: entities.players
+    nearbyPlayers: entities.nearby_players
   })
 }
 
