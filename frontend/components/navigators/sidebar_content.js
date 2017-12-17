@@ -39,7 +39,9 @@ export default class SideBarContent extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
+    padding: 20,
+    flex: 1,
+    justifyContent: "space-between"
   },
   item: {
     color: "#FFF",
