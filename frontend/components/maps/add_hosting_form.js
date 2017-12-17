@@ -37,12 +37,17 @@ class AddHostingForm extends React.Component {
   }
 
   submitEvent() {
+    const { postEvent, navigation } = this.props;
+
     navigator.geolocation.getCurrentPosition((location) => {
       this.setState(
         {
           lat: location.coords.latitude,
           lng: location.coords.longitude
-        }, () => this.props.postEvent(this.state)
+        }, () => {
+          navigation.navigate("ActivityMap")
+          postEvent(this.state)
+        }
       );
     });
   }
