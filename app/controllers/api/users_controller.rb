@@ -39,7 +39,9 @@ class Api::UsersController < ApplicationController
       :description, 
       :main, 
       :pronouns, 
-      :age
+      :age,
+      :game,
+      :image_url
     )
   end
 end

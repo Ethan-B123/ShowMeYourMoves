@@ -2,7 +2,16 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session';
 import merge from 'lodash/merge';
 
 const _nullSession = {
-  currentUser: null
+  currentUser: {
+    display_name: '',
+    email: '',
+    description: '',
+    main: '',
+    game: '',
+    pronouns: '',
+    age: '',
+    id: ''
+  }
 };
 
 const sessionReducer = (state = _nullSession, action) => {
