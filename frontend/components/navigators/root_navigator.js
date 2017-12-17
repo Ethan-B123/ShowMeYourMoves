@@ -7,16 +7,7 @@ import RegularSignupPageContainer from '../regular_signup_container';
 import MapShowPage from "../maps/map_show_container";
 import UserDetail from "../maps/user_detail"
 import MapActionNavigator from "../maps/map_action_navigator";
-
-const HamburgerMenu = (
-  <View>
-    <TouchableOpacity>
-      <Text>
-        hamburger
-      </Text>
-    </TouchableOpacity>
-  </View>
-)
+import HamburgerMenu from "../hamburger_menu";
 
 const MainAppStack = StackNavigator({
   UserDetail: {
@@ -40,7 +31,7 @@ const MainAppStack = StackNavigator({
 },
 {
   initialRouteName: "ActivityMap",
-  navigationOptions: {
+  navigationOptions: ({ navigation }) => ({
     headerStyle: {
       backgroundColor: "#27033E"
     },
@@ -49,12 +40,13 @@ const MainAppStack = StackNavigator({
       fontSize: 24
     },
     headerBackTitle: null,
-    headerTintColor: "#FFF"
-  }
+    headerTintColor: "#FFF",
+    headerLeft: <HamburgerMenu navigation={navigation}/>
+  })
 })
 
 const SideBar = DrawerNavigator({
-  Stack: { screen: MainAppStack }
+  ActivityMap: { screen: MainAppStack }
 })
 
 const SignUpStack = StackNavigator({
