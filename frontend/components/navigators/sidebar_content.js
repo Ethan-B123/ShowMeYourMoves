@@ -8,9 +8,10 @@ export default class SideBarContent extends React.Component {
     console.log(props, 'sidebar props');
   }
 
-  navigateToScreen = (route) => () => {
+  navigateToScreen = (route, playerId) => () => {
     const navigateAction = NavigationActions.navigate({
-      routeName: route
+      routeName: route,
+      params: {id: playerId}
     });
     this.props.navigation.dispatch(navigateAction);
   }
@@ -22,7 +23,7 @@ export default class SideBarContent extends React.Component {
         <ScrollView>
           {this.props.nearbyPlayers.map(player => {
             return (
-              <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail')}>
+              <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
                 {player.display_name}
               </Text>
             )
