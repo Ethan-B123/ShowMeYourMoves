@@ -6,6 +6,14 @@ const receiveNearbyPlayers = nearbyPlayers => ({
   nearbyPlayers
 });
 
+export const postPlayer = location => dispatch => (
+  NearbyUtil.postPlayer(location).then(response => {
+    return (
+      dispatch(receiveNearbyPlayers(response))
+    )
+  })
+);
+
 export const fetchPlayers = location => dispatch => (
   NearbyUtil.getNearbyPlayers(location).then(response => {
     return (
