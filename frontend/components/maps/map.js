@@ -117,7 +117,7 @@ class Map extends Component {
         {nearbyEvents.map(
           ({location, id}) => this.makeMapIcon(location, id, "event")
         )}
-      </ MapView>
+      </MapView>
     );
   }
 }
