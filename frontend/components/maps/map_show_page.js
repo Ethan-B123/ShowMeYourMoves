@@ -21,13 +21,17 @@ class MapShowPage extends Component {
   }
 
   openDetail(detailId, type) {
-    return () => (
+    return (e) => {
       this.setState({ detailOpen: true, detailType: type, detailId })
-    );
+    };
   }
 
   closeDetail() {
-    return () => this.setState({ detailOpen: false });
+    return (e) => {
+      if(e.nativeEvent.action === undefined) {
+        this.setState({ detailOpen: false });
+      }
+    }
   }
 
   searchArea() {
@@ -39,7 +43,7 @@ class MapShowPage extends Component {
   }
 
   render() {
-
+    console.log(this.state.detailOpen);
     return(
       <View
         style={styles.container}

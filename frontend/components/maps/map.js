@@ -2,22 +2,16 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Image } from 'react-native';
 import MapView from "react-native-maps";
+// import { MapView } from "expo";
 import MapIcon from "./map_icon";
 
 class Map extends Component {
 
   constructor(props) {
     super(props);
-    this.state = this.getInitialState();
-  }
-
-  componentDidMount() {
-    this.setState({
-      // playerIconDefaultSrc: require("./../../../assets/map_icons/person_icon_purple.png"),
-      // playerIconHighlightedSrc: require("./../../../assets/map_icons/person_icon_highlighted.png"),
-      // houseIconDefaultSrc: require("./../../../assets/map_icons/house_icon_green.png"),
-      // houseIconHighlightedSrc: require("./../../../assets/map_icons/house_icon_highlighted.png")
-    })
+    this.state = {
+      calledMapReady: false
+    };
   }
 
   getInitialState() {
@@ -27,9 +21,7 @@ class Map extends Component {
         longitude: -122.40135179999999,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      },
-      selectedIcon: "",
-      timeout: undefined
+      }
     };
   }
 
@@ -47,14 +39,14 @@ class Map extends Component {
       region.longitude = coordinate.longitude;
       this.mapView.animateToCoordinate(coordinate, 500);
       this.setState({ region, selectedIcon: id + type });
-      doOpenDetail();
+      doOpenDetail(e);
     }
   }
 
   makeCloseDetail() {
     const doCloseDetail = this.props.closeDetail();
-    return () => {
-      doCloseDetail();
+    return (e) => {
+      doCloseDetail(e);
       this.setState({ selectedIcon: "" })
     }
   }
@@ -97,6 +89,15 @@ class Map extends Component {
     )
   }
 
+  updateMapOnce() {
+    if (!this.state.calledMapReady) {
+      this.setState({
+        region: this.getInitialState().region,
+        calledMapReady: true
+      })
+    }
+  }
+
   render() {
     const { region } = this.state;
     const { nearbyPlayers, nearbyEvents } = this.props;
@@ -105,6 +106,8 @@ class Map extends Component {
       <MapView
         ref={(mapView) => this.mapView = mapView}
         style={styles.map}
+        onMapReady={this.updateMapOnce.bind(this)}
+        moveOnMarkerPress={false}
         region={region}
         onPress={this.makeCloseDetail()}
         onRegionChange={this.onRegionChange.bind(this)}>
