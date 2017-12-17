@@ -30,7 +30,7 @@ class LoginPage extends React.Component {
           `Hi ${jResponse.given_name}!`,
         );
 
-        const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+        const navigateCB = () => this.props.navigation.navigate('Main');
         const registerCB = () => this.props.register(this.state, navigateCB);
 
         this.setState({
@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
         `Hi ${jResponse.name}!`,
       );
 
-      const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+      const navigateCB = () => this.props.navigation.navigate('Main');
       const registerCB = () => this.props.register(this.state, navigateCB);
 
       this.setState({

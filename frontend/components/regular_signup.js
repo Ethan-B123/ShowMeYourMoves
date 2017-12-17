@@ -17,7 +17,7 @@ class RegularSignupPage extends React.Component {
   }
 
   handleSubmit(e) {
-    const navigateCB = () => this.props.navigation.navigate('ActivityMap');
+    const navigateCB = () => this.props.navigation.navigate('Main');
     this.props.register(this.state, navigateCB);
   }
 
