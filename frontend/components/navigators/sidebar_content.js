@@ -32,11 +32,13 @@ export default class SideBarContent extends React.Component {
             )
           })}
         </ScrollView>
-        <View>
+        <View style={{borderTopWidth: 1, borderTopColor: "#FFF"}}>
           <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>
+            <Image style={styles.image} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513542359/235861_xaifbg.png"}}/>
             <Text style={styles.text}>Activity Map</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('UserSettings')}>
+            <Image style={styles.image} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513542490/white-cog-hi_lv7eyy.png"}}/>
             <Text style={styles.text}>User Settings</Text>
           </TouchableOpacity>
         </View>
@@ -58,7 +60,8 @@ const styles = StyleSheet.create({
   title: {
     color: "#FFF",
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 15
   },
   image: {
     height: 36,
@@ -67,7 +70,8 @@ const styles = StyleSheet.create({
     borderRadius: 18
   },
   item: {
-    marginTop: 30,
-    flexDirection: "row"
+    marginTop: 22,
+    flexDirection: "row",
+    alignItems: "center"
   }
 })
