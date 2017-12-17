@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, View, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 export default class SideBarContent extends React.Component {
@@ -23,15 +23,22 @@ export default class SideBarContent extends React.Component {
         <ScrollView>
           {this.props.nearbyPlayers.map(player => {
             return (
-              <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
-                {player.display_name}
-              </Text>
+              <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
+                <Image style={styles.image} source={{uri: player.details.image_url}}/>
+                <Text key={player.id} style={styles.text}>
+                  {player.display_name}
+                </Text>
+              </TouchableOpacity>
             )
           })}
         </ScrollView>
         <View>
-          <Text style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>Activity Map</Text>
-          <Text style={styles.item} onPress={this.navigateToScreen('UserSettings')}>User Settings</Text>
+          <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>
+            <Text style={styles.text}>Activity Map</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('UserSettings')}>
+            <Text style={styles.text}>User Settings</Text>
+          </TouchableOpacity>
         </View>
       </View>
     )
@@ -44,15 +51,24 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between"
   },
-  item: {
+  text: {
     color: "#FFF",
     fontSize: 22,
-    marginBottom: 20
   },
   title: {
     color: "#FFF",
     fontSize: 30,
-    marginBottom: 20,
+    marginBottom: 30,
     fontWeight: 'bold'
+  },
+  image: {
+    height: 36,
+    width: 36,
+    marginRight: 15,
+    borderRadius: 18
+  },
+  item: {
+    marginBottom: 30,
+    flexDirection: "row"
   }
 })
