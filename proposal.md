@@ -20,7 +20,7 @@ Our app consists of two key features:
 - [ ] An activity map that shows other Smash Players and Hosts around the user
 - [ ] A 'More Info' page for both Smash Players and Hosts
 - [ ] A message button that opens up a chat window
-- [ ] Login with FaceBook, Google, and regular login
+- [x] Login with FaceBook, Google, and regular login
 - [ ] A sidebar that shows all of the user's previous chats
 - [ ] User profile settings allows user to choose if they're a Host or just a Smash Player
 
@@ -153,7 +153,7 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
   - Routes
   - Setup PostgreSQL
   - Run rails migrations
-- [ ] Get login and signup forms functioning (BW)
+- [x] Get login and signup forms functioning (BW)
   - FaceBook login
   - Google login
   - Regular login
@@ -169,7 +169,7 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
     - 'More Info' button (live link)
     - 'Message' button (doesn't do anything yet. dead link for now)
     - Skill level and main Smash game info
-- [ ] Finish building Rails backend and smooth out login/signup bugs (BW)
+- [x] Finish building Rails backend and smooth out login/signup bugs (BW)
 - [ ] Build app header component (BW)
   - Header text
   - Hamburger menu
