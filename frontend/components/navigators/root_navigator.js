@@ -46,7 +46,12 @@ const MainAppStack = StackNavigator({
 })
 
 const SideBar = DrawerNavigator({
-  ActivityMap: { screen: MainAppStack }
+  ActivityMap: {
+    screen: MainAppStack,
+    navigationOptions: {
+      title: "Activity Map"
+    }
+  }
 },
 {
   initialRouteName: "ActivityMap",
