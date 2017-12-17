@@ -15,7 +15,8 @@ a = User.create(
   main: "Green Falco",
   pronouns: "he/him/his",
   age: 41,
-  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png"
+  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png",
+  contact_info: "(555) 321 9876"
 )
 b = User.create(
   email: "joe@gmail.com",
@@ -27,7 +28,8 @@ b = User.create(
   main: "Falco",
   pronouns: "he/him/his",
   age: 24,
-  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png"
+  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png",
+  contact_info: "Snapchat: SmashJoe93"
 )
 c = User.create(
   email: "sally@gmail.com",
@@ -39,7 +41,8 @@ c = User.create(
   main: "Fox",
   pronouns: "she/her/hers",
   age: 23,
-  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png"
+  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png",
+  contact_info: "(555) 567 1234"
 )
 d = User.create(
   email: "brawl4life@gmail.com",
@@ -51,7 +54,8 @@ d = User.create(
   main: "Meta Knight",
   pronouns: "he/him/his",
   age: 30,
-  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png"
+  image_url: "https://res.cloudinary.com/dezmnl5mf/image/upload/v1512006900/dummy_profile_image_m7vtxo.png",
+  contact_info: "AIM: brawl4life"
 )
 NearbyPlayer.create(user_id: b.id, lat: 37.774929, lng: -122.419416)
 NearbyPlayer.create(user_id: c.id, lat: 37.774671, lng: -122.411900)
