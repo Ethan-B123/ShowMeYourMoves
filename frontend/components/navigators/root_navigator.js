@@ -5,7 +5,8 @@ import LoginPageContainer from '../login_page_container';
 import RegularLoginPageContainer from '../regular_login_container';
 import RegularSignupPageContainer from '../regular_signup_container';
 import MapShowPage from "../maps/map_show_container";
-import UserDetail from "../maps/user_detail"
+import UserDetail from "../maps/user_detail_container";
+import EventDetail from "../maps/event_detail_container";
 import MapActionNavigator from "../maps/map_action_navigator";
 import HamburgerMenu from "../hamburger_menu";
 
@@ -14,6 +15,12 @@ const MainAppStack = StackNavigator({
     screen: UserDetail,
     navigationOptions: {
       headerTitle: 'UserDetail',
+    },
+  },
+  EventDetail: {
+    screen: EventDetail,
+    navigationOptions: {
+      headerTitle: 'EventDetail',
     },
   },
   MapActionNavigator: {

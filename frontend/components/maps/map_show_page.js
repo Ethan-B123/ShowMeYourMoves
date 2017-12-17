@@ -12,7 +12,7 @@ class MapShowPage extends Component {
     this.state = {
       detailOpen: false,
       detailId: 0,
-      detailType: "player"
+      detailType: ""
     };
   }
 
@@ -60,6 +60,7 @@ class MapShowPage extends Component {
         }>
           <MapDetailBottom
             detailId={this.state.detailId}
+            type={this.state.detailType}
             navigation={this.props.navigation}
           />
         </View>
