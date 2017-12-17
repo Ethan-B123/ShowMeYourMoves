@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import BackButton from '../back_button';
 
 class UserDetail extends Component {
   render() {
@@ -16,9 +17,7 @@ class UserDetail extends Component {
         <View
           style={headerBox}
         >
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{position: "absolute", top: 8, left: 20, width: 40}}>
-            <Ionicons name="ios-arrow-back" color="#27033E" size={50}/>
-          </TouchableOpacity>
+          <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{player.display_name}</Text>
           <Text style={subText}>{player.game}</Text>
           <Text style={subText}>{player.skill_level}</Text>
