@@ -9,31 +9,22 @@ class EventDetail extends Component {
     const { id } = this.props.navigation.state.params;
     const event = this.props.nearbyEvents[id.toString()];
     const details = event.details
+    const dateString = new Date(details.date).toDateString();
+    const startTimeString = new Date(details.start_time).toLocaleTimeString();
+    const endTimeString = new Date(details.end_time).toLocaleTimeString();
     return (
       <ScrollView
         style={scrollView}
         contentContainerStyle={contentContainer}>
-        <View
-          style={headerBox}
-        >
+        <View style={headerBox}>
           <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{event.event_name}</Text>
           <Text style={subText}>{event.game}</Text>
           <Text style={subText}>{event.skill_level}</Text>
-
-          <TouchableHighlight
-            style={button}
-
-          >
-            <View>
-              <Text style={textWhite}>Send Message to Host</Text>
-            </View>
-          </TouchableHighlight>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Time</Text>
-          <Text style={subText}>{details.date}</Text>
-          <Text style={subText}>{details.start_time}</Text>
+          <Text style={subText}>{dateString}, {startTimeString} - {endTimeString}</Text>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Description</Text>
@@ -63,7 +54,7 @@ const styles = StyleSheet.create({
   headerBox: {
     alignSelf: "stretch",
     alignItems: "center",
-    marginBottom: 30
+    marginBottom: 25
   },
   headerText: {
     color: "#000",
@@ -80,13 +71,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#210c56",
   },
   infoBox: {
-    alignSelf: "stretch",
-    marginLeft: 20,
-    marginBottom: 5
+    marginBottom: 15
   },
   subHeader: {
     fontWeight: "bold",
-    marginBottom: 3,
+    marginBottom: 8,
     fontSize: 16
   },
   subText: {
@@ -94,7 +83,7 @@ const styles = StyleSheet.create({
     fontSize: 14
   },
   contentContainer: {
-    paddingVertical: 20
+    padding: 20
   },
   textWhite: {
     color: "#fff",
