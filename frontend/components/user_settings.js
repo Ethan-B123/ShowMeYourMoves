@@ -24,7 +24,8 @@ class UserSettings extends React.Component {
       game: "Melee",
       main: "Falco",
       pronouns: "he/him/his",
-      age: 41
+      age: 41,
+      image_url: "http://res.cloudinary.com/lara-cloud1/image/upload/v1513485247/Abate-293x300_kunln4.png"
     };
     //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
 
@@ -67,7 +68,10 @@ class UserSettings extends React.Component {
         </View> */}
         <ScrollView>
         <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={-150}>
-          
+          <Image
+            style={{ width: 50, height: 50 }}
+            source={{ uri: this.state.image_url }}
+          />
           <Text style={styles.formText}>Email</Text>
           <TextInput
             onChangeText={(val) => this.setState({ email: val })}
