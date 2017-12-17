@@ -1,22 +1,8 @@
+
 import React, { Component } from "react";
 import { View, StyleSheet, Image } from 'react-native';
 import MapView from "react-native-maps";
 import MapIcon from "./map_icon";
-// import { MapView } from "Expo";
-
-const DEMO_PLAYERS = [
-  { latitude: 37.798323, longitude: -122.4209297 },
-  { latitude: 37.7973596, longitude: -122.4119088 },
-  { latitude: 37.7929689, longitude: -122.4127009 },
-  { latitude: 37.7844654, longitude: -122.4091938 }
-]
-
-const DEMO_SESSIONS = [
-  { latitude: 37.798323 + 0.001, longitude: -122.4209297 },
-  { latitude: 37.7973596 + 0.001, longitude: -122.4119088 },
-  { latitude: 37.7929689 + 0.001, longitude: -122.4127009 },
-  { latitude: 37.7844654 + 0.001, longitude: -122.4091938 }
-]
 
 class Map extends Component {
 
@@ -27,8 +13,10 @@ class Map extends Component {
 
   componentDidMount() {
     this.setState({
-      playerIconDefaultSrc: require("./../../../assets/map_icons/person_icon_purple.png"),
-      playerIconHighlightedSrc: require("./../../../assets/map_icons/person_icon_highlighted.png")
+      // playerIconDefaultSrc: require("./../../../assets/map_icons/person_icon_purple.png"),
+      // playerIconHighlightedSrc: require("./../../../assets/map_icons/person_icon_highlighted.png"),
+      // houseIconDefaultSrc: require("./../../../assets/map_icons/house_icon_green.png"),
+      // houseIconHighlightedSrc: require("./../../../assets/map_icons/house_icon_highlighted.png")
     })
   }
 
@@ -40,9 +28,7 @@ class Map extends Component {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       },
-      players: DEMO_PLAYERS,
-      sessions: DEMO_SESSIONS,
-      selectedIcon: -1,
+      selectedIcon: "",
       timeout: undefined
     };
   }
@@ -51,48 +37,82 @@ class Map extends Component {
     this.setState({ region });
   }
 
-  openDetailFixClip(id) {
+  openDetailFixClip(id, type) {
     const { openDetail } = this.props;
-    const doOpenDetail = openDetail(id);
+    const doOpenDetail = openDetail(id, type);
     return (e) => {
       const coordinate = e.nativeEvent.coordinate;
       const region = Object.assign({}, this.state.region);
       region.latitude = coordinate.latitude;
       region.longitude = coordinate.longitude;
-      this.mapView.animateToCoordinate(coordinate, 3);
-      this.setState({ region });
-      doOpenDetail(id);
+      this.mapView.animateToCoordinate(coordinate, 500);
+      this.setState({ region, selectedIcon: id + type });
+      doOpenDetail();
     }
   }
 
-  makeMapIcon(latLng, id) {
-    const { playerIconDefaultSrc, playerIconHighlightedSrc } = this.state;
+  makeCloseDetail() {
+    const doCloseDetail = this.props.closeDetail();
+    return () => {
+      doCloseDetail();
+      this.setState({ selectedIcon: "" })
+    }
+  }
+
+  makeMapIcon(latLng, id, type) {
+    const {
+      playerIconDefaultSrc,
+      playerIconHighlightedSrc,
+      houseIconDefaultSrc,
+      houseIconHighlightedSrc
+    } = this.state;
     const { openDetail, closeDetail, detailIsOpen } = this.props;
-    const icon = id === this.state.selectedIcon // TODO: use user/event id
-      ? this.state.playerIconHighlightedSrc
-      : this.state.playerIconDefaultSrc;
+
+    let icon;
+
+    if (type === "player") {
+      if (this.state.selectedIcon === id + type) {
+        icon = {uri: "http://res.cloudinary.com/dhc8w148v/image/upload/v1513463328/person_icon_highlighted_e1bkad.png"}
+      } else {
+        icon = {uri: "http://res.cloudinary.com/dhc8w148v/image/upload/v1513463328/person_icon_purple_cyjmem.png"};
+      }
+    } else if (type === "event") {
+      if (this.state.selectedIcon === id + type) {
+        icon = {uri: "http://res.cloudinary.com/dhc8w148v/image/upload/v1513463328/house_icon_highlighted_aexz9k.png"}
+      } else {
+        icon = {uri: "http://res.cloudinary.com/dhc8w148v/image/upload/v1513463328/house_icon_green_mvmsn6.png"}
+      }
+    }
+
+    const newLatLong = {}
+    newLatLong.latitude = parseFloat(latLng.latitude)
+    newLatLong.longitude = parseFloat(latLng.longitude)
     return (
       <MapIcon
-        key={id}
-        latLng={latLng}
-        imgSrc={playerIconDefaultSrc}
-        openDetail={this.openDetailFixClip(id).bind(this)}
+        key={id + type}
+        latLng={newLatLong}
+        imgSrc={icon}
+        openDetail={this.openDetailFixClip(id, type).bind(this)}
       />
     )
   }
 
   render() {
     const { region } = this.state;
-    const { closeDetail } = this.props;
+    const { nearbyPlayers, nearbyEvents } = this.props;
+
     return (
       <MapView
         ref={(mapView) => this.mapView = mapView}
         style={styles.map}
         region={region}
-        onPress={closeDetail()}
+        onPress={this.makeCloseDetail()}
         onRegionChange={this.onRegionChange.bind(this)}>
-        {DEMO_PLAYERS.map(
-          (latLng, idx) => this.makeMapIcon(latLng, idx)
+        {nearbyPlayers.map(
+          ({location, id}) => this.makeMapIcon(location, id, "player")
+        )}
+        {nearbyEvents.map(
+          ({location, id}) => this.makeMapIcon(location, id, "event")
         )}
       </ MapView>
     );
