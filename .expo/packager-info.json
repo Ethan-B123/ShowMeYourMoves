@@ -1,5 +1,10 @@
 {
   "expoServerPort": 19000,
+  "packagerPort": 19005,
+  "packagerPid": 78747,
+  "expoServerNgrokUrl": "https://fv-a3c.foxmccloud.showmeyourmoves.exp.direct",
+  "packagerNgrokUrl": "https://packager.fv-a3c.foxmccloud.showmeyourmoves.exp.direct",
+  "ngrokPid": 78758
   "packagerPort": 19001,
   "packagerPid": 9989,
   "expoServerNgrokUrl": "https://hk-idn.brillanw.showmeyourmoves.exp.direct",
