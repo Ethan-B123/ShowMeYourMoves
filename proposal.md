@@ -170,15 +170,15 @@ Expectation is that with each thing done, CSS/styling will be 100% completed as 
     - 'Message' button (doesn't do anything yet. dead link for now)
     - Skill level and main Smash game info
 - [x] Finish building Rails backend and smooth out login/signup bugs (BW)
-- [ ] Build app header component (BW)
+- [x] Build app header component (BW)
   - Header text
   - Hamburger menu
   - Back button depending on current page
-- [ ] Start building side bar menu (BW)
+- [x] Start building side bar menu (BW)
   - list of previous chats (dead links for now)
   - link to User Settings (live link)
   - link to Activity Map (live link)
-- [ ] Finish building session Redux cycle (FL)
+- [x] Finish building session Redux cycle (FL)
 - [ ] Start building User Settings component (FL)
   - user settings form
   - image upload functionality
