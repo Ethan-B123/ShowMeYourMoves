@@ -1,13 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19005,
-  "packagerPid": 78747,
-  "expoServerNgrokUrl": "https://fv-a3c.foxmccloud.showmeyourmoves.exp.direct",
-  "packagerNgrokUrl": "https://packager.fv-a3c.foxmccloud.showmeyourmoves.exp.direct",
-  "ngrokPid": 78758
-  "packagerPort": 19001,
-  "packagerPid": 12200,
-  "expoServerNgrokUrl": "https://2j-sbq.brillanw.showmeyourmoves.exp.direct",
-  "packagerNgrokUrl": "https://packager.2j-sbq.brillanw.showmeyourmoves.exp.direct",
-  "ngrokPid": 12214
+  "expoServerPort": 19006,
+  "packagerPort": 19009,
+  "packagerPid": 80379,
+  "expoServerNgrokUrl": "https://2j-sbq.foxmccloud.showmeyourmoves.exp.direct",
+  "packagerNgrokUrl": "https://packager.2j-sbq.foxmccloud.showmeyourmoves.exp.direct",
+  "ngrokPid": 80390
 }

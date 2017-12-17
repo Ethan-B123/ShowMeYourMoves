@@ -102,7 +102,7 @@ const SignUpStack = StackNavigator({
   }
 },
 {
-  initialRouteName: "Main",
+  initialRouteName: "Login",
   headerMode: "none"
   // navigationOptions: {
   //   headerStyle: {

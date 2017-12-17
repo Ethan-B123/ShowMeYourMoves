@@ -46,3 +46,22 @@ export const getNearbyEvents = coords => {
     });
   });
 };
+
+
+export const postEvent = eventDetails => {
+  var data = new FormData();
+  data.append( "event", JSON.stringify( eventDetails ));
+  return new Promise((resolve, reject) => {
+    fetch(`${ip}/api/nearby_events`, {
+      method: 'POST',
+      body: data
+    }).then(async (fullRes) => {
+      resJ = await fullRes.json()
+      if (fullRes.status > 300) {
+        reject(resJ)
+      } else {
+        resolve(resJ)
+      }
+    });
+  });
+};

@@ -28,7 +28,9 @@ class MapShowPage extends Component {
 
   closeDetail() {
     return (e) => {
-      if(e.nativeEvent.action === undefined) {
+      if(e.nativeEvent.action === undefined ||
+        e.nativeEvent.action === "press"
+      ) {
         this.setState({ detailOpen: false });
       }
     }

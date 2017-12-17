@@ -31,14 +31,14 @@ class Api::UsersController < ApplicationController
   def user_params
     params[:user] = JSON.parse(params[:user])
     params.require(:user).permit(
-      :display_name, 
-      :email, 
-      :password, 
+      :display_name,
+      :email,
+      :password,
       :fb_user_id,
       :google_user_id,
-      :description, 
-      :main, 
-      :pronouns, 
+      :description,
+      :main,
+      :pronouns,
       :age,
       :game,
       :image_url

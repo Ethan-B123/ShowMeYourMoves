@@ -1,6 +1,6 @@
 import { TabNavigator } from 'react-navigation';
 import AddSeekingForm from './add_seeking_form';
-import AddHostingForm from './add_hosting_form';
+import AddHostingForm from './add_hosting_container';
 
 export default TabNavigator({
   AddSeekingForm: {
