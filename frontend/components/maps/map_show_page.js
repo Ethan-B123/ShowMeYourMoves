@@ -17,7 +17,6 @@ class MapShowPage extends Component {
   }
 
   componentDidMount() {
-    console.log('map show page mounted');
     this.searchArea();
   }
 

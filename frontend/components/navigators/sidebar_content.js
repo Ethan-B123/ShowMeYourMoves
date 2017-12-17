@@ -15,17 +15,17 @@ export default class SideBarContent extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'rendering');
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Nearby Players</Text>
         {this.props.nearbyPlayers.map(player => {
           return (
-            <Text key={player.id} style={styles.name} onPress={this.navigateToScreen('UserDetail')}>
+            <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail')}>
               {player.display_name}
             </Text>
           )
         })}
+        <Text style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>Activity Map</Text>
       </View>
     )
   }
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20
   },
-  name: {
+  item: {
     color: "#FFF",
     fontSize: 22,
     marginBottom: 20
