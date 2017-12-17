@@ -47,7 +47,7 @@ class Api::NearbyEventsController < ApplicationController
   private
 
   def selected_event
-    NearbyEvent.find(params[:id])
+    NearbyEvent.find_by(user_id: current_user.id)
   end
 
   def event_params
