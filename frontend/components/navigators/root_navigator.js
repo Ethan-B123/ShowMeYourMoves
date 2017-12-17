@@ -15,21 +15,20 @@ import UserSettingsContainer from '../user_settings_container';
 const MainAppStack = StackNavigator({
   UserDetail: {
     screen: UserDetail,
-    navigationOptions: {
-      headerTitle: 'UserDetail',
-    },
+    navigationOptions: ({navigation}) => ({
+      headerTitle: navigation.state.params.name,
+    }),
   },
   EventDetail: {
     screen: EventDetail,
-    navigationOptions: {
-      headerTitle: 'EventDetail',
-    },
+    navigationOptions: ({navigation}) => ({
+      headerTitle: navigation.state.params.name,
+    }),
   },
   MapActionNavigator: {
     screen: MapActionNavigator,
     navigationOptions: {
       headerTitle: 'Map Action Navigator',
-      // headerLeft backbutton
     },
   },
   ActivityMap: {

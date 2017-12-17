@@ -43,11 +43,11 @@ class MapDetailBottom extends Component {
   }
 
   redirect() {
-    const { navigation, detailId, type } = this.props;
+    const { navigation, detailId, type, nearbyEvents, nearbyPlayers } = this.props;
     if (type === "player") {
-      navigation.navigate('UserDetail', {id: detailId})
+      navigation.navigate('UserDetail', {id: detailId, name: nearbyPlayers[detailId.toString()].display_name})
     } else if (type === "event") {
-      navigation.navigate('EventDetail', {id: detailId})
+      navigation.navigate('EventDetail', {id: detailId, name: nearbyEvents[detailId.toString()].event_name})
     }
   }
 
