@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
 import LoginPageContainer from '../login_page_container';
 import RegularLoginPageContainer from '../regular_login_container';
 import RegularSignupPageContainer from '../regular_signup_container';
@@ -9,6 +9,7 @@ import UserDetail from "../maps/user_detail_container";
 import EventDetail from "../maps/event_detail_container";
 import MapActionNavigator from "../maps/map_action_navigator";
 import HamburgerMenu from "../hamburger_menu";
+import SideBarContentContainer from "./sidebar_content_container";
 
 const MainAppStack = StackNavigator({
   UserDetail: {
@@ -27,6 +28,7 @@ const MainAppStack = StackNavigator({
     screen: MapActionNavigator,
     navigationOptions: {
       headerTitle: 'Map Action Navigator',
+      // headerLeft backbutton
     },
   },
   ActivityMap: {
@@ -62,7 +64,11 @@ const SideBar = DrawerNavigator({
 },
 {
   initialRouteName: "ActivityMap",
-  drawerBackgroundColor: "#27033E"
+  drawerBackgroundColor: "#27033E",
+  contentComponent: SideBarContentContainer,
+  contentOptions: {
+    activeTintColor: "#FFF"
+  }
 })
 
 const SignUpStack = StackNavigator({
