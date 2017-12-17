@@ -5,6 +5,7 @@ import { NavigationActions } from 'react-navigation';
 export default class SideBarContent extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props, 'sidebar props');
   }
 
   navigateToScreen = (route) => () => {
@@ -18,14 +19,19 @@ export default class SideBarContent extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Nearby Players</Text>
-        {this.props.nearbyPlayers.map(player => {
-          return (
-            <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail')}>
-              {player.display_name}
-            </Text>
-          )
-        })}
-        <Text style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>Activity Map</Text>
+        <ScrollView>
+          {this.props.nearbyPlayers.map(player => {
+            return (
+              <Text key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail')}>
+                {player.display_name}
+              </Text>
+            )
+          })}
+        </ScrollView>
+        <View>
+          <Text style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>Activity Map</Text>
+          <Text style={styles.item} onPress={this.navigateToScreen('UserSettings')}>User Settings</Text>
+        </View>
       </View>
     )
   }
