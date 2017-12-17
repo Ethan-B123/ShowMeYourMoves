@@ -42,15 +42,18 @@ class MapDetailBottom extends Component {
     )
   }
 
-  render() {
-    const { navigation, nearbyPlayers, detailId, type } = this.props;
-    const { container, text, textWhite, button } = styles;
-    if (Object.keys(nearbyPlayers).length === 0) {
-      return (
-        <View></View>
-      )
+  redirect() {
+    const { navigation, detailId, type } = this.props;
+    if (type === "player") {
+      navigation.navigate('UserDetail', {id: detailId})
+    } else if (type === "event") {
+      navigation.navigate('EventDetail', {id: detailId})
     }
-    const user = nearbyPlayers[detailId.toString()]
+  }
+
+  render() {
+    const { navigation, detailId } = this.props;
+    const { container, text, textWhite, button } = styles;
     return(
       <View style={container}>
         {this.userDetails()}
@@ -58,7 +61,7 @@ class MapDetailBottom extends Component {
 
         <TouchableHighlight
           style={button}
-          onPress={() => navigation.navigate('UserDetail', {id: detailId})}
+          onPress={this.redirect.bind(this)}
         >
           <View>
             <Text style={textWhite}>More Info</Text>
