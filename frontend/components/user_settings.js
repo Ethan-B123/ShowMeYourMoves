@@ -164,7 +164,9 @@ class UserSettings extends React.Component {
             style={styles.input} />
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.update(this.state)}>
+            onPress={() => this.props.update(this.state).then(() => {
+              this.props.navigation.navigate("ActivityMap");
+            })}>
             <Text style={styles.buttonText}>Update</Text>
           </TouchableOpacity>
           <TouchableOpacity
