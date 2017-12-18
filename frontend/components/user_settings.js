@@ -164,7 +164,9 @@ class UserSettings extends React.Component {
             style={styles.input} />
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => this.props.update(this.state)}>
+            onPress={() => this.props.update(this.state).then(() => {
+              this.props.navigation.navigate("ActivityMap");
+            })}>
             <Text style={styles.buttonText}>Update</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -185,12 +187,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#210c56"
+    backgroundColor: "#27033E"
   },
   image: {
     width: 150, 
     height: 150, 
-    borderRadius: 150,
+    borderRadius: 75,
     flex: 1,
     alignSelf: "center",
     padding: 40
