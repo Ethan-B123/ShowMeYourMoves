@@ -13,8 +13,8 @@ class RegularLoginPage extends React.Component {
   }
 
   handleSubmit(e) {
-    const navigateCB = () => this.props.navigation.navigate('Main');
-    this.props.login(this.state, navigateCB);
+    const navigateToMap = () => this.props.navigation.navigate('Main');
+    this.props.login(this.state, navigateToMap);
   }
 
   componentWillUnmount() {

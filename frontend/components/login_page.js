@@ -30,14 +30,15 @@ class LoginPage extends React.Component {
           `Hi ${jResponse.given_name}!`,
         );
 
-        const navigateCB = () => this.props.navigation.navigate('Main');
-        const registerCB = () => this.props.register(this.state, navigateCB);
+        const navigateToMap = () => this.props.navigation.navigate('Main');
+        const navigateToUserSettings = () => this.props.navigation.navigate('UserSettings');
+        const register = () => this.props.register(this.state, navigateToUserSettings);
 
         this.setState({
           google_user_id: jResponse.id,
           fb_user_id: null
          },
-          () => this.props.login(this.state, navigateCB, registerCB)
+          () => this.props.login(this.state, navigateToMap, register)
         )
       } else {
         return {cancelled: true};
@@ -61,14 +62,15 @@ class LoginPage extends React.Component {
         `Hi ${jResponse.name}!`,
       );
 
-      const navigateCB = () => this.props.navigation.navigate('Main');
-      const registerCB = () => this.props.register(this.state, navigateCB);
+      const navigateToMap = () => this.props.navigation.navigate('Main');
+      const navigateToUserSettings = () => this.props.navigation.navigate('UserSettings');
+      const register = () => this.props.register(this.state, navigateToUserSettings);
 
       this.setState({
         fb_user_id: jResponse.id,
         google_user_id: null
        },
-        () => this.props.login(this.state, navigateCB, registerCB)
+        () => this.props.login(this.state, navigateToMap, register)
       )
     }
   }
