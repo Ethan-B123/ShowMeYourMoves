@@ -18,19 +18,6 @@ class UserSettings extends React.Component {
   constructor(props) {
     super(props);
 
-    //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
-    // this.state = {
-    //   display_name: "IntermediateSteve",
-    //   email: "steveo@gmail.com",
-    //   description: "This is a description",
-    //   game: "Melee",
-    //   main: "Falco",
-    //   pronouns: "he/him/his",
-    //   age: 41,
-    //   image_url: "http://res.cloudinary.com/lara-cloud1/image/upload/v1513485247/Abate-293x300_kunln4.png"
-    // };
-    //TESTING VALUES, REMOVE AND UNCOMMENT CODE BELOW WHEN DONE
-
     let age;
 
     if(!props.age) {
@@ -71,20 +58,6 @@ class UserSettings extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          }}
-          >
-          <Image
-          style={{ flex: 1, resizeMode: 'stretch' }}
-          source={{ uri: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1513193501/background_image_jopmxv.png' }}
-          />
-        </View> */}
         <KeyboardAvoidingView behavior="position" style={styles.form} keyboardVerticalOffset={-50}>
         <ScrollView>
           <Image
@@ -188,7 +161,7 @@ class UserSettings extends React.Component {
             })}>
             <Text style={styles.buttonText}>Log Out</Text>
           </TouchableOpacity>
-      </ScrollView>
+        </ScrollView>
         </KeyboardAvoidingView>
       </View>
     );
