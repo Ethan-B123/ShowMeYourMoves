@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   right: {
     flex: 1,
     alignSelf: "stretch",
-    backgroundColor: "#210c56",
+    backgroundColor: "#27033E",
     justifyContent: "center",
     alignItems: "center"
   },
