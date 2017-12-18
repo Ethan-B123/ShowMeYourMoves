@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   image: {
     width: 150, 
     height: 150, 
-    borderRadius: 150,
+    borderRadius: 75,
     flex: 1,
     alignSelf: "center",
     padding: 40
