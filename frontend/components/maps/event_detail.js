@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView } from 'react-native';
 import BackButton from '../back_button';
+import SubInfo from './sub_info';
 
 class EventDetail extends Component {
   render() {
     const { scrollView, infoBox, subHeader, headerBox, headerText,
-      subText, contentContainer, button, textWhite} = styles;
+      subText, subInfo, icon, contentContainer, button, textWhite} = styles;
     const { id } = this.props.navigation.state.params;
     const event = this.props.nearbyEvents[id.toString()];
     const details = event.details
@@ -19,8 +20,7 @@ class EventDetail extends Component {
         <View style={headerBox}>
           <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{event.event_name}</Text>
-          <Text style={subText}>{event.game}</Text>
-          <Text style={subText}>{event.skill_level}</Text>
+          <SubInfo game={event.game} skillLevel={event.skill_level}/>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Time</Text>
@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 14
   },
+  subInfo: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
   contentContainer: {
     padding: 20
   },
@@ -98,5 +102,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center"
+  },
+  icon: {
+    height: 15,
+    width: 15,
+    marginRight: 5
   }
 });

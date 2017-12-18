@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import BackButton from '../back_button';
+import SubInfo from './sub_info';
 
 class UserDetail extends Component {
   render() {
@@ -17,8 +18,7 @@ class UserDetail extends Component {
         <View style={headerBox}>
           <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{player.display_name}</Text>
-          <Text style={subText}>{player.game}</Text>
-          <Text style={subText}>{player.skill_level}</Text>
+          <SubInfo game={player.game} skillLevel={player.skill_level}/>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Profile Picture</Text>

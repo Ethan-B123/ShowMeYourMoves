@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
-
+import SubInfo from './sub_info';
 
 class MapDetailBottom extends Component {
 
   userDetails() {
     const { nearbyPlayers, detailId, type } = this.props;
-    const { textHeader, text, detailBox } = styles;
+    const { textHeader, text, detailBox, subInfo, icon } = styles;
     if (type !== "player") {
       return (<View></View>)
     }
@@ -17,15 +17,14 @@ class MapDetailBottom extends Component {
         style={detailBox}
       >
         <Text style={textHeader}>{user.display_name}</Text>
-        <Text style={text}>{user.game}</Text>
-        <Text style={text}>{user.skill_level}</Text>
+        <SubInfo game={user.game} skillLevel={user.skill_level}/>
       </View>
     )
   }
 
   eventDetails() {
     const { nearbyEvents, detailId, type } = this.props;
-    const { textHeader, text, detailBox } = styles;
+    const { textHeader, text, detailBox, subInfo, icon } = styles;
     if (type !== "event") {
       return (<View></View>)
     }
@@ -36,8 +35,7 @@ class MapDetailBottom extends Component {
         style={detailBox}
       >
         <Text style={textHeader}>{event.event_name}</Text>
-        <Text style={text}>{event.game}</Text>
-        <Text style={text}>{event.skill_level}</Text>
+        <SubInfo game={event.game} skillLevel={event.skill_level}/>
       </View>
     )
   }
@@ -89,10 +87,6 @@ const styles = StyleSheet.create({
     // backgroundColor: "pink",
     alignItems: "center"
   },
-  text: {
-    color: "#000",
-    fontSize: 14
-  },
   textHeader: {
     color: "#000",
     fontWeight: "bold",
@@ -113,5 +107,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center"
-  }
+  },
 });
