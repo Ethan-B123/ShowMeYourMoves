@@ -40,6 +40,10 @@ class UserDetail extends Component {
           <Text style={subHeader}>Main Character</Text>
           <Text style={subText}>{details.main}</Text>
         </View>
+        <View style={infoBox}>
+          <Text style={subHeader}>Contact Info</Text>
+          <Text style={subText}>{details.contact_info}</Text>
+        </View>
       </ScrollView>
     )
   }
