@@ -11,8 +11,8 @@
       json.longitude event.lng
     end
     json.set! :details do
-      json.start_time event.start_time.strftime("%l:%M%p %Z")
-      json.end_time event.end_time.strftime("%l:%M%p %Z")
+      json.start_time event.start_time.strftime("%l:%M%p")
+      json.end_time event.end_time.strftime("%l:%M%p")
       json.date event.date
       json.description event.description
       json.current_player_count event.current_players
