@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
     fontSize: 24,
-    paddingBottom: 6,
-    paddingTop: 3
+    paddingBottom: 7,
+    paddingTop: 7
   },
   textWhite: {
     color: "#fff",
