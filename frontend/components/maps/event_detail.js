@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#210c56",
+    backgroundColor: "#27033E",
   },
   infoBox: {
     marginBottom: 15
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     minHeight: 40,
     minWidth: 40,
     margin: 10,
-    backgroundColor: "#210c56",
+    backgroundColor: "#27033E",
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center"
