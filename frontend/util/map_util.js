@@ -1,4 +1,4 @@
-import ip from '../../ip_file';
+import ip from '../../heroku_ip_file';
 
 export const getNearbyPlayers = coords => {
   var data = new FormData();

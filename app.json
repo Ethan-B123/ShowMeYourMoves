@@ -10,14 +10,17 @@
     "primaryColor": "#cccccc",
     "icon": "./assets/icon.png",
     "facebookScheme": "fb1622588997802973",
-    "splash": {
-      "image": "./wireframe/OAuth-Login.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.860639452597-kv99q03ue2hukf63bri83h33j9fdtmio"
+        }
+      },
       "supportsTablet": true,
       "bundleIdentifier": "com.smash-academy.show-me-your-moves"
+    },
+    "android": {
+      "package": "com.smash-academy.show-me-your-moves"
     }
   }
 }

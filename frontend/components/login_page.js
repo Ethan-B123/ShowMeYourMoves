@@ -17,6 +17,7 @@ class LoginPage extends React.Component {
       const { type, accessToken } = await Expo.Google.logInAsync({
         androidClientId: "860639452597-qdkr4j4k22b9vv2r739r9ucgj2l0o8vd.apps.googleusercontent.com",
         iosClientId: "860639452597-rknoe79r58di8fe5qgos5jjnsoug5jne.apps.googleusercontent.com",
+        iosStandaloneAppClientId: "860639452597-kv99q03ue2hukf63bri83h33j9fdtmio.apps.googleusercontent.com",
         scopes: ['profile', 'email'],
       });
 
