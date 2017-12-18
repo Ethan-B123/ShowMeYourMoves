@@ -2,7 +2,7 @@
   "expoServerPort": 19000,
   "expoServerNgrokUrl": "https://t4-dbn.brillanw.showmeyourmoves.exp.direct",
   "packagerNgrokUrl": "https://packager.t4-dbn.brillanw.showmeyourmoves.exp.direct",
-  "ngrokPid": 25570,
+  "ngrokPid": 26547,
   "packagerPort": 19001,
-  "packagerPid": 25555
+  "packagerPid": 26532
 }

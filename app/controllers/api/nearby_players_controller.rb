@@ -7,15 +7,14 @@ class Api::NearbyPlayersController < ApplicationController
       @nearby_player.save
     end
     @nearby_players = NearbyPlayer.all_near_spot(
-      nearby_players_params, 200)
+      nearby_players_params, 20)
     render :index
   end
 
   def index
-    # params[:nearby_player] = JSON.parse(params[:nearby_player])
-    # @nearby_players = NearbyPlayer.all_near_spot(
-    #   nearby_players_params, 200)
-    @nearby_players = NearbyPlayer.all
+    params[:nearby_player] = JSON.parse(params[:nearby_player])
+    @nearby_players = NearbyPlayer.all_near_spot(
+      nearby_players_params, 20)
   end
 
   private
