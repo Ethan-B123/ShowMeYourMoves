@@ -10,11 +10,11 @@ class SubInfo extends Component {
     return (
       <View>
         <View style={styles.subInfo}>
-          <Image style={styles.icon} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513551529/smash_logo_rdc40q.png"}}/>
+          <Image style={styles.icon} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513554999/smash_logo_light_dxh1om.png"}}/>
           <Text style={styles.text}>{this.props.game}</Text>
         </View>
         <View style={styles.subInfo}>
-          <Image style={styles.icon} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513551528/small_shine_wm76yp.png"}}/>
+          <Image style={styles.icon} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513554999/small_shine_light_zghfrl.png"}}/>
           <Text style={styles.text}>{this.props.skillLevel}</Text>
         </View>
       </View>
@@ -25,7 +25,8 @@ class SubInfo extends Component {
 const styles = StyleSheet.create({
   subInfo: {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: 3
   },
   text: {
     color: "#000",
