@@ -9,6 +9,7 @@ class EventDetail extends Component {
       subText, subInfo, icon, contentContainer, button, textWhite} = styles;
     const { id } = this.props.navigation.state.params;
     const event = this.props.nearbyEvents[id.toString()];
+    const host = this.props.nearbyPlayers[event.host_id.toString()];
     const details = event.details
     const dateString = new Date(details.date).toDateString();
     const startTimeString = new Date(details.start_time).toLocaleTimeString();
@@ -39,7 +40,14 @@ class EventDetail extends Component {
           <Text style={subHeader}>Current Setup</Text>
           <Text style={subText}>{details.setup}</Text>
         </View>
-
+        <View style={infoBox}>
+          <Text style={subHeader}>Host Name</Text>
+          <Text style={subText}>{host.display_name}</Text>
+        </View>
+        <View style={infoBox}>
+          <Text style={subHeader}>Host Contact Info</Text>
+          <Text style={subText}>{host.details.contact_info}</Text>
+        </View>
       </ScrollView>
     )
   }
