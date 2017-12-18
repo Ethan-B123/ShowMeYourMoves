@@ -66,12 +66,13 @@ NearbyEvent.create(
   lat: 37.787075,
   lng: -122.403917,
   date: "Sat, 16 Dec 2017",
-  start_time: "21:05:02",
-  end_time: "21:35:02",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
   game: "Melee",
   skill_level: "All skill levels welcome!",
   description: "This is a description",
   current_players: 2,
   max_players: 8,
-  current_setup: "We have 2 setups and 8 GC controllers"
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513545992/image-82907c1308b0a5d6d7936f3819bf1ef4_vepo6y.png"
 )

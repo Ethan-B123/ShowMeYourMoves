@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView } from 'react-native';
+import { Image, View, StyleSheet, Text, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import BackButton from '../back_button';
+import SubInfo from './sub_info';
 
 class UserDetail extends Component {
   render() {
@@ -12,30 +15,30 @@ class UserDetail extends Component {
       <ScrollView
         style={scrollView}
         contentContainerStyle={contentContainer}>
-        <View
-          style={headerBox}
-        >
+        <View style={headerBox}>
+          <BackButton navigation={this.props.navigation}/>
           <Text style={headerText}>{player.display_name}</Text>
-          <Text style={subText}>{player.game}</Text>
-          <Text style={subText}>{player.skill_level}</Text>
-
-          <TouchableHighlight
-            style={button}
-          >
-            <View>
-              <Text style={textWhite}>Send Message</Text>
-            </View>
-          </TouchableHighlight>
+          <SubInfo game={player.game} skillLevel={player.skill_level}/>
+        </View>
+        <View style={infoBox}>
+          <Text style={subHeader}>Profile Picture</Text>
+          <Image style={{height: 200, width: 200, alignSelf: "center"}} source={{uri: details.image_url}}/>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>About Me</Text>
           <Text style={subText}>{details.description}</Text>
-          <Text style={subText}>Age: {details.age}</Text>
-          <Text style={subText}>Preferred Pronouns: {details.pronouns}</Text>
         </View>
         <View style={infoBox}>
-          <Text style={subHeader}>Character</Text>
-          <Text style={subText}>Main: {details.main}</Text>
+          <Text style={subHeader}>Age</Text>
+          <Text style={subText}>{details.age}</Text>
+        </View>
+        <View style={infoBox}>
+          <Text style={subHeader}>Preferred Prounouns</Text>
+          <Text style={subText}>{details.pronouns}</Text>
+        </View>
+        <View style={infoBox}>
+          <Text style={subHeader}>Main Character</Text>
+          <Text style={subText}>{details.main}</Text>
         </View>
       </ScrollView>
     )
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
   headerBox: {
     alignSelf: "stretch",
     alignItems: "center",
-    marginBottom: 30
+    marginBottom: 25
   },
   headerText: {
     color: "#000",
@@ -68,13 +71,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#210c56",
   },
   infoBox: {
-    alignSelf: "stretch",
-    marginLeft: 20,
-    marginBottom: 5
+    // alignSelf: "stretch",
+    marginBottom: 15
   },
   subHeader: {
     fontWeight: "bold",
-    marginBottom: 3,
+    marginBottom: 8,
     fontSize: 16
   },
   subText: {
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 14
   },
   contentContainer: {
-    paddingVertical: 20
+    padding: 20
   },
   textWhite: {
     color: "#fff",

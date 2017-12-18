@@ -8,10 +8,10 @@ export default class SideBarContent extends React.Component {
     console.log(props, 'sidebar props');
   }
 
-  navigateToScreen = (route, playerId) => () => {
+  navigateToScreen = (route, id, name) => () => {
     const navigateAction = NavigationActions.navigate({
       routeName: route,
-      params: {id: playerId}
+      params: {id: id, name: name}
     });
     this.props.navigation.dispatch(navigateAction);
   }
@@ -23,7 +23,7 @@ export default class SideBarContent extends React.Component {
         <ScrollView>
           {this.props.nearbyPlayers.map(player => {
             return (
-              <TouchableOpacity key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id)}>
+              <TouchableOpacity key={player.id} style={styles.item} onPress={this.navigateToScreen('UserDetail', player.id, player.display_name)}>
                 <Image style={styles.image} source={{uri: player.details.image_url}}/>
                 <Text style={styles.text}>
                   {player.display_name}
@@ -32,7 +32,20 @@ export default class SideBarContent extends React.Component {
             )
           })}
         </ScrollView>
-        <View style={{borderTopWidth: 1, borderTopColor: "#FFF"}}>
+        <Text style={styles.title}>Nearby Events</Text>
+        <ScrollView>
+          {this.props.nearbyEvents.map(event => {
+            return (
+              <TouchableOpacity key={event.id} style={styles.item} onPress={this.navigateToScreen('EventDetail', event.id, event.event_name)}>
+                <Image style={styles.image} source={{uri: event.details.photo}}/>
+                <Text style={styles.text}>
+                  {event.event_name}
+                </Text>
+              </TouchableOpacity>
+            )
+          })}
+        </ScrollView>
+        <View style={{paddingTop: 15, borderTopWidth: 1, borderTopColor: "#FFF"}}>
           <TouchableOpacity style={styles.item} onPress={this.navigateToScreen('ActivityMap')}>
             <Image style={styles.image} source={{uri: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513542359/235861_xaifbg.png"}}/>
             <Text style={styles.text}>Activity Map</Text>
@@ -49,19 +62,19 @@ export default class SideBarContent extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal: 20,
     flex: 1,
     justifyContent: "space-between"
   },
   text: {
     color: "#FFF",
-    fontSize: 22,
+    fontSize: 18,
   },
   title: {
     color: "#FFF",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginBottom: 15
+    marginVertical: 15
   },
   image: {
     height: 36,
@@ -70,7 +83,7 @@ const styles = StyleSheet.create({
     borderRadius: 18
   },
   item: {
-    marginTop: 22,
+    marginBottom: 20,
     flexDirection: "row",
     alignItems: "center"
   }

@@ -28,7 +28,7 @@ class MapIcon extends Component {
               style={styles.image}
             />
           </View>
-        </ MapView.Marker>
+        </MapView.Marker>
     );
   }
 }
