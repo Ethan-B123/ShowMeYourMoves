@@ -12,8 +12,8 @@
     end
     json.set! :details do
       json.start_time event.start_time
-      json.end_time event.end_time
-      json.date event.date
+      json.end_time event.end_time.strftime("%l:%M%p %Z")
+      json.date event.date.strftime("%l:%M%p %Z")
       json.description event.description
       json.current_player_count event.current_players
       json.max_player_count event.max_players
