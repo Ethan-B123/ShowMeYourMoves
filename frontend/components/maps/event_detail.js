@@ -9,7 +9,8 @@ class EventDetail extends Component {
       subText, subInfo, icon, contentContainer, button, textWhite} = styles;
     const { id } = this.props.navigation.state.params;
     const event = this.props.nearbyEvents[id.toString()];
-    const host = this.props.nearbyPlayers[event.host_id.toString()];
+    const host = this.props.nearbyPlayers[event.host_id.toString()] || this.props.currentUser;
+    const contactInfo = host.details ? host.details.contact_info : host.contact_info; //MUST REFACTOR LATER. this is for if the host is a current user or not because current user doesn't have details in their slice of state
     const details = event.details
     const dateString = new Date(details.date).toDateString();
     const startTimeString = new Date(details.start_time).toLocaleTimeString();
@@ -25,7 +26,7 @@ class EventDetail extends Component {
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Time</Text>
-          <Text style={subText}>{dateString}, {startTimeString} - {endTimeString}</Text>
+          <Text style={subText}>{dateString}, {details.start_time} - {details.end_time}</Text>
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Description</Text>
@@ -46,7 +47,7 @@ class EventDetail extends Component {
         </View>
         <View style={infoBox}>
           <Text style={subHeader}>Host Contact Info</Text>
-          <Text style={subText}>{host.details.contact_info}</Text>
+          <Text style={subText}>{contactInfo}</Text>
         </View>
       </ScrollView>
     )
