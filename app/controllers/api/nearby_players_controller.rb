@@ -12,9 +12,10 @@ class Api::NearbyPlayersController < ApplicationController
   end
 
   def index
-    params[:nearby_player] = JSON.parse(params[:nearby_player])
-    @nearby_players = NearbyPlayer.all_near_spot(
-      nearby_players_params, 200)
+    # params[:nearby_player] = JSON.parse(params[:nearby_player])
+    # @nearby_players = NearbyPlayer.all_near_spot(
+    #   nearby_players_params, 200)
+    @nearby_players = NearbyPlayer.all
   end
 
   private

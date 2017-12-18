@@ -20,7 +20,7 @@
       "bundleIdentifier": "com.smash-academy.show-me-your-moves"
     },
     "android": {
-      "package": "com.smash-academy.show-me-your-moves"
+      "package": "com.smashacademy.showmeyourmoves"
     }
   }
 }

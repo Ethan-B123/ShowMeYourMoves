@@ -41,7 +41,8 @@ class Api::NearbyEventsController < ApplicationController
   end
 
   def index
-    @events = NearbyEvent.all_near_spot(event_params, 200)
+    # @events = NearbyEvent.all_near_spot(event_params, 200)
+    @events = NearbyEvent.all
   end
 
   private
