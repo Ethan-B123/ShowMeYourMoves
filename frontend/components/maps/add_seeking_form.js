@@ -10,6 +10,11 @@ class AddSeekingForm extends Component {
     });
   }
 
+  goToHostForm() {
+    const { navigation } = this.props;
+    navigation.navigate('AddHostingForm')
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -17,6 +22,12 @@ class AddSeekingForm extends Component {
           style={styles.buttonContainer}
           onPress={this.submitEvent.bind(this)}>
           <Text style={styles.buttonText}>Put yourself on the map!</Text>
+        </TouchableOpacity>
+        <Text style={styles.orText}>or</Text>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={this.goToHostForm.bind(this)}>
+          <Text style={styles.buttonText}>Host an Event!</Text>
         </TouchableOpacity>
       </View>
     )
@@ -72,6 +83,11 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontSize: 20,
     textAlign: "left"
+  },
+  orText: {
+    color: "#FFF",
+    fontSize: 20,
+    alignSelf: "center"
   }
 });
 

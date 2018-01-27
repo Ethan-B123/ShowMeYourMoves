@@ -4,19 +4,6 @@ import AddSeekingForm from './add_seeking_container';
 import AddHostingForm from './add_hosting_container';
 import { View, StyleSheet } from "react-native"
 
-// export default class MapActionNavClass extends React.Component  {
-//   render() {
-//     debugger
-//
-//     return (
-//       <View>
-//         <MapActionNav
-//           stackNav={this.props.navigation}
-//           />
-//       </View>
-//     )
-//   }
-// }
 
 const styles = StyleSheet.create({
   container: {

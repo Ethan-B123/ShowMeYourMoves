@@ -7,7 +7,8 @@ import RegularSignupPageContainer from '../regular_signup_container';
 import MapShowPage from "../maps/map_show_container";
 import UserDetail from "../maps/user_detail_container";
 import EventDetail from "../maps/event_detail_container";
-import MapActionNavigator from "../maps/map_action_navigator";
+import AddSeekingForm from "../maps/add_seeking_container";
+import AddHostingForm from "../maps/add_hosting_container";
 import HamburgerMenu from "../hamburger_menu";
 import SideBarContentContainer from "./sidebar_content_container";
 import UserSettingsContainer from '../user_settings_container';
@@ -25,10 +26,16 @@ const MainAppStack = StackNavigator({
       headerTitle: navigation.state.params.name,
     }),
   },
-  MapActionNavigator: {
-    screen: MapActionNavigator,
+  AddSeekingForm: {
+    screen: AddSeekingForm,
     navigationOptions: {
-      headerTitle: 'Map Action Navigator',
+      headerTitle: 'Put Yourself on the Map',
+    },
+  },
+  AddHostingForm: {
+    screen: AddHostingForm,
+    navigationOptions: {
+      headerTitle: 'Host an Event',
     },
   },
   ActivityMap: {
