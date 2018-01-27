@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://t4-dbn.brillanw.showmeyourmoves.exp.direct",
-  "packagerNgrokUrl": "https://packager.t4-dbn.brillanw.showmeyourmoves.exp.direct",
-  "ngrokPid": 26547,
+  "expoServerNgrokUrl": "https://6c-cw5.foxmccloud.showmeyourmoves.exp.direct",
+  "packagerNgrokUrl": "https://packager.6c-cw5.foxmccloud.showmeyourmoves.exp.direct",
+  "ngrokPid": 8227,
   "packagerPort": 19001,
-  "packagerPid": 26532
+  "packagerPid": 8179
 }
