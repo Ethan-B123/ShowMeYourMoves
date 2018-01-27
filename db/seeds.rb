@@ -149,6 +149,203 @@ k = User.create(
   contact_info: "(132)-917-0927"
 )
 
+l = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "purplepeacock406",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/95.jpg",
+  contact_info: "(132)-917-0927"
+)
+m = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "whitelion678",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/35.jpg",
+  contact_info: "(132)-917-0927"
+)
+n = User.create(
+  email: "antonin.francois@example.com",
+  password: "password",
+  display_name: "browntiger406",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/42.jpg",
+  contact_info: "(615)-782-5421"
+)
+o = User.create(
+  email: "antonin.francois@example.com",
+  password: "password",
+  display_name: "greenswan575",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/79.jpg",
+  contact_info: "(615)-782-5421"
+)
+p = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "heavyswan496",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/69.jpg",
+  contact_info: "(132)-917-0927"
+)
+q = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "orangebird846",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/95.jpg",
+  contact_info: "(132)-917-0927"
+)
+r = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "redbird267",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/65.jpg",
+  contact_info: "(132)-917-0927"
+)
+s = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "blacksnake384",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/37.jpg",
+  contact_info: "(132)-917-0927"
+)
+t = User.create(
+  email: "antonin.francois@example.com",
+  password: "password",
+  display_name: "beautifulgorilla860",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/59.jpg",
+  contact_info: "(615)-782-5421"
+)
+u = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "heavysnake968",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/28.jpg",
+  contact_info: "(132)-917-0927"
+)
+
+v = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "smallelephant819",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/73.jpg",
+  contact_info: "(132)-917-0927"
+)
+w = User.create(
+  email: "antonin.francois@example.com",
+  password: "password",
+  display_name: "greenbird980",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/37.jpg",
+  contact_info: "(615)-782-5421"
+)
+x = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "ticklishmeercat101",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/3.jpg",
+  contact_info: "(132)-917-0927"
+)
+y = User.create(
+  email: "antonin.francois@example.com",
+  password: "password",
+  display_name: "organicmeercat272",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/47.jpg",
+  contact_info: "(615)-782-5421"
+)
+z = User.create(
+  email: "ella.taylor@example.com",
+  password: "password",
+  display_name: "heavydog159",
+  description: "This is a description",
+  game: "Melee",
+  skill_level: "Average",
+  main: "Fox",
+  pronouns: "she/her/hers",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/women/85.jpg",
+  contact_info: "(132)-917-0927"
+)
+
 
 NearbyPlayer.create(user_id: b.id, lat: 37.774929, lng: -122.419416)
 NearbyPlayer.create(user_id: c.id, lat: 37.774671, lng: -122.411900)
@@ -160,6 +357,25 @@ NearbyPlayer.create(user_id: h.id, lat: 37.790072, lng: -122.406170)
 NearbyPlayer.create(user_id: i.id, lat: 37.786429, lng: -122.412667)
 NearbyPlayer.create(user_id: j.id, lat: 37.803555, lng: -122.406493)
 NearbyPlayer.create(user_id: k.id, lat: 37.795506, lng: -122.396921)
+
+NearbyPlayer.create(user_id: l.id, lat: 37.799201, lng: -122.424685)
+NearbyPlayer.create(user_id: m.id, lat: 37.774057, lng: -122.431132)
+NearbyPlayer.create(user_id: n.id, lat: 37.757155, lng: -122.417283)
+NearbyPlayer.create(user_id: o.id, lat: 37.757549, lng: -122.409822)
+NearbyPlayer.create(user_id: p.id, lat: 37.762557, lng: -122.391025)
+NearbyPlayer.create(user_id: q.id, lat: 37.771958, lng: -122.389873)
+NearbyPlayer.create(user_id: r.id, lat: 37.735497, lng: -122.433664)
+NearbyPlayer.create(user_id: s.id, lat: 37.763530, lng: -122.478043)
+NearbyPlayer.create(user_id: t.id, lat: 37.717886, lng: -122.463992)
+NearbyPlayer.create(user_id: u.id, lat: 37.734974, lng: -122.427302)
+
+NearbyPlayer.create(user_id: v.id, lat: 37.752535, lng: -122.465178)
+NearbyPlayer.create(user_id: w.id, lat: 37.716336, lng: -122.481983)
+NearbyPlayer.create(user_id: x.id, lat: 37.780500, lng: -122.482697)
+NearbyPlayer.create(user_id: y.id, lat: 37.713661, lng: -122.415139)
+NearbyPlayer.create(user_id: z.id, lat: 37.716918, lng: -122.439894)
+
+
 
 NearbyEvent.create(
   event_name: "Pat's House",
