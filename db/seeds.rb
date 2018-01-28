@@ -113,7 +113,7 @@ i = User.create(
   email: "ethan.lawson@example.com",
   password: "password",
   display_name: "whiteladybug149",
-  description: "This is a description",
+  description: "Hi I've been playing Super Smash Brothers Melee for the Nintendo GameCube for the last 3 years.",
   game: "Melee",
   skill_level: "Average",
   main: "Fox",
@@ -150,7 +150,7 @@ k = User.create(
 )
 
 l = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exampl2e.com",
   password: "password",
   display_name: "purplepeacock406",
   description: "This is a description",
@@ -163,7 +163,7 @@ l = User.create(
   contact_info: "(132)-917-0927"
 )
 m = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@ex3ample.com",
   password: "password",
   display_name: "whitelion678",
   description: "This is a description",
@@ -176,7 +176,7 @@ m = User.create(
   contact_info: "(132)-917-0927"
 )
 n = User.create(
-  email: "antonin.francois@example.com",
+  email: "antonin.francois@exam5ple.com",
   password: "password",
   display_name: "browntiger406",
   description: "This is a description",
@@ -189,7 +189,7 @@ n = User.create(
   contact_info: "(615)-782-5421"
 )
 o = User.create(
-  email: "antonin.francois@example.com",
+  email: "antonin.francois@exa6mple.com",
   password: "password",
   display_name: "greenswan575",
   description: "This is a description",
@@ -202,7 +202,7 @@ o = User.create(
   contact_info: "(615)-782-5421"
 )
 p = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exam7ple.com",
   password: "password",
   display_name: "heavyswan496",
   description: "This is a description",
@@ -215,7 +215,7 @@ p = User.create(
   contact_info: "(132)-917-0927"
 )
 q = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exam8ple.com",
   password: "password",
   display_name: "orangebird846",
   description: "This is a description",
@@ -228,20 +228,20 @@ q = User.create(
   contact_info: "(132)-917-0927"
 )
 r = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exam9le.com",
   password: "password",
   display_name: "redbird267",
-  description: "This is a description",
+  description: "Hey guys! I just started playing Super Smash Bros, but I love it so far! Looking to play any Smash game with anyone",
   game: "Melee",
   skill_level: "Average",
   main: "Fox",
-  pronouns: "she/her/hers",
+  pronouns: "he/him/his",
   age: 21,
   image_url: "https://randomuser.me/api/portraits/men/65.jpg",
   contact_info: "(132)-917-0927"
 )
 s = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exampl0e.com",
   password: "password",
   display_name: "blacksnake384",
   description: "This is a description",
@@ -254,7 +254,7 @@ s = User.create(
   contact_info: "(132)-917-0927"
 )
 t = User.create(
-  email: "antonin.francois@example.com",
+  email: "antonin.francois@exawmple.com",
   password: "password",
   display_name: "beautifulgorilla860",
   description: "This is a description",
@@ -267,7 +267,7 @@ t = User.create(
   contact_info: "(615)-782-5421"
 )
 u = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@exameple.com",
   password: "password",
   display_name: "heavysnake968",
   description: "This is a description",
@@ -281,7 +281,7 @@ u = User.create(
 )
 
 v = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@examprle.com",
   password: "password",
   display_name: "smallelephant819",
   description: "This is a description",
@@ -294,7 +294,7 @@ v = User.create(
   contact_info: "(132)-917-0927"
 )
 w = User.create(
-  email: "antonin.francois@example.com",
+  email: "antonin.francois@extample.com",
   password: "password",
   display_name: "greenbird980",
   description: "This is a description",
@@ -307,7 +307,7 @@ w = User.create(
   contact_info: "(615)-782-5421"
 )
 x = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@examplye.com",
   password: "password",
   display_name: "ticklishmeercat101",
   description: "This is a description",
@@ -320,7 +320,7 @@ x = User.create(
   contact_info: "(132)-917-0927"
 )
 y = User.create(
-  email: "antonin.francois@example.com",
+  email: "antonin.francois@euxample.com",
   password: "password",
   display_name: "organicmeercat272",
   description: "This is a description",
@@ -333,7 +333,7 @@ y = User.create(
   contact_info: "(615)-782-5421"
 )
 z = User.create(
-  email: "ella.taylor@example.com",
+  email: "ella.taylor@examplie.com",
   password: "password",
   display_name: "heavydog159",
   description: "This is a description",
@@ -392,4 +392,106 @@ NearbyEvent.create(
   max_players: 8,
   current_setup: "We have 2 setups and 8 GC controllers",
   photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1513545992/image-82907c1308b0a5d6d7936f3819bf1ef4_vepo6y.png"
+)
+
+NearbyEvent.create(
+  event_name: "Super Smash Sundays",
+  user_id: b.id,
+  lat: 37.759972,
+  lng: -122.435307,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1517098601/SuperSmashSundays_wzktat.jpg"
+)
+
+NearbyEvent.create(
+  event_name: "Pitt Smash Bros",
+  user_id: c.id,
+  lat: 37.796571,
+  lng: -122.441988,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1517098601/PittSmash_ewzh3d.jpg"
+)
+
+NearbyEvent.create(
+  event_name: "King of the Springs",
+  user_id: d.id,
+  lat: 37.749111,
+  lng: -122.416035,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "http://res.cloudinary.com/lara-cloud1/image/upload/v1517098601/KingOfTheSprings_bdyfuo.png"
+)
+
+NearbyEvent.create(
+  event_name: "BEAST 7",
+  user_id: e.id,
+  lat: 37.739977,
+  lng: -122.492903,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1517098602/BEAST7_mghb3j.png"
+)
+
+NearbyEvent.create(
+  event_name: "Fair Fights 6",
+  user_id: f.id,
+  lat: 37.799172,
+  lng: --122.415528,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "https://res.cloudinary.com/lara-cloud1/image/upload/v1517098602/FairFights_7_hb4m7t.png"
+)
+
+NearbyEvent.create(
+  event_name: "MKMT II",
+  user_id: g.id,
+  lat: 37.769950,
+  lng: -122.400963,
+  date: "Sat, 16 Dec 2017",
+  start_time: "21:00:00",
+  end_time: "23:00:00",
+  game: "Melee",
+  skill_level: "All skill levels welcome!",
+  description: "This is a description",
+  current_players: 2,
+  max_players: 8,
+  current_setup: "We have 2 setups and 8 GC controllers",
+  photo: "http://res.cloudinary.com/lara-cloud1/image/upload/v1517098602/MKMT_2_hqvzwc.jpg"
 )
