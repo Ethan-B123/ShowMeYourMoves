@@ -1,3 +1,3 @@
-const ip = "http://192.168.1.213:3000";
+const ip = "https://show-me-your-moves.herokuapp.com/";
 
 export default ip;
