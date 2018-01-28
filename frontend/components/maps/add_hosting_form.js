@@ -22,15 +22,14 @@ class AddHostingForm extends React.Component {
     this.state = {
       event_name: "Smash Event",
       skill_level: "All levels welcome",
-      game: "melee",
-      description: "description",
-      current_players: "n/a",
-      max_players: "n/a",
-      current_setup: "current_setup",
-      photo: "photo",
-      date: "date",
-      start_time: "start_time",
-      end_time: "end_time",
+      game: "Melee",
+      description: undefined,
+      max_players: undefined,
+      current_setup: undefined,
+      photo: undefined,
+      date: undefined,
+      start_time: undefined,
+      end_time: undefined,
       lat: "lat",
       lng: "lng",
     };
@@ -110,7 +109,7 @@ class AddHostingForm extends React.Component {
             style={styles.input}
           />
 
-          <Text style={styles.formText}>Current Players</Text>
+          {/* <Text style={styles.formText}>Current Players</Text>
           <TextInput
             onChangeText={(val) => this.setState({ current_players: val })}
             value={this.state.current_players}
@@ -122,16 +121,17 @@ class AddHostingForm extends React.Component {
             onSubmitEditing={() => this.descriptionInput.focus()}
             ref={(input) => this.current_players = input}
             style={styles.input}
-          />
+          /> */}
 
-          <Text style={styles.formText}>Max Players</Text>
+          <Text style={styles.formText}>Max Player Count</Text>
           <TextInput
             onChangeText={(val) => this.setState({ max_players: val })}
             value={this.state.max_players}
-            placeholder="Max Players"
+            placeholder="Max Player Count"
             placeholderTextColor="#4C4C50"
             returnKeyType="next"
             autoCapitalize="none"
+            keyboardType="numeric"
             autoCorrect={false}
             onSubmitEditing={() => this.gameInput.focus()}
             ref={(input) => this.descriptionInput = input}
@@ -168,13 +168,13 @@ class AddHostingForm extends React.Component {
 
 
 
-          <Text style={styles.formText}>Start Date</Text>
+          <Text style={styles.formText}>Date</Text>
           <DatePicker
-            style={{width: 200}}
+            style={styles.dateStyle}
             date={this.state.date}
             mode="date"
-            placeholder="select date"
-            format="YYYY-MM-DD"
+            placeholder="Select Date"
+            format="MMM DD, YYYY"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             customStyles={{
@@ -186,6 +186,9 @@ class AddHostingForm extends React.Component {
               },
               dateInput: {
                 marginLeft: 36
+              },
+              dateText: {
+                color: "white"
               }
             }}
             onDateChange={(date) => {this.setState({date: date})}}
@@ -193,11 +196,11 @@ class AddHostingForm extends React.Component {
 
           <Text style={styles.formText}>Start Time</Text>
           <DatePicker
-            style={{width: 200}}
+            style={styles.dateStyle}
             date={this.state.start_time}
             mode="time"
-            placeholder="select date"
-            format="h:mm:ss"
+            placeholder="Select Start Time"
+            format="h:mm a"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             customStyles={{
@@ -209,6 +212,9 @@ class AddHostingForm extends React.Component {
               },
               dateInput: {
                 marginLeft: 36
+              },
+              dateText: {
+                color: "white"
               }
             }}
             onDateChange={(start_time) => {this.setState({start_time: start_time})}}
@@ -216,11 +222,11 @@ class AddHostingForm extends React.Component {
 
           <Text style={styles.formText}>End Time</Text>
           <DatePicker
-            style={{width: 200}}
+            style={styles.dateStyle}
             date={this.state.end_time}
             mode="time"
-            placeholder="end time"
-            format="h:mm:ss"
+            placeholder="Select End Time"
+            format="h:mm a"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             customStyles={{
@@ -232,6 +238,9 @@ class AddHostingForm extends React.Component {
               },
               dateInput: {
                 marginLeft: 36
+              },
+              dateText: {
+                color: "white"
               }
             }}
             onDateChange={(end_time) => {this.setState({end_time: end_time})}}
@@ -297,6 +306,9 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontSize: 20,
     textAlign: "left"
+  },
+  dateStyle: {
+    width: "100%"
   }
 });
 
