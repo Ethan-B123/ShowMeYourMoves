@@ -346,6 +346,19 @@ z = User.create(
   contact_info: "(132)-917-0927"
 )
 
+gg = User.create(
+  email: "g",
+  password: "password",
+  display_name: "g",
+  description: "g",
+  game: "Melee",
+  skill_level: "great",
+  main: "ganondorf",
+  pronouns: "he/him/his",
+  age: 21,
+  image_url: "https://randomuser.me/api/portraits/men/98.jpg",
+  contact_info: "(132)-917-0927"
+
 
 NearbyPlayer.create(user_id: b.id, lat: 37.774929, lng: -122.419416)
 NearbyPlayer.create(user_id: c.id, lat: 37.774671, lng: -122.411900)
