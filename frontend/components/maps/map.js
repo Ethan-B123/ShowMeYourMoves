@@ -47,7 +47,11 @@ class Map extends Component {
     const doCloseDetail = this.props.closeDetail();
     return (e) => {
       doCloseDetail(e);
-      this.setState({ selectedIcon: "" })
+      if(e.nativeEvent.action === undefined ||
+        e.nativeEvent.action === "press"
+      ) {
+        this.setState({ selectedIcon: "" })
+      }
     }
   }
 
@@ -75,13 +79,16 @@ class Map extends Component {
         icon = {uri: "http://res.cloudinary.com/dhc8w148v/image/upload/v1513463328/house_icon_green_mvmsn6.png"}
       }
     }
-
+    const selected = this.state.selectedIcon === id + type;
     const newLatLong = {}
     newLatLong.latitude = parseFloat(latLng.latitude)
     newLatLong.longitude = parseFloat(latLng.longitude)
+    console.log(this.state.selectedIcon);
     return (
       <MapIcon
         key={id + type}
+        idType={id + type}
+        selected={selected}
         latLng={newLatLong}
         imgSrc={icon}
         openDetail={this.openDetailFixClip(id, type).bind(this)}
