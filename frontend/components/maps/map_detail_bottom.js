@@ -1,8 +1,47 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { Animated, StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import SubInfo from './sub_info';
 
 class MapDetailBottom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideAnim: new Animated.Value(0)  // Initial value for opacity: 0
+    }
+  }
+
+  componentDidMount() {
+    console.log("mounting")
+    Animated.timing(                  // Animate over time
+      this.state.slideAnim,            // The animated value to drive
+      {
+        toValue: 100,                   // Animate to opacity: 1 (opaque)
+        duration: 1000,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  componentWillReceiveProps(nextProps){
+    const { type } = this.props;
+    if (type.length === 0 && nextProps.type.length > 0){
+      Animated.timing(                  // Animate over time
+        this.state.slideAnim,            // The animated value to drive
+        {
+          toValue: 100,                   // Animate to opacity: 1 (opaque)
+          duration: 10000,              // Make it take a while
+        }
+      ).start();
+
+    } else if (type.length > 0 && nextProps.type.length === 0){
+      Animated.timing(                  // Animate over time
+        this.state.slideAnim,            // The animated value to drive
+        {
+          toValue: 0,                   // Animate to opacity: 1 (opaque)
+          duration: 10000,              // Make it take a while
+        }
+      ).start();
+    }
+  }
 
   userDetails() {
     const { nearbyPlayers, detailId, type } = this.props;
@@ -53,7 +92,7 @@ class MapDetailBottom extends Component {
     const { navigation, detailId } = this.props;
     const { container, text, textWhite, button } = styles;
     return(
-      <View style={container}>
+      <Animated.View style={[container, {minHeight: this.state.slideAnim}]}>
         {this.userDetails()}
         {this.eventDetails()}
 
@@ -65,7 +104,7 @@ class MapDetailBottom extends Component {
             <Text style={textWhite}>More Info</Text>
           </View>
         </TouchableHighlight>
-      </View>
+      </Animated.View>
     );
   }
 }
@@ -76,7 +115,7 @@ export default MapDetailBottom;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: 100,
+    // minHeight: 100,
     alignSelf: "stretch",
     backgroundColor: "#fff",
     justifyContent: "center",

@@ -7,11 +7,11 @@ export default ({ navigation }) => {
   const { container, button } = styles;
   return (
     <View style={container}>
-      <TouchableHighlight
+      <TouchableOpacity
         style={button}
         onPress={() => navigation.navigate('AddSeekingForm')}>
         <FontAwesome name="plus" color="white" size={30}/>
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   )
 }

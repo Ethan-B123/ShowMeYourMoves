@@ -5,7 +5,6 @@ import { NavigationActions } from 'react-navigation';
 export default class SideBarContent extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props, 'sidebar props');
   }
 
   navigateToScreen = (route, id, name) => () => {

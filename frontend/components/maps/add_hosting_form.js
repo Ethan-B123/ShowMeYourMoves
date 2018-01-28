@@ -62,7 +62,7 @@ class AddHostingForm extends React.Component {
             value={this.state.event_name}
             placeholder="Event Name"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -75,7 +75,7 @@ class AddHostingForm extends React.Component {
             value={this.state.skill_level}
             placeholder="Skill Level"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -88,7 +88,7 @@ class AddHostingForm extends React.Component {
             value={this.state.game}
             placeholder="Game"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -101,8 +101,7 @@ class AddHostingForm extends React.Component {
             value={this.state.description}
             placeholder="Description"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
-            onSubmitEditing={() => this.displayNameInput.focus()}
+            returnKeyType="done"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -115,7 +114,7 @@ class AddHostingForm extends React.Component {
             value={this.state.current_players}
             placeholder="Current Players"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
             onSubmitEditing={() => this.descriptionInput.focus()}
@@ -129,12 +128,10 @@ class AddHostingForm extends React.Component {
             value={this.state.max_players}
             placeholder="Max Player Count"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             keyboardType="numeric"
             autoCorrect={false}
-            onSubmitEditing={() => this.gameInput.focus()}
-            ref={(input) => this.descriptionInput = input}
             style={styles.input}
           />
 
@@ -144,11 +141,9 @@ class AddHostingForm extends React.Component {
             value={this.state.current_setup}
             placeholder="Current Setup"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.gameInput.focus()}
-            ref={(input) => this.current_setup = input}
             style={styles.input}
           />
 
@@ -158,11 +153,9 @@ class AddHostingForm extends React.Component {
             value={this.state.photo}
             placeholder="URL"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.gameInput.focus()}
-            ref={(input) => this.current_setup = input}
             style={styles.input}
           />
 

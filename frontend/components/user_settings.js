@@ -71,8 +71,7 @@ class UserSettings extends React.Component {
             value={this.state.email}
             placeholder="Email"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
-            onSubmitEditing={() => this.displayNameInput.focus()}
+            returnKeyType="done"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
@@ -83,11 +82,9 @@ class UserSettings extends React.Component {
             value={this.state.display_name}
             placeholder="Display Name"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.contactInfoInput.focus()}
-            ref={(input) => this.displayNameInput = input}
             style={styles.input} />
           <Text style={styles.formText}>Contact Info</Text>
           <TextInput
@@ -95,11 +92,8 @@ class UserSettings extends React.Component {
             value={this.state.contact_info}
             placeholder="Contact Info"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
-            autoCapitalize="none"
+            returnKeyType="done"
             autoCorrect={false}
-            onSubmitEditing={() => this.descriptionInput.focus()}
-            ref={(input) => this.contactInfoInput = input}
             style={styles.input} />
           <Text style={styles.formText}>About Me</Text>
           <TextInput
@@ -107,11 +101,9 @@ class UserSettings extends React.Component {
             value={this.state.description}
             placeholder="About Me"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.gameInput.focus()}
-            ref={(input) => this.descriptionInput = input}
             style={styles.input} />
           <Text style={styles.formText}>Game</Text>
           <TextInput
@@ -119,11 +111,9 @@ class UserSettings extends React.Component {
             value={this.state.game}
             placeholder="Game"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.pronounsInput.focus()}
-            ref={(input) => this.gameInput = input}
             style={styles.input} />
           <Text style={styles.formText}>Pronouns</Text>
           <TextInput
@@ -131,36 +121,30 @@ class UserSettings extends React.Component {
             value={this.state.pronouns}
             placeholder="Pronouns"
             placeholderTextColor="#4C4C50"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            onSubmitEditing={() => this.ageInput.focus()}
-            ref={(input) => this.pronounsInput = input}
             style={styles.input} />
           <Text style={styles.formText}>Age</Text>
           <TextInput
             onChangeText={(val) => this.setState({ age: this.removeNonNum(val) })}
-            onSubmitEditing={() => this.imageInput.focus()}
             value={this.state.age.toString()}
             placeholder="Age"
             placeholderTextColor="#4C4C50"
             keyboardType="numeric"
-            returnKeyType="next"
+            returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            ref={(input) => this.ageInput = input}
             style={styles.input} />
           <Text style={styles.formText}>Image Url</Text>
           <TextInput
             onChangeText={(val) => this.setState({ image_url: val })}
             value={this.state.image_url}
             placeholder="Image Url"
-            onSubmitEditing={() => this.props.update(this.state)}
             placeholderTextColor="#4C4C50"
             returnKeyType="done"
             autoCapitalize="none"
             autoCorrect={false}
-            ref={(input) => this.imageInput = input}
             style={styles.input} />
           <TouchableOpacity
             style={styles.buttonContainer}

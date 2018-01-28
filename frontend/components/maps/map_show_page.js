@@ -31,7 +31,10 @@ class MapShowPage extends Component {
       if(e.nativeEvent.action === undefined ||
         e.nativeEvent.action === "press"
       ) {
-        this.setState({ detailOpen: false });
+        this.setState({
+          detailOpen: false,
+          detailType: ""
+        });
       }
     }
   }
@@ -45,7 +48,6 @@ class MapShowPage extends Component {
   }
 
   render() {
-    console.log(this.state.detailOpen);
     return(
       <View
         style={styles.container}

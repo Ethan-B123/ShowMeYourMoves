@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import MapView from "react-native-maps";
 
 
@@ -21,13 +21,13 @@ class MapIcon extends Component {
           coordinate={latLng}
           onPress={this.pressFn.bind(this)}
         >
-          <View
+          <TouchableOpacity
             style={styles.markerView}>
             <Image
               source={imgSrc}
               style={styles.image}
             />
-          </View>
+          </TouchableOpacity>
         </MapView.Marker>
     );
   }
