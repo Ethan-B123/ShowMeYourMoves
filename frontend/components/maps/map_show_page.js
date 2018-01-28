@@ -128,7 +128,8 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   bottomBarHidden: {
-    maxHeight: 0
+    maxHeight: 0,
+    display: "none"
   }
 });
 
